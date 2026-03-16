@@ -5,7 +5,7 @@ export const Hero = () => (
     {/* Imagen de Fondo con Zoom Sutil */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="/hero-image.jpg" 
+        src="/hero-image.webp" 
         alt="WeProm Strategic Background" 
         className="w-full h-full object-cover scale-100 animate-subtle-zoom"
       />
@@ -22,7 +22,7 @@ export const Hero = () => (
           Strategic Intelligence • Europe & Latin America
         </p>*/}
         
-        <h1 className="font-montserrat text-4xl font-semibold md:text-5xl text-white leading-[1.1] mb-6 tracking-wide opacity-0 animate-slide-up">
+        <h1 className="font-montserrat text-4xl font-semibold md:text-5xl text-white leading-[1.1] mb-6 tracking-wide reveal">
 
           International Market Expansion & <br />
 
@@ -33,7 +33,7 @@ export const Hero = () => (
           </span>
         </h1>
 
-        <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 opacity-0 animate-slide-up">
+        <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal">
           <p className="font-sans tracking-widest font-light">
             WeProm Europe is a strategy and market intelligence firm based in France,
             specialized in international expansion, brand positioning, and cross-border
@@ -47,14 +47,24 @@ export const Hero = () => (
           </p>
         </div>
 
-        <div className="opacity-0 animate-slide-up">
-          <button className="group relative overflow-hidden bg-white text-weprom-dark px-6 py-4 text-[10px] font-bold uppercase tracking-[0.3em] rounded-full transition-all duration-500 hover:pr-12">
-            <span className="relative z-10">Explore Our Capabilities</span>
-            <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
-              →
+        <div className="reveal">
+          <button className="group relative w-[25pc] overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+            
+            {/* Haz de luz interno sutil */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+            
+            <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">
+              Explore Our Capabilities
+              <span className="text-[14px] transform transition-transform duration-500 group-hover:translate-x-2">
+                →
+              </span>
             </span>
+        
+            {/* Sombra interna 3D sutil */}
+            <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] rounded-full pointer-events-none"></div>
           </button>
         </div>
+
       </div>
     </div>
 

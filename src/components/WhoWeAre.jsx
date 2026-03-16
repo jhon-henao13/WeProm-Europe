@@ -5,7 +5,7 @@ export const WhoWeAre = () => (
     <div className="w-full grid md:grid-cols-2 gap-0 items-stretch">
       
       {/* Lado Izquierdo: Contenido */}
-      <div className="space-y-12 order-2 md:order-1 opacity-0 animate-slide-up py-24 px-8 md:px-24 flex flex-col justify-center" style={{ animationFillMode: 'forwards' }}>
+      <div className="space-y-12 order-2 md:order-1 reveal py-24 px-8 md:px-24 flex flex-col justify-center" style={{ animationFillMode: 'forwards' }}>
         <div>
           <h2 className="text-weprom-dark text-[40px] font-extrabold tracking-[0.01em] uppercase mb-8">
             W H O &nbsp; W E &nbsp; A R E
@@ -35,14 +35,17 @@ export const WhoWeAre = () => (
       </div>
 
       {/* Lado Derecho: Imagen Vertical Edificio */}
-      <div className="order-1 md:order-2 opacity-0 animate-slide-up relative min-h-[500px] md:min-h-full" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-        <div className="absolute inset-0 w-full h-full">
+      <div className="order-1 md:order-2 reveal relative min-h-[500px] md:min-h-full overflow-hidden" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
+        <div className="absolute inset-0 w-full h-[120%] -top-[10%]"> {/* El contenedor es más alto para permitir el movimiento */}
           <img 
             src="/building-vertical.jpg" 
             alt="Strategic Infrastructure" 
-            className="w-full h-full object-cover object-center" 
+            className="w-full h-full object-cover object-center transition-transform duration-500 ease-out"
+            style={{
+              transform: 'translateY(var(--parallax-y, 0))'
+            }}
+            id="parallax-building"
           />
-          {/* Overlay sutil */}
           <div className="absolute inset-0 bg-weprom-dark/5 pointer-events-none"></div>
         </div>
       </div>
