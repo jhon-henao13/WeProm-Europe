@@ -36,12 +36,12 @@ export const Navbar = () => {
       {/* Desktop Menu */}
       <div className={`hidden md:flex items-center gap-7 text-[10px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
         <a href="#" className="hover:opacity-50 transition-opacity">Insights</a>
-        <span className="opacity-20 font-thin">|</span>
+        <span className="opacity-70 font-thin">|</span>
         <a href="#" className="hover:opacity-50 transition-opacity">Contact</a>
         <div className="flex gap-4 ml-16 items-center">
-          <button className="opacity-50 hover:opacity-100 transition-all">es</button>
-          <span className="opacity-20">/</span>
-          <button className="font-black">fr</button>
+          <button className="opacity-90 font-black hover:opacity-100 transition-all">es</button>
+          <span className="opacity-40">/</span>
+          <button className="opacity-90 font-black hover:opacity-100 transition-all">fr</button>
         </div>
       </div>
 

@@ -5,11 +5,11 @@ export const Hero = () => (
     {/* Imagen de Fondo con Zoom Sutil */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="/hero-image.webp" 
+        src="/hero-image2.webp"
         alt="WeProm Strategic Background" 
         className="w-full h-full object-cover scale-100 animate-subtle-zoom"
       />
-      <div className="absolute inset-0 bg-slate-950/30 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-slate-950/10 mix-blend-multiply"></div>
       {/* Gradiente extra para legibilidad inferior */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"></div>
     </div>
@@ -33,14 +33,14 @@ export const Hero = () => (
           </span>
         </h1>
 
-        <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal">
-          <p className="font-sans tracking-widest font-light">
+        <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal opacity-100">
+          <p className="font-montserrat tracking-widest font-light leading-snug">
             WeProm Europe is a strategy and market intelligence firm based in France,
             specialized in international expansion, brand positioning, and cross-border
             business development between Europe and Latin America.
 
           </p>
-          <p className="font-sans font-extralight opacity-70 tracking-wider border-l border-white/20 pl-6 italic">
+          <p className="font-montserrat font-extralight opacity-90 tracking-wider border-l border-white/20 pl-6 italic leading-snug">
             We support companies, institutions and territories in navigating complex markets,
             reducing uncertainty and transforming information into strategic decisions.
   
