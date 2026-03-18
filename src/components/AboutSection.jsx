@@ -4,8 +4,8 @@ export const AboutSection = () => (
   <section className="bg-white py-32 px-8 md:px-16 overflow-hidden">
     <div className="max-w-7xl mx-auto">
       {/* Título Superior con Tracking Extremo */}
-      <div className="text-center mb-16 reveal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-        <h2 className="text-weprom-dark text-[35px] font-extrabold tracking-[0.1em] uppercase">
+      <div className="text-center mb-4 reveal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+        <h2 className="text-blue-600 text-[35px] font-extrabold tracking-[0.1em] uppercase">
           W E &nbsp; K N O W &nbsp; B U S I N E S S
         </h2>
         <div className="w-12 h-[1px] bg-weprom-dark/20 mx-auto mt-6"></div>
@@ -15,12 +15,12 @@ export const AboutSection = () => (
         {/* Lado Izquierdo: Mapa Europa Negro */}
         <div className="relative group reveal" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
           <img 
-            src="/map-europe.webp" 
+            src="/map-azul.png"
             alt="European Market Context" 
             className="w-full h-auto opacity-90 transition-all duration-1000 group-hover:opacity-100 group-hover:scale-[1.02]"
           />
           {/* Overlay sutil decorativo */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent"></div>
+          
         </div>
 
         {/* Lado Derecho: Texto P */}
@@ -39,7 +39,7 @@ export const AboutSection = () => (
               and market development. Yet, this corridor also demands deep contextual understanding, 
               reliable intelligence and carefully designed positioning strategies.
             </p>
-            <p className="italic tracking-wider nt-serif text-weprom-dark border-l-2 border-slate-100 pl-6 py-2">
+            <p className="tracking-wider nt-serif text-weprom-dark border-l-2 border-slate-100 pl-2">
               In such environments, decisions cannot rely on intuition alone. They require structured 
               analysis, market insight and cross-border strategic thinking.
             </p>
