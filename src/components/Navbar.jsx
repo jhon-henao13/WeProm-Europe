@@ -14,24 +14,45 @@ export const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full py-4 px-8 md:px-12 flex justify-between items-center z-[100] transition-all duration-500 ${
       isScrolled ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
     }`}>
+
+      {/* Branding - Contenedor del Logo */}
       {/* Branding */}
-      <div className="flex items-center gap-2 z-[110] group cursor-pointer">
-        <img 
-          src="/icon.webp" 
-          alt="WeProm Icon" 
-          className={`w-18 h-18 object-contain transition-all duration-700 ${isScrolled || isOpen ? '[filter:invert(29%)_sepia(91%)_rotate(211deg)_brightness(92%)_contrast(91%)]' : ''}`}
-        />
-        <div className={`flex flex-col font-montserrat transition-colors duration-500 ${isScrolled || isOpen ? 'text-[#2d61e0]' : 'text-white'}`}>
-
-          <div className={'flex flex-row'}>
-
-            <span className="font-medium text-xl tracking-[0.3em] leading-none">WE</span> 
-            <span className="font-light text-xl tracking-[0.3em] leading-none">PROM</span>
+      <div className="flex items-center gap-[5px] z-[110] group cursor-pointer">
+        
+        {/* Contenedor relativo para los iconos con tamaño fijo responsivo */}
+        <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+          {/* Icono Original (Blanco) */}
+          <img 
+            src="/icon.webp" 
+            alt="WeProm Icon" 
+            className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
+              isScrolled || isOpen ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
+            }`}
+          />
+          
+          {/* Icono de Scroll (Azul / icon2) */}
+          <img 
+            src="/icon2.jpeg" 
+            alt="WeProm Icon Scrolled" 
+            className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
+              isScrolled || isOpen ? 'opacity-100 scale-[0.82]' : 'opacity-0 scale-110'
+            }`}
+          />
+        </div>
+      
+        {/* Textos: Alineación ajustada con flex-col */}
+        <div className={`flex flex-col font-montserrat transition-colors duration-500 ${
+          isScrolled || isOpen ? 'text-[#2d61e0]' : 'text-white'
+        }`}>
+          <div className="flex flex-row">
+            <span className="font-medium text-lg md:text-xl tracking-[0.3em] leading-none">WE</span> 
+            <span className="font-light text-lg md:text-xl tracking-[0.3em] leading-none">PROM</span>
           </div>
-
-          <span className="font-light text-[14px] tracking-[0.5em] mt-1 opacity-70">EUROPE</span>
+          <span className="font-medium text-[14px] md:text-[14px] tracking-[0.5em] mt-1 opacity-70">EUROPE</span>
         </div>
       </div>
+
+
 
       {/* Desktop Menu */}
       <div className={`hidden md:flex items-center gap-7 text-[10px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
