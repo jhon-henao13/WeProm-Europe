@@ -2,17 +2,24 @@ import React from 'react';
 
 export const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden pt-[6rem]">
-    {/* Imagen de Fondo con Zoom Sutil */}
-    <div className="absolute inset-0 z-0">
+    {/* Contenedor de Imagen con Parallax */}
+    <div 
+      className="absolute inset-0 z-0 will-change-transform"
+      style={{
+        transform: 'translateY(var(--parallax-hero-y, 0))',
+        height: '120%' // Un poco más de altura para el margen de movimiento
+      }}
+    >
       <img 
+        id="parallax-hero"
         src="/hero-image2.webp"
         alt="WeProm Strategic Background" 
-        className="w-full h-full object-cover scale-100 animate-subtle-zoom"
+        className="w-full h-full object-cover animate-subtle-zoom"
       />
       <div className="absolute inset-0 bg-slate-950/10 mix-blend-multiply"></div>
-      {/* Gradiente extra para legibilidad inferior */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"></div>
     </div>
+    
 
     {/* Contenido con Animación de entrada */}
     <div className="relative z-10 max-w-[100%] mx-auto px-8 md:px-16 w-full animate-fadeIn">
@@ -69,16 +76,6 @@ export const Hero = () => (
     </div>
 
     {/* CSS Inline para animaciones (puedes moverlo a index.css si prefieres) */}
-    <style jsx>{`
-      @keyframes subtle-zoom {
-        from { transform: scale(1); }
-        to { transform: scale(1.1); }
-      }
-      @keyframes slideUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fadeIn { animation: fadeIn 1.5s ease-out; }
-    `}</style>
+    
   </section>
 );
