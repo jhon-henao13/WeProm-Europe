@@ -60,8 +60,6 @@ export const StrategicArchitecture = () => {
         </div>
 
         {/* LADO DERECHO: Logo con Parallax Independiente */}
-        
-
         <div 
           id="parallax-logo-architecture"
           className="absolute top-1/2 -right-[25%] w-full md:w-[50%] opacity-20 select-none flex justify-end transition-transform duration-200 ease-out hover-slide-left cursor-default"

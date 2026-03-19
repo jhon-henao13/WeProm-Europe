@@ -29,16 +29,16 @@ export const Hero = () => (
           Strategic Intelligence • Europe & Latin America
         </p>*/}
         
-        <h1 className="font-montserrat text-4xl font-semibold md:text-5xl text-white leading-[1.1] mb-6 tracking-wide reveal">
+        
 
-          International Market Expansion & <br />
-
-
-          <span className="block font-montserrat tracking-wider mt-[10px]">Business Development</span>
-          <span className="block font-montserrat font-semibold text-4xl md:text-5xl block mt-[10px] tracking-wide">
+        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-6 tracking-wide reveal">
+          International Market Expansion & <br className="hidden md:block" />
+          <span className="block font-montserrat tracking-wider mt-2 md:mt-[10px]">Business Development</span>
+          <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
             Between Europe and Latin America
           </span>
         </h1>
+
 
         <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal opacity-100">
           <p className="font-montserrat tracking-widest font-light leading-snug">
@@ -55,7 +55,7 @@ export const Hero = () => (
         </div>
 
         <div className="reveal">
-          <button className="group relative w-[25pc] overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+          <button className="group relative w-full md:w-[25pc] overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
             
             {/* Haz de luz interno sutil */}
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>

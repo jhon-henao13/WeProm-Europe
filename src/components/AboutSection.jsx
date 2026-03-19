@@ -5,7 +5,11 @@ export const AboutSection = () => (
     <div className="max-w-7xl mx-auto">
       {/* Título Superior con Tracking Extremo */}
       <div className="text-center mb-4 reveal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-        <h2 className="text-blue-600 text-[35px] font-extrabold tracking-[0.1em] uppercase">
+        <h2 className="text-blue-600 font-extrabold uppercase 
+                       /* Móvil (Default) */
+                       text-[1.7rem] tracking-normal 
+                       /* Desktop (desde 768px en adelante) */
+                       md:text-[35px] md:tracking-[0.1em]">
           W E &nbsp; K N O W &nbsp; B U S I N E S S
         </h2>
         <div className="w-12 h-[1px] bg-weprom-dark/20 mx-auto mt-6"></div>

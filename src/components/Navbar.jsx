@@ -52,8 +52,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-
-
       {/* Desktop Menu */}
       <div className={`hidden md:flex items-center gap-7 text-[10px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
         <a href="#" className="hover:opacity-50 transition-opacity">Insights</a>
