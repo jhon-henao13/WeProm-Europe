@@ -48,7 +48,7 @@ export const Navbar = () => {
             <span className="font-medium text-lg md:text-xl tracking-[0.3em] leading-none">WE</span> 
             <span className="font-light text-lg md:text-xl tracking-[0.3em] leading-none">PROM</span>
           </div>
-          <span className="font-medium text-[14px] md:text-[14px] tracking-[0.5em] mt-1 opacity-70">EUROPE</span>
+          <span className="font-medium text-[14px] md:text-[14px] tracking-[0.5em] mt-0 opacity-70">EUROPE</span>
         </div>
       </div>
 

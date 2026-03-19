@@ -3,6 +3,9 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { WhoWeAre } from './components/WhoWeAre';
+import { InternationalGroup } from './components/InternationalGroup';
+import { Capabilities } from './components/Capabilities';
+import { StrategicArchitecture } from './components/StrategicArchitecture';
 
 function App() {
   useEffect(() => {
@@ -17,19 +20,51 @@ function App() {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
 
-    // 2. Lógica de Parallax Optimizada
     const handleParallax = () => {
-      const image = document.getElementById('parallax-building');
-      if (image) {
-        const rect = image.parentElement.getBoundingClientRect();
-        const screenCenter = window.innerHeight / 2;
-        const elementCenter = rect.top + rect.height / 2;
-        
-        // Calcula la distancia del elemento al centro de la pantalla
-        const distanceFromCenter = elementCenter - screenCenter;
-        const speed = 0.06; // Ajuste fino de velocidad
-        
-        image.style.setProperty('--parallax-y', `${distanceFromCenter * speed}px`);
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // 0. HERO PARALLAX (Visible y fluido)
+      const hero = document.getElementById('parallax-hero');
+      if (hero && scrollY < viewportHeight) {
+        // Nota: Accedemos al parentElement porque es el que tiene el ID o el estilo de translateY
+        // Si aplicaste el estilo al div contenedor en el paso 1:
+        const container = hero.parentElement;
+        container.style.setProperty('--parallax-hero-y', `${scrollY * 0.4}px`);
+      }
+
+      // 3. Logo (Strategic Architecture)
+      const archLogo = document.getElementById('parallax-logo-architecture');
+      if (archLogo) {
+        const rect = archLogo.getBoundingClientRect();
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const distanceFromCenter = (rect.top + rect.height / 2) - (viewportHeight / 2);
+          // Cambiamos a --parallax-logo-y para consistencia
+          archLogo.style.setProperty('--parallax-logo-y', `${distanceFromCenter * -0.12}px`);
+        }
+      }
+
+    
+      // 1. Edificio (WhoWeAre)
+      const building = document.getElementById('parallax-building');
+      if (building) {
+        const rect = building.parentElement.getBoundingClientRect();
+        // Solo calcular si está cerca de la pantalla para ahorrar recursos
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const distanceFromCenter = (rect.top + rect.height / 2) - (viewportHeight / 2);
+          building.style.setProperty('--parallax-y', `${distanceFromCenter * 0.07}px`);
+        }
+      }
+    
+      // 2. Logo (Capabilities) - CORREGIDO
+      const logoContainer = document.getElementById('parallax-logo-container');
+      if (logoContainer) {
+        const rect = logoContainer.getBoundingClientRect();
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const distanceFromCenter = (rect.top + rect.height / 2) - (viewportHeight / 2);
+          // Multiplicador negativo para que suba mientras bajas (efecto profundidad)
+          logoContainer.style.setProperty('--parallax-logo-y', `${distanceFromCenter * -0.15}px`);
+        }
       }
     };
 
@@ -41,7 +76,6 @@ function App() {
       window.removeEventListener('scroll', handleParallax);
     };
   }, []);
-    
 
   return (
     <div className="min-h-screen bg-white selection:bg-weprom-dark selection:text-white">
@@ -55,6 +89,12 @@ function App() {
         <div className="reveal">
           <WhoWeAre />
         </div>
+
+          <InternationalGroup />
+
+          <Capabilities />
+          <StrategicArchitecture />
+
       </main>
 
       <footer className="py-20 px-8 md:px-16 border-t border-slate-50 text-center md:text-left">

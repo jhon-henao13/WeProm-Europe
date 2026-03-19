@@ -44,9 +44,8 @@ export const Capabilities = () => {
         {/* LADO DERECHO: Logo Gris con ID corregido */}
         <div 
           id="parallax-logo-container"
-          className="absolute top-1/2 -right-[23%] w-full md:w-[50%] opacity-20 pointer-events-none select-none flex justify-end transition-transform duration-200 ease-out"
+          className="absolute top-1/2 -right-[25%] w-full md:w-[50%] opacity-20 select-none flex justify-end transition-transform duration-200 ease-out hover-slide-left cursor-default"
           style={{ 
-            // Mantenemos el -50% del centrado y sumamos el parallax
             transform: 'translateY(calc(-50% + var(--parallax-logo-y, 0px)))' 
           }}
         >
