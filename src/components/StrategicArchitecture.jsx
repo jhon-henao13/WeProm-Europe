@@ -51,10 +51,17 @@ export const StrategicArchitecture = () => {
 
             {/* Botón Call to Action */}
             <div className="reveal pt-0">
-              <button className="group relative overflow-hidden bg-weprom-dark text-white px-14 py-5 text-[12px] font-bold uppercase tracking-[0.4em] rounded-full transition-all duration-500 hover:shadow-[0_20px_40px_rgba(15,23,42,0.3)] hover:-translate-y-1">
-                <span className="relative z-10">Contact us</span>
-                <div className="absolute inset-0 bg-blue-600 translate-y-full transition-transform duration-500 group-hover:translate-y-0"></div>
+              
+
+              <button className="group relative w-[17pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-12 py-5 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
+                {/* Efecto de brillo más intenso */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
+                
+                <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
+                  Contact us
+                </span>
               </button>
+
             </div>
           </div>
         </div>
