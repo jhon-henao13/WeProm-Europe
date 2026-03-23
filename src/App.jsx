@@ -7,6 +7,10 @@ import { InternationalGroup } from './components/InternationalGroup';
 import { Capabilities } from './components/Capabilities';
 import { StrategicArchitecture } from './components/StrategicArchitecture';
 
+import { MultisectoralExpertise } from './components/MultisectoralExpertise';
+
+import { OurApproach } from './components/OurApproach';
+
 function App() {
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
@@ -41,6 +45,17 @@ function App() {
           const distanceFromCenter = (rect.top + rect.height / 2) - (viewportHeight / 2);
           // Cambiamos a --parallax-logo-y para consistencia
           archLogo.style.setProperty('--parallax-logo-y', `${distanceFromCenter * -0.12}px`);
+        }
+      }
+
+      // 4. Cubo Multisectoral (Efecto elegante)
+      const multiCube = document.getElementById('parallax-multisectoral');
+      if (multiCube) {
+        const rect = multiCube.getBoundingClientRect();
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          const distanceFromCenter = (rect.top + rect.height / 2) - (viewportHeight / 2);
+          // Multiplicador -0.08 para un movimiento muy suave y profesional
+          multiCube.style.setProperty('--parallax-multisectoral-y', `${distanceFromCenter * -0.08}px`);
         }
       }
 
@@ -94,6 +109,10 @@ function App() {
 
           <Capabilities />
           <StrategicArchitecture />
+
+          <MultisectoralExpertise />
+
+          <OurApproach />
 
       </main>
 

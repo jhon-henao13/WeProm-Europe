@@ -26,8 +26,6 @@
     100% { transform: translateX(100%); }
   }
 }
-  
-
 
 @layer base {
   html {
@@ -43,6 +41,12 @@
 }
 
 @layer utilities {
+
+
+  .text-\[2\.9rem\] {
+    @apply text-3xl md:text-[2.9rem] leading-tight;
+  }
+  
   /* Clase para la imagen del Hero */
   .animate-subtle-zoom {
     animation: subtle-zoom 20s ease-in-out infinite alternate;
