@@ -11,6 +11,10 @@ import { MultisectoralExpertise } from './components/MultisectoralExpertise';
 
 import { OurApproach } from './components/OurApproach';
 
+import { Insights } from './components/Insights';
+
+import { Contact } from './components/Contact';
+
 function App() {
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
@@ -134,6 +138,14 @@ function App() {
           <MultisectoralExpertise />
 
           <OurApproach />
+
+          <div className="reveal">
+            <Insights /> {/* <-- Añadir esta debajo de OurApproach */}
+          </div>
+
+          <div className="reveal">
+            <Contact /> {/* Nueva sección de contacto */}
+          </div>
 
       </main>
 
