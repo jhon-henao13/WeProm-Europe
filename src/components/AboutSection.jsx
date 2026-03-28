@@ -5,7 +5,7 @@ export const AboutSection = () => (
     <div className="max-w-7xl mx-auto">
       {/* Título Superior con Tracking Extremo */}
       <div className="text-center mb-4 reveal" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-        <h2 className="text-blue-600 font-extrabold uppercase 
+        <h2 className="text-[oklch(0.54_0.2_263.94)] font-extrabold uppercase 
                        /* Móvil (Default) */
                        text-[1.7rem] tracking-normal 
                        /* Desktop (desde 768px en adelante) */
