@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Contact = () => {
   return (
-    <section className="relative bg-white py-32 px-8 md:px-16 overflow-hidden border-b border-slate-50">
+    <section className="relative bg-white py-12 px-8 md:px-16 overflow-hidden border-b border-slate-50">
       <div className="max-w-full mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
         
         {/* LADO IZQUIERDO: Información de contacto */}
@@ -81,7 +81,7 @@ export const Contact = () => {
             </div>
 
             <div className="pt-0">
-              <button type="submit" className="group relative w-full md:w-[25pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-2 py-4 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-[15px] transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-white hover:bg-blue-600 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2)] hover:scale-[1.02] active:scale-95">
+              <button type="submit" className="group relative w-full md:w-[26pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-2 py-4 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-[15px] transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-white hover:bg-blue-600 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2)] hover:scale-[1.02] active:scale-95">
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
 
                 <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">

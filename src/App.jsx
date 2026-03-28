@@ -15,6 +15,8 @@ import { Insights } from './components/Insights';
 
 import { Contact } from './components/Contact';
 
+import { Footer } from './components/Footer';
+
 function App() {
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
@@ -123,7 +125,7 @@ function App() {
                 </h2>
                 
                 {/* Isotipo Único Difuminado */}
-                <div className="absolute top-0 right-0 md:-right-[23%] w-[45%] opacity-20 select-none">
+                <div className="absolute top-0 right-0  w-[40%] opacity-15 select-none">
                   <img src="/icon.webp" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
                 </div>
               </div>
@@ -149,17 +151,7 @@ function App() {
 
       </main>
 
-      <footer className="py-20 px-8 md:px-16 border-t border-slate-50 text-center md:text-left">
-        <div className="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-8">
-          <p className="text-[10px] text-slate-400 tracking-[0.4em] uppercase">
-            © 2026 WeProm Europe. All rights reserved.
-          </p>
-          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-             <span>France</span>
-             <span>México</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

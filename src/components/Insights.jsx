@@ -20,7 +20,7 @@ export const Insights = () => {
   ];
 
   return (
-    <section className="relative bg-white py-32 px-8 md:px-16 overflow-hidden border-b border-slate-50">
+    <section className="relative bg-white py-22 px-8 md:px-16 overflow-hidden border-b border-slate-50">
       <div className="max-w-full mx-auto">
         
         {/* CABECERA DE SECCIÓN: Alineada a la izquierda */}
