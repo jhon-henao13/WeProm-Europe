@@ -11,7 +11,7 @@ export const MultisectoralExpertise = () => {
           <div className="space-y-20">
             {/* Título y Párrafo 1 */}
             <div className="reveal group" style={{ transitionDelay: '0.1s' }}>
-              <h3 className="text-[2.9rem] font-bold mb-6 text-weprom-dark tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
+              <h3 className="text-[3.2rem] max-w-4xl font-bold mb-6 text-weprom-dark tracking-[0.07em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
                 Our Multisectoral Expertise
               </h3>
 
@@ -39,7 +39,7 @@ export const MultisectoralExpertise = () => {
             {/* Párrafo 2 */}
             <div className="reveal group" style={{ transitionDelay: '0.2s' }}>
 
-              <h3 className="text-[1.1rem] font-bold mb-6 text-black tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8 max-w-2xl">
+              <h3 className="text-[1.1rem] font-bold mb-6 text-black tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 max-w-2xl">
                 We have directly contributed to the 
                 success of projects that are now benchmarks in their sector.
               </h3>

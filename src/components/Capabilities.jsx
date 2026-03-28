@@ -2,62 +2,41 @@ import React from 'react';
 
 export const Capabilities = () => {
   return (
-    <section className="relative bg-white py-22 px-8 md:px-16 overflow-hidden border-b border-slate-50">
-      <div className="max-w-full mx-auto flex flex-col md:flex-row items-center">
-        
-        {/* LADO IZQUIERDO: 60% de ancho */}
-        <div className="w-full md:w-[70%] z-10">
-          <h2 className="reveal text-blue-600 text-4xl md:text-[60px] font-bold uppercase mb-8 md:mb-12 leading-tight">
-            Strategic Capabilities
-          </h2>
-          
-          <div className="space-y-16">
-            {/* Capacidad 1 */}
-            <div className="reveal" style={{ transitionDelay: '0.2s' }}>
+    <section className="relative bg-white px-8 md:px-16 overflow-visible">
+      <div className="max-w-full mx-auto pt-22 pb-0">
+        {/* Contenedor de servicios 1 y 2 - Manteniendo el margen para no chocar con el título que ahora viene de App.jsx */}
+        <div className="relative z-10 space-y-16 mt-[50px] md:mt-[100px]">
+          {/* Capacidad 1 */}
+          <div className="reveal" style={{ transitionDelay: '0.2s' }}>
+            <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
+              Market Research & Business Intelligence
+            </h3>
 
-              <h3 className="text-lg md:text-[1.3rem] font-semibold mb-4 md:mb-6 text-weprom-dark tracking-[0.22em] md:tracking-[0.44rem] leading-relaxed">
-                Market Research & Business Intelligence
-              </h3>
-              <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-8xl tracking-wide">
-                We analyze markets, sectors, and competitive environments to generate structured insights that 
-                support high-level decision-making. Our intelligence frameworks help organizations understand 
-                demand structures, risks, and opportunity landscapes across complex international contexts. We 
-                transform raw data into actionable strategic intelligence to provide a clear competitive advantage.
-              </p>
-            </div>
+            <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-8xl tracking-wide">
+              We analyze markets, sectors, and competitive environments to generate structured insights that 
+              support high-level decision-making. Our intelligence frameworks help organizations understand 
+              demand structures, risks, and opportunity landscapes across complex international contexts. We 
+              transform raw data into actionable strategic intelligence to provide a clear competitive advantage.
+            </p>
+          </div>
 
-            {/* Capacidad 2 */}
-            <div className="reveal" style={{ transitionDelay: '0.4s' }}>
-              <h3 className="text-lg md:text-[1.3rem] font-semibold mb-4 md:mb-6 text-weprom-dark tracking-[0.22em] md:tracking-[0.44rem] leading-relaxed">
-                International Expansion & Market Entry
-              </h3>
-              <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
-                WeProm Europe supports companies and institutions in designing and executing expansion strategies 
-                between Europe and Latin America. From feasibility assessment to market entry architecture, we 
-                navigate the regulatory, commercial, and cultural dimensions of cross-border growth. Our 
-                methodology ensures a structured transition into new markets, minimizing friction and optimizing 
-                resource allocation.
-              </p>
-            </div>
+          {/* Capacidad 2 */}
+          <div className="reveal" style={{ transitionDelay: '0.4s' }}>
+            <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
+              International Expansion & Market Entry
+            </h3>
+            <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
+              WeProm Europe supports companies and institutions in designing and executing expansion strategies 
+              between Europe and Latin America. From feasibility assessment to market entry architecture, we 
+              navigate the regulatory, commercial, and cultural dimensions of cross-border growth. Our 
+              methodology ensures a structured transition into new markets, minimizing friction and optimizing 
+              resource allocation.
+            </p>
           </div>
         </div>
 
-        {/* LADO DERECHO: Logo Gris con ID corregido */}
-        <div 
-          id="parallax-logo-container"
-          className="absolute top-1/2 -right-[25%] w-full md:w-[50%] opacity-20 select-none flex justify-end transition-transform duration-200 ease-out hover-slide-left cursor-default"
-          style={{ 
-            transform: 'translateY(calc(-50% + var(--parallax-logo-y, 0px)))' 
-          }}
-        >
-          <img 
-            src="/icon.webp" 
-            alt="" 
-            className="w-full h-auto object-contain grayscale brightness-50" 
-          />
-        </div>
-
       </div>
+
     </section>
   );
 };

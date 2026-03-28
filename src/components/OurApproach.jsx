@@ -41,7 +41,7 @@ export const OurApproach = () => {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600 transition-all duration-500 group-hover:h-3 group-hover:w-3 group-hover:bg-blue-500"></span>
                   </span>
             
-                  <p className="text-black font-montserrat text-[1.1rem] md:text-[1.25rem] tracking-wide group-hover:text-blue-900 group-hover:translate-x-3 transition-all duration-500 ease-out">
+                  <p className="text-black font-montserrat text-[1.1rem] md:text-[1.25rem] tracking-wide group-hover:text-blue-900 transition-all duration-500 ease-out">
                     {point}
                   </p>
                 </li>
