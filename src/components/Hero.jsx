@@ -1,22 +1,22 @@
 import React from 'react';
 
 export const Hero = () => (
-  <section className="relative min-h-screen flex items-center overflow-hidden pt-[6rem]">
+  <section className="relative min-h-[120vh] flex items-center overflow-hidden pt-0">
     {/* Contenedor de Imagen con Parallax */}
     <div 
       className="absolute inset-0 z-0 will-change-transform"
-      style={{
+      /*style={{
         transform: 'translateY(var(--parallax-hero-y, 0))',
-        height: '120%' // Un poco más de altura para el margen de movimiento
-      }}
+        height: '100%' // Un poco más de altura para el margen de movimiento
+      }}*/
     >
       <img 
         id="parallax-hero"
         src="/hero-image2.webp"
         alt="WeProm Strategic Background" 
-        className="w-full h-full object-cover animate-subtle-zoom"
+        className="w-full h-full object-cover "
       />
-      <div className="absolute inset-0 bg-slate-950/10 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-slate-950/0 mix-blend-multiply"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"></div>
     </div>
     
@@ -31,7 +31,7 @@ export const Hero = () => (
         
         
 
-        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-6 tracking-wide reveal">
+        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-8 tracking-wide reveal">
           International Market Expansion & <br className="hidden md:block" />
           <span className="block font-montserrat tracking-wider mt-2 md:mt-[10px]">Business Development</span>
           <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
@@ -40,14 +40,14 @@ export const Hero = () => (
         </h1>
 
 
-        <div className="space-y-8 text-slate-200 max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal opacity-100">
-          <p className="font-montserrat tracking-widest font-light leading-snug">
+        <div className="space-y-8 text-white max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal opacity-100">
+          <p className="font-montserrat tracking-widest font-normal leading-snug">
             WeProm Europe is a strategy and market intelligence firm based in France,
             specialized in international expansion, brand positioning, and cross-border
             business development between Europe and Latin America.
 
           </p>
-          <p className="font-montserrat font-extralight opacity-90 tracking-wider border-l border-white/20 pl-6 italic leading-snug">
+          <p className="font-montserrat font-light opacity-98 tracking-wider border-l border-white/20 pl-6 italic leading-snug text-[1.2rem]">
             We support companies, institutions and territories in navigating complex markets,
             reducing uncertainty and transforming information into strategic decisions.
   

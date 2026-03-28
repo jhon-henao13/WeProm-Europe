@@ -11,7 +11,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full py-4 px-8 md:px-12 flex justify-between items-center z-[100] transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 w-full py-2 px-6 md:px-10 flex justify-between items-center z-[100] transition-all duration-500 ${
       isScrolled ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
     }`}>
 
@@ -20,10 +20,10 @@ export const Navbar = () => {
       <div className="flex items-center gap-[5px] z-[110] group cursor-pointer">
         
         {/* Contenedor relativo para los iconos con tamaño fijo responsivo */}
-        <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0">
+        <div className="relative w-[280px] h-[100px] md:w-[280px] md:h-[100px] flex-shrink-0">
           {/* Icono Original (Blanco) */}
           <img 
-            src="/icon.webp" 
+            src="/LOGO1BLANCO.png" 
             alt="WeProm Icon" 
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
               isScrolled || isOpen ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
@@ -32,16 +32,16 @@ export const Navbar = () => {
           
           {/* Icono de Scroll (Azul / icon2) */}
           <img 
-            src="/icon2.jpeg" 
+            src="/LOGO3AZUL.png" 
             alt="WeProm Icon Scrolled" 
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
-              isScrolled || isOpen ? 'opacity-100 scale-[0.82]' : 'opacity-0 scale-110'
+              isScrolled || isOpen ? 'opacity-100 scale-[0.92]' : 'opacity-0 scale-110'
             }`}
           />
         </div>
       
         {/* Textos: Alineación ajustada con flex-col */}
-        <div className={`flex flex-col font-montserrat transition-colors duration-500 ${
+        {/*<div className={`flex flex-col font-montserrat transition-colors duration-500 ${
           isScrolled || isOpen ? 'text-[#2d61e0]' : 'text-white'
         }`}>
           <div className="flex flex-row">
@@ -49,18 +49,18 @@ export const Navbar = () => {
             <span className="font-light text-lg md:text-xl tracking-[0.3em] leading-none">PROM</span>
           </div>
           <span className="font-medium text-[14px] md:text-[14px] tracking-[0.5em] mt-0 opacity-70">EUROPE</span>
-        </div>
+        </div>*/}
       </div>
 
       {/* Desktop Menu */}
-      <div className={`hidden md:flex items-center gap-7 text-[10px] font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
+      <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
         <a href="#" className="hover:opacity-50 transition-opacity">Insights</a>
         <span className="opacity-70 font-thin">|</span>
         <a href="#" className="hover:opacity-50 transition-opacity">Contact</a>
         <div className="flex gap-4 ml-16 items-center">
-          <button className="opacity-90 font-black hover:opacity-100 transition-all">es</button>
+          <button className="opacity-90 font-black hover:opacity-100 transition-all">ES</button>
           <span className="opacity-40">/</span>
-          <button className="opacity-90 font-black hover:opacity-100 transition-all">fr</button>
+          <button className="opacity-90 font-black hover:opacity-100 transition-all">FR</button>
         </div>
       </div>
 
