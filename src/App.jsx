@@ -133,8 +133,9 @@ function App() {
                     </h2>
   
                     {/* 3. ISOTIPO: Nítido (opacity-100), sin blur, desplazado a la derecha (mitad fuera) */}
-                    <div className="absolute top-0 -right-[25%] w-[50%] opacity-15 select-none pointer-events-none">
-                      <img src="/icon.webp" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
+                    
+                    <div className="absolute top-0 right-0 w-[30%] translate-x-[13%] opacity-15 select-none pointer-events-none">
+                      <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
                     </div>
   
                   </div>
