@@ -117,19 +117,32 @@ function App() {
 
           {/* Sección Unificada de Capacidades */}
           <div className="relative overflow-visible bg-white">
+
             {/* BLOQUE INMÓVIL (Sticky) */}
             <div className="absolute inset-0 z-20 pointer-events-none">
-              <div className="sticky top-32 px-8 md:px-16 max-w-full mx-auto">
-                <h2 className="reveal text-[oklch(0.54_0.2_263.94)] text-4xl md:text-[60px] font-bold uppercase leading-tight pointer-events-auto pt-[1rem]">
-                  Strategic Capabilities
-                </h2>
+              {/* 1. Contenedor sticky con top aumentado para bajar el título */}
+              <div className="sticky top-40 w-full">
                 
-                {/* Isotipo Único Difuminado */}
-                <div className="absolute top-0 right-0  w-[40%] opacity-15 select-none">
-                  <img src="/icon.webp" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
+                {/* 2. BARRA BLANCA SÓLIDA: Cubre el texto al hacer scroll */}
+                <div className="bg-white w-full py-6 px-8 md:px-16">
+                  <div className="max-w-full mx-auto relative">
+                    
+                    {/* Título: El bg-white aquí asegura que no haya transparencia */}
+                    <h2 className="reveal text-[oklch(0.54_0.2_263.94)] text-4xl md:text-[60px] font-bold uppercase leading-tight pointer-events-auto bg-white inline-block">
+                      Strategic Capabilities
+                    </h2>
+  
+                    {/* 3. ISOTIPO: Nítido (opacity-100), sin blur, desplazado a la derecha (mitad fuera) */}
+                    <div className="absolute top-0 -right-[25%] w-[50%] opacity-15 select-none pointer-events-none">
+                      <img src="/icon.webp" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
+                    </div>
+  
+                  </div>
                 </div>
               </div>
-            </div>
+            </div>            
+
+
           
             {/* CONTENIDO QUE HACE SCROLL */}
             <Capabilities />

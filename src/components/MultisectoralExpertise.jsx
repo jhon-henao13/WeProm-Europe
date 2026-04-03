@@ -64,7 +64,7 @@ export const MultisectoralExpertise = () => {
             absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] opacity-10 pointer-events-none
             /* Desktop (md): Recupera posición original y estilo */
             md:left-auto md:right-[-6.5%] md:translate-x-0 md:w-[50%] md:opacity-100 md:pointer-events-auto
-            select-none flex justify-end transition-all duration-700 ease-out cursor-pointer group/cube z-0 md:z-10"
+            select-none flex justify-end transition-all duration-700 ease-out cursor-pointer group/cube z-20 md:z-30"
           style={{ 
             transform: 'translateY(calc(-0% + var(--parallax-multisectoral-y, 0px)))' 
           }}
