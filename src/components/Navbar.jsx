@@ -10,6 +10,16 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Bloqueo de scroll cuando el menú móvil está abierto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
   return (
     <nav className={`fixed top-0 left-0 w-full py-2 px-6 md:px-10 flex justify-between items-center z-[100] transition-all duration-500 ${
       isScrolled ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
@@ -75,15 +85,22 @@ export const Navbar = () => {
       </button>
 
       {/* Mobile Overlay Menu */}
-      <div className={`fixed inset-0 bg-white transition-all duration-700 ease-in-out z-[105] flex flex-col items-center justify-center gap-12 ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
-        <div className="flex flex-col items-center gap-8 text-weprom-dark font-montserrat font-bold text-xs uppercase tracking-[0.6em]">
-          <a href="#" onClick={() => setIsOpen(false)} className="hover:opacity-50 transition-all">Insights</a>
-          <a href="#" onClick={() => setIsOpen(false)} className="hover:opacity-50 transition-all">Contact</a>
+      {/* Mobile Overlay Menu */}
+      <div 
+        className={`fixed inset-0 bg-white transition-all duration-700 ease-in-out flex flex-col items-center justify-center gap-12 
+        ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} 
+        /* Añadimos estas clases para asegurar que cubra todo */
+        z-[105] h-screen w-screen overflow-hidden`}
+      >
+        <div className="flex flex-col items-center gap-8 text-slate-900 font-montserrat font-bold text-xs uppercase tracking-[0.6em]">
+          <a href="#" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Insights</a>
+          <a href="#" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Contact</a>
         </div>
-        <div className="flex gap-6 text-weprom-dark/40 font-bold text-[10px] tracking-[0.4em] uppercase">
-          <button className="hover:text-weprom-dark transition-colors">ES</button>
+        
+        <div className="flex gap-6 text-slate-400 font-bold text-[10px] tracking-[0.4em] uppercase">
+          <button className="hover:text-blue-600 transition-colors">ES</button>
           <span>/</span>
-          <button className="text-weprom-dark">FR</button>
+          <button className="text-slate-900">FR</button>
         </div>
       </div>
     </nav>
