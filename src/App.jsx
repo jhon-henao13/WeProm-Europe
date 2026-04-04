@@ -17,6 +17,8 @@ import { Contact } from './components/Contact';
 
 import { Footer } from './components/Footer';
 
+import { WhatsAppButton } from './components/WhatsAppButton'
+
 function App() {
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
@@ -166,6 +168,9 @@ function App() {
       </main>
 
       <Footer />
+
+      <WhatsAppButton />
+      
     </div>
   );
 }

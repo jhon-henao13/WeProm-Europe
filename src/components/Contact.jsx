@@ -11,8 +11,8 @@ export const Contact = () => {
             <h3 className="text-[2.2rem] font-bold mb-8 text-weprom-dark tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 leading-tight">
               Contact WeProm Europe
             </h3>
-            <p className="text-black font-montserrat text-xl font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
-              For institutional cooperation, partnerships or business inquiries, 
+            <p className="text-black font-montserrat text-[1.35rem] font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
+              For institutional cooperation, partnerships or business inquiries, <br/> 
               our team remains available for confidential and strategic discussions.
             </p>
 
@@ -55,22 +55,22 @@ export const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
               <div className="space-y-2">
                 <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Full name</label>
-                <input type="text" placeholder="Tu nombre" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
+                <input type="text" placeholder="Your name" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
               </div>
               <div className="space-y-2">
                 <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Company</label>
-                <input type="text" placeholder="Nombre de tu empresa" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
+                <input type="text" placeholder="Company name" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
               </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Email</label>
-              <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
+              <input type="email" placeholder="you@example.com" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
             </div>
 
             <div className="space-y-2">
               <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Message</label>
-              <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto o idea.." className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none"></textarea>
+              <textarea rows="4" placeholder="Tell us about your project…" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none"></textarea>
             </div>
 
             <div className="flex items-start space-x-3 py-2">
