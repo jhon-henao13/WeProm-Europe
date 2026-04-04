@@ -6,14 +6,15 @@ export const MultisectoralExpertise = () => {
       <div className="max-w-full mx-auto flex flex-col md:flex-row items-center">
         
         {/* LADO IZQUIERDO: Alineado 100% a la izquierda */}
-        <div className="w-full md:w-[70%] z-10">
+        <div className="w-full md:w-[70%] z-99">
           
           <div className="space-y-20">
             {/* Título y Párrafo 1 */}
             <div className="reveal group" style={{ transitionDelay: '0.1s' }}>
-              <h3 className="text-[3.2rem] max-w-4xl font-bold mb-6 text-weprom-dark tracking-[0.07em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
+              
+              <h3 className="text-3xl lg:text-[3.2rem] max-w-4xl font-bold mb-6 text-weprom-dark tracking-[0.07em] uppercase border-l-4 border-blue-600 pl-4 lg:pl-6 transition-all duration-500 group-hover:pl-8">
                 Our Multisectoral Expertise
-              </h3>
+              </h3> 
 
               <br />
  
