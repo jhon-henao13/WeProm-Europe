@@ -11,9 +11,20 @@ export const Contact = () => {
             <h3 className="text-[2.2rem] font-bold mb-8 text-weprom-dark tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 leading-tight">
               Contact WeProm Europe
             </h3>
-            <p className="text-black font-montserrat text-[1.35rem] font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
+
+
+           {/* <p className="text-black font-montserrat text-[1.35rem] font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
               For institutional cooperation, partnerships or business inquiries, <br/> 
               our team remains available for confidential and strategic discussions.
+            </p>*/}
+
+            <p className="text-black font-montserrat text-[1.35rem] font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
+              <span className="md:block">
+                For institutional cooperation, partnerships or business inquiries,
+              </span>
+              <span className="md:block">
+                our team remains available for confidential and strategic discussions.
+              </span>
             </p>
 
             {/* Lista de datos de contacto */}

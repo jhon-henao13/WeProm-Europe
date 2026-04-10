@@ -157,12 +157,12 @@ function App() {
 
           <OurApproach />
 
-          <div className="reveal">
-            <Insights /> {/* <-- Añadir esta debajo de OurApproach */}
+          <div id="insights" className="reveal">
+            <Insights />
           </div>
 
-          <div className="reveal">
-            <Contact /> {/* Nueva sección de contacto */}
+          <div id="contact" className="reveal">
+            <Contact />
           </div>
 
       </main>

@@ -31,9 +31,22 @@ export const Hero = () => (
         
         
 
-        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-8 tracking-wide reveal">
+        {/*<h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-8 tracking-wide reveal">
           International Market Expansion & <br className="hidden md:block" />
           <span className="block font-montserrat tracking-wider mt-2 md:mt-[10px]">Business Development</span>
+          <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
+            Between Europe and Latin America
+          </span>
+        </h1>*/}
+
+
+        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.2] mb-8 tracking-wide reveal" style={{ textWrap: 'balance' }}>
+          {/* Primera línea: El concepto principal completo */}
+          <span className="block">
+            International Market Expansion & Business Development
+          </span>
+          
+          {/* Segunda línea: La ubicación geográfica */}
           <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
             Between Europe and Latin America
           </span>

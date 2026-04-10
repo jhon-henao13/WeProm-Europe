@@ -26,8 +26,10 @@ export const Navbar = () => {
     }`}>
 
       {/* Branding - Contenedor del Logo */}
-      {/* Branding */}
-      <div className="flex items-center gap-[5px] z-[110] group cursor-pointer">
+      <div 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="flex items-center gap-[5px] z-[110] group cursor-pointer"
+      >
         
         {/* Contenedor relativo para los iconos con tamaño fijo responsivo */}
         <div className="relative w-[280px] h-[100px] md:w-[280px] md:h-[100px] flex-shrink-0">
@@ -64,9 +66,9 @@ export const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
-        <a href="#" className="hover:opacity-50 transition-opacity">Insights</a>
+        <a href="#insights" className="hover:opacity-50 transition-opacity">Insights</a>
         <span className="opacity-70 font-thin">|</span>
-        <a href="#" className="hover:opacity-50 transition-opacity">Contact</a>
+        <a href="#contact" className="hover:opacity-50 transition-opacity">Contact</a>
         <div className="flex gap-4 ml-16 items-center">
           <button className="opacity-90 font-black hover:opacity-100 transition-all">ES</button>
           <span className="opacity-40">/</span>
@@ -93,8 +95,8 @@ export const Navbar = () => {
         z-[105] h-screen w-screen overflow-hidden`}
       >
         <div className="flex flex-col items-center gap-8 text-slate-900 font-montserrat font-bold text-xs uppercase tracking-[0.6em]">
-          <a href="#" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Insights</a>
-          <a href="#" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Contact</a>
+          <a href="#insights" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Insights</a>
+          <a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Contact</a>
         </div>
         
         <div className="flex gap-6 text-slate-400 font-bold text-[10px] tracking-[0.4em] uppercase">
