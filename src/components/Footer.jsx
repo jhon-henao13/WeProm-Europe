@@ -10,11 +10,17 @@ export const Footer = () => {
           <h2 className="text-2xl font-bold tracking-[0.1em] text-blue-600 mb-1">
             WeProm Europe
           </h2>
+
+
           <div className="text-[15px] font-bold text-black font-montserrat leading-relaxed tracking-wide max-w-full">
-            <p>International Market Expansion & Business Development</p>
-            <p>Between Europe and Latin America</p>
+            {/* Usamos block para obligar el salto de línea entre frases y whitespace-nowrap para que no se separen las palabras clave */}
+            <span className="block md:whitespace-nowrap">International Market Expansion & Business Development</span>
+            <span className="block">Between Europe and Latin America</span>
             <p className="mt-2 font-normal text-slate-700">France | México</p>
           </div>
+
+
+
           <p className="text-[11px] text-slate-400 tracking-widest uppercase pt-8">
             © 2026 WeProm Europe. All rights reserved.
           </p>
