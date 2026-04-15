@@ -1,0 +1,30 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main  # Se ejecutará cada vez que hagas push a la rama main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build  # Esto genera la carpeta 'dist'
+
+      - name: Deploy to WPX via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 2222 # <--- IMPORTANTE: El puerto que indica tu panel
+          protocol: sftp # <--- Usamos SFTP como recomienda WPX
+          local-dir: ./dist/ 
+          server-dir: ./public_html/ # O la ruta que te indique WPX al crear el usuario
