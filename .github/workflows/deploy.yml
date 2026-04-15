@@ -24,7 +24,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 2222 # <--- IMPORTANTE: El puerto que indica tu panel
-          protocol: sftp # <--- Usamos SFTP como recomienda WPX
-          local-dir: ./dist/ 
-          server-dir: ./public_html/ # O la ruta que te indique WPX al crear el usuario
+          port: 2222 
+          # Cambiamos "sftp" por "ftps" que es lo que la acción reconoce para conexiones seguras
+          protocol: ftps
+          # Añadimos esta línea por si el certificado del servidor es auto-firmado
+          security: loose 
+          local-dir: ./dist/  
+          server-dir: ./public_html/
