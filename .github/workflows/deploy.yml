@@ -25,6 +25,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 2222
-          local_path: './dist/*' # Asegúrate que tu build sea 'dist'
-          remote_path: '/public_html'
-          sftp_args: '-o StrictHostKeyChecking=no'
+          local_path: './dist/*' 
+          remote_path: './public_html' # Añadimos el punto para ruta relativa
+          sftpArgs: '-o StrictHostKeyChecking=no' # Corregido a camelCase
