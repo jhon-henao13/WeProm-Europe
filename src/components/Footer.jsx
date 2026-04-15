@@ -12,7 +12,7 @@ export const Footer = () => {
           </h2>
 
 
-          <div className="text-[15px] font-bold text-black font-montserrat leading-relaxed tracking-wide max-w-full">
+          <div className="text-[15px] max-[530px]:text-[13px] font-bold text-black font-montserrat leading-relaxed tracking-wide max-w-full">
             {/* Usamos block para obligar el salto de línea entre frases y whitespace-nowrap para que no se separen las palabras clave */}
             <span className="block md:whitespace-nowrap">International Market Expansion & Business Development</span>
             <span className="block">Between Europe and Latin America</span>
