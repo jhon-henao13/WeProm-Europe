@@ -18,13 +18,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to WPX via SFTP (Secure)
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy to WPX via rsync
+        uses: Burnett01/rsync-deployments@7.0.1
         with:
-          username: ${{ secrets.FTP_USERNAME }}
-          server: ${{ secrets.FTP_SERVER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 2222
-          local_path: './dist/*' 
-          remote_path: 'public_html' # Añadimos el punto para ruta relativa
-          sftpArgs: '-o StrictHostKeyChecking=no' # Corregido a camelCase
+          switches: -avzr --delete
+          path: ./dist/ # Asegúrate que tu build sea 'dist'
+          remote_path: /public_html/
+          remote_host: ${{ secrets.FTP_SERVER }}
+          remote_user: ${{ secrets.FTP_USERNAME }}
+          remote_port: 2222
+        env:
+          ssh_private_key: "" # No la usamos porque usaremos password
+          remote_password: ${{ secrets.FTP_PASSWORD }}
