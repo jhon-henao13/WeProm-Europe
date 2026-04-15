@@ -49,6 +49,7 @@ export const OurApproach = () => {
             </ul>
 
             {/* Texto Final y CTA */}
+            {/* OurApproach.jsx - Busca la sección del botón y reemplázala */}
             <div className="reveal space-y-8 ml-14" style={{ transitionDelay: '0.7s' }}>
               <div className="max-w-5xl mb-14">
                 <h2 className="text-[1.3rem] font-bold text-black tracking-[0.04em] border-l-4 border-blue-600 pl-6">
@@ -58,16 +59,18 @@ export const OurApproach = () => {
                   We operate as a strategic partner in international market development.
                 </h2>
               </div>
-
-              <button className="group relative w-[17pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-12 py-5 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
-                {/* Efecto de brillo más intenso */}
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
-                
-                <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
-                  Contact us
-                </span>
-              </button>
+            
+              <a href="#contact" className="inline-block">
+                <button className="group relative w-[17pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-12 py-5 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
+                  
+                  <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
+                    Contact us
+                  </span>
+                </button>
+              </a>
             </div>
+
 
           </div>
         </div>

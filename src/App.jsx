@@ -118,7 +118,7 @@ function App() {
 
 
           {/* Sección Unificada de Capacidades */}
-          <div className="relative overflow-visible bg-white">
+          <div id="capabilities" className="relative overflow-visible bg-white">
 
             {/* BLOQUE INMÓVIL (Sticky) */}
             <div className="absolute inset-0 z-20 pointer-events-none">
@@ -161,7 +161,7 @@ function App() {
             <Insights />
           </div>
 
-          <div id="contact" className="reveal">
+          <div id="contact" className="reveal scroll-mt-48">
             <Contact />
           </div>
 

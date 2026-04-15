@@ -68,22 +68,23 @@ export const Hero = () => (
         </div>
 
         <div className="reveal">
-          <button className="group relative w-full md:w-[25pc] overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-            
-            {/* Haz de luz interno sutil */}
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
-            
-            <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">
-              Explore Our Capabilities
-              <span className="text-[14px] transform transition-transform duration-500 group-hover:translate-x-2">
-                →
+          <a href="#capabilities" className="inline-block w-full md:w-[25pc]">
+            <button className="group relative w-full overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0.3)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+              
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+              
+              <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">
+                Explore Our Capabilities
+                <span className="text-[14px] transform transition-transform duration-500 group-hover:translate-x-2">
+                  →
+                </span>
               </span>
-            </span>
-        
-            {/* Sombra interna 3D sutil */}
-            <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] rounded-full pointer-events-none"></div>
-          </button>
+          
+              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] rounded-full pointer-events-none"></div>
+            </button>
+          </a>
         </div>
+
 
       </div>
     </div>
