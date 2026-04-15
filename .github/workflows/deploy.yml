@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main  # Se ejecutará cada vez que hagas push a la rama main
+      - main
 
 jobs:
   build-and-deploy:
@@ -16,18 +16,15 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build  # Esto genera la carpeta 'dist'
+        run: npm run build
 
-      - name: Deploy to WPX via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to WPX via SFTP (Secure)
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 2222 
-          # Cambiamos "sftp" por "ftps" que es lo que la acción reconoce para conexiones seguras
-          protocol: ftps
-          # Añadimos esta línea por si el certificado del servidor es auto-firmado
-          security: loose 
-          local-dir: ./dist/  
-          server-dir: ./public_html/
+          port: 2222
+          local_path: './dist/*' # Asegúrate que tu build sea 'dist'
+          remote_path: '/public_html'
+          sftp_args: '-o StrictHostKeyChecking=no'
