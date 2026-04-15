@@ -26,5 +26,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 2222
           local_path: './dist/*' 
-          remote_path: './public_html' # Añadimos el punto para ruta relativa
+          remote_path: 'public_html' # Añadimos el punto para ruta relativa
           sftpArgs: '-o StrictHostKeyChecking=no' # Corregido a camelCase
