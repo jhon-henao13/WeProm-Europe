@@ -32,7 +32,7 @@ export const Navbar = () => {
       >
         
         {/* Contenedor relativo para los iconos con tamaño fijo responsivo */}
-        <div className="relative w-[280px] h-[100px] md:w-[280px] md:h-[100px] flex-shrink-0">
+        <div className="relative w-[280px] h-[100px] md:w-[280px] md:h-[100px] flex-shrink-0 max-[400px]:w-[200px] max-[400px]:h-[90px] max-[310px]:w-[170px]">
           {/* Icono Original (Blanco) */}
           <img 
             src="/LOGO1BLANCO.png" 

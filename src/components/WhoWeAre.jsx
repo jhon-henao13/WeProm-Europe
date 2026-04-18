@@ -7,7 +7,7 @@ export const WhoWeAre = () => (
       {/* Lado Izquierdo: Contenido */}
       <div className="space-y-12 order-2 md:order-1 reveal py-24 px-8 md:px-24 flex flex-col justify-center" style={{ animationFillMode: 'forwards' }}>
         <div>
-          <h2 className="text-weprom-dark text-[40px] font-extrabold tracking-[0.01em] uppercase mb-8">
+          <h2 className="text-weprom-dark text-[40px] font-extrabold tracking-[0.01em] uppercase mb-8 max-[500px]:text-[30px] max-[400px]:text-[23px] max-[325px]:text-[19px]">
             W H O &nbsp; W E &nbsp; A R E
           </h2>
           <div className="space-y-6 text-slate-700 leading-relaxed text-[1.1rem] font-light">

@@ -7,12 +7,12 @@ export const Footer = () => {
         
         {/* LADO IZQUIERDO: Branding & Info */}
         <div className="flex flex-col space-y-4 w-full md:w-1/3">
-          <h2 className="text-2xl font-bold tracking-[0.1em] text-blue-600 mb-1">
+          <h2 className="text-2xl font-bold tracking-[0.1em] text-blue-600 mb-1 max-[400px]:text-xl">
             WeProm Europe
           </h2>
 
 
-          <div className="text-[15px] max-[530px]:text-[13px] font-bold text-black font-montserrat leading-relaxed tracking-wide max-w-full">
+          <div className="text-[15px] max-[530px]:text-[13px] font-bold text-black font-montserrat leading-relaxed tracking-wide max-w-full max-[480px]:text-[12px] max-[450px]:text-[11px] max-[410px]:text-[10px] max-[380px]:text-[9px]">
             {/* Usamos block para obligar el salto de línea entre frases y whitespace-nowrap para que no se separen las palabras clave */}
             <span className="block md:whitespace-nowrap">International Market Expansion & Business Development</span>
             <span className="block">Between Europe and Latin America</span>
