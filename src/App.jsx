@@ -18,6 +18,10 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 import { WhatsAppButton } from './components/WhatsAppButton'
+import { Routes, Route } from 'react-router-dom';
+
+import { BlogIndex } from './components/BlogIndex';
+import { BlogPost } from './components/BlogPost';
 
 function App() {
   useEffect(() => {
@@ -103,74 +107,79 @@ function App() {
   return (
     <div className="min-h-screen bg-white selection:bg-weprom-dark selection:text-white">
       <Navbar />
-      <main className="relative">
-        <Hero />
-        {/* Envolvemos las secciones en contenedores reveal para la transición */}
-        <div className="reveal">
-          <AboutSection />
-        </div>
-        <div className="reveal">
-          <WhoWeAre />
-        </div>
-
-          <InternationalGroup />
-
-
-
-          {/* Sección Unificada de Capacidades */}
-          <div id="capabilities" className="relative overflow-visible bg-white">
-
-            {/* BLOQUE INMÓVIL (Sticky) */}
-            <div className="absolute inset-0 z-20 pointer-events-none">
-              {/* 1. Contenedor sticky con top aumentado para bajar el título */}
-              <div className="sticky top-40 w-full">
-                
-                {/* 2. BARRA BLANCA SÓLIDA: Cubre el texto al hacer scroll */}
-                <div className="bg-white w-full py-6 px-8 md:px-16">
-                  <div className="max-w-full mx-auto relative">
+      <Routes>
+        <Route path="/" element={
+          <main className="relative">
+            <Hero />
+            {/* Envolvemos las secciones en contenedores reveal para la transición */}
+            <div className="reveal">
+              <AboutSection />
+            </div>
+            <div className="reveal">
+              <WhoWeAre />
+            </div>
+    
+              <InternationalGroup />
+    
+    
+    
+              {/* Sección Unificada de Capacidades */}
+              <div id="capabilities" className="relative overflow-visible bg-white">
+    
+                {/* BLOQUE INMÓVIL (Sticky) */}
+                <div className="absolute inset-0 z-20 pointer-events-none">
+                  {/* 1. Contenedor sticky con top aumentado para bajar el título */}
+                  <div className="sticky top-40 w-full">
                     
-                    {/* Título: El bg-white aquí asegura que no haya transparencia */}
-                    <h2 className="reveal text-[oklch(0.54_0.2_263.94)] text-4xl md:text-[60px] font-bold uppercase leading-tight pointer-events-auto bg-white inline-block">
-                      Strategic Capabilities
-                    </h2>
-  
-                    {/* 3. ISOTIPO: Nítido (opacity-100), sin blur, desplazado a la derecha (mitad fuera) */}
-                    
-                    <div className="absolute top-0 right-0 w-[30%] translate-x-[13%] opacity-15 select-none pointer-events-none">
-                      <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
-                    </div>
-  
-                  </div>
-                </div>
-              </div>
-            </div>            
-
-
-          
-            {/* CONTENIDO QUE HACE SCROLL */}
-            <Capabilities />
-            <StrategicArchitecture />
-          </div>
-
-
-          <MultisectoralExpertise />
-
-          <OurApproach />
-
-          <div id="insights" className="reveal">
-            <Insights />
-          </div>
-
-          <div id="contact" className="reveal scroll-mt-48">
-            <Contact />
-          </div>
-
-      </main>
-
-      <Footer />
-
-      <WhatsAppButton />
+                    {/* 2. BARRA BLANCA SÓLIDA: Cubre el texto al hacer scroll */}
+                    <div className="bg-white w-full py-6 px-8 md:px-16">
+                      <div className="max-w-full mx-auto relative">
+                        
+                        {/* Título: El bg-white aquí asegura que no haya transparencia */}
+                        <h2 className="reveal text-[oklch(0.54_0.2_263.94)] text-4xl md:text-[60px] font-bold uppercase leading-tight pointer-events-auto bg-white inline-block">
+                          Strategic Capabilities
+                        </h2>
       
+                        {/* 3. ISOTIPO: Nítido (opacity-100), sin blur, desplazado a la derecha (mitad fuera) */}
+                        
+                        <div className="absolute top-0 right-0 w-[30%] translate-x-[13%] opacity-15 select-none pointer-events-none">
+                          <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
+                        </div>
+      
+                      </div>
+                    </div>
+                  </div>
+                </div>            
+    
+    
+              
+                {/* CONTENIDO QUE HACE SCROLL */}
+                <Capabilities />
+                <StrategicArchitecture />
+              </div>
+    
+    
+              <MultisectoralExpertise />
+    
+              <OurApproach />
+    
+              <div id="insights" className="reveal">
+                <Insights />
+              </div>
+    
+              <div id="contact" className="reveal scroll-mt-48">
+                <Contact />
+              </div>
+    
+          </main>
+        } />
+
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+
+      </Routes>
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
