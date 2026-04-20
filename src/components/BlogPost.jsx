@@ -40,7 +40,7 @@ export const BlogPost = () => {
             <div className="w-full aspect-video md:h-[550px] overflow-hidden border border-slate-100 shadow-2xl reveal active">
               <img 
                 src={urlFor(post.mainImage).url()} 
-                className="w-full h-full object-cover rounded-[20px]" 
+                className="w-full h-full object-cover" 
                 alt={post.title} 
               />
             </div>

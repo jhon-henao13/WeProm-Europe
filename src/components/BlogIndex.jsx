@@ -42,7 +42,7 @@ export const BlogIndex = () => {
                 <img 
                   src={urlFor(post.mainImage).width(800).url()} 
                   alt={post.title} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-[1.02]"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-slate-400 font-montserrat italic">
