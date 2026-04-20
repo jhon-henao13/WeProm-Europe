@@ -18,40 +18,60 @@ export const BlogPost = () => {
   if (!post) return <div className="pt-40 text-center font-montserrat tracking-widest text-slate-400">LOADING INSIGHTS...</div>;
 
   return (
-    <article className="pt-40 pb-32 bg-white min-h-screen">
+    <article className="pt-48 pb-32 bg-white min-h-screen">
       <div className="max-w-5xl mx-auto px-8 md:px-16">
-        <Link to="/blog" className="inline-block text-blue-600 text-[0.7rem] font-bold uppercase tracking-[0.4em] mb-12 hover:pl-2 transition-all">
-          ← Back to Insights
+        {/* Botón Volver estilizado */}
+        <Link to="/blog" className="group inline-flex items-center text-blue-600 text-[0.7rem] font-bold uppercase tracking-[0.4em] mb-16 transition-all">
+          <span className="transform transition-transform group-hover:-translate-x-2 mr-2">←</span> 
+          Back to Insights
         </Link>
 
-        <header className="mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-black leading-[1.1] mb-8 uppercase tracking-tight border-l-8 border-blue-600 pl-6 md:pl-10">
-            {post.title}
-          </h1>
-          <p className="text-slate-500 font-montserrat text-sm uppercase tracking-[0.2em] mb-12">
-            Published on {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-          </p>
+        <header className="mb-20">
+          <div className="reveal active">
+            <p className="text-blue-600 font-bold text-[0.8rem] uppercase tracking-[0.4em] mb-6">
+              Perspective • {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+            <h1 className="text-3xl md:text-4xl font-bold text-black leading-[1.1] mb-12 uppercase tracking-tight border-l-8 border-blue-600 pl-6 md:pl-10 font-montserrat">
+              {post.title}
+            </h1>
+          </div>
           
           {post.mainImage && (
-            <div className="w-full h-[500px] overflow-hidden border border-slate-100 shadow-xl">
-              <img src={urlFor(post.mainImage).url()} className="w-full h-full object-cover" alt={post.title} />
+            <div className="w-full aspect-video md:h-[550px] overflow-hidden border border-slate-100 shadow-2xl reveal active">
+              <img 
+                src={urlFor(post.mainImage).url()} 
+                className="w-full h-full object-cover rounded-[20px]" 
+                alt={post.title} 
+              />
             </div>
           )}
         </header>
 
-        <div className="font-montserrat text-[1.15rem] leading-relaxed text-black space-y-8 max-w-4xl">
+        {/* Cuerpo del texto con tipografía de la AboutSection */}
+        <div className="font-montserrat text-[1.1rem] md:text-[1.2rem] leading-relaxed text-slate-800 space-y-8 max-w-4xl reveal active">
           <PortableText 
             value={post.body} 
             components={{
               block: {
-                h2: ({children}) => <h2 className="text-2xl font-bold text-weprom-dark uppercase tracking-widest border-l-4 border-blue-600 pl-4 mt-12 mb-6">{children}</h2>,
-                normal: ({children}) => <p className="mb-6">{children}</p>,
+                h2: ({children}) => (
+                  <h2 className="text-2xl font-bold text-weprom-dark uppercase tracking-widest border-l-4 border-blue-600 pl-4 mt-16 mb-8 pt-4">
+                    {children}
+                  </h2>
+                ),
+                normal: ({children}) => <p className="mb-6 font-light tracking-wide">{children}</p>,
               },
               list: {
-                bullet: ({children}) => <ul className="list-disc pl-6 space-y-4 mb-8">{children}</ul>,
+                bullet: ({children}) => <ul className="list-disc pl-6 space-y-4 mb-8 text-blue-600"><span className="text-slate-800">{children}</span></ul>,
               }
             }}
           />
+        </div>
+        
+        {/* Footer del post para cerrar con elegancia */}
+        <div className="mt-24 pt-12 border-t border-slate-100">
+           <p className="text-slate-400 text-xs uppercase tracking-widest italic">
+             © 2026 WeProm Europe Strategic Intelligence
+           </p>
         </div>
       </div>
     </article>
