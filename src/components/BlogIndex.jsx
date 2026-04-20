@@ -16,7 +16,7 @@ export const BlogIndex = () => {
   return (
     <div className="pt-40 pb-32 px-8 md:px-16 max-w-full mx-auto bg-white min-h-screen">
       <div className="reveal mb-20">
-        <h3 className="text-3xl lg:text-[3.2rem] font-bold text-weprom-dark tracking-[0.07em] uppercase border-l-4 border-blue-600 pl-4 lg:pl-6">
+        <h3 className="text-3xl lg:text-[2rem] max-[650px]:text-[1.5rem] font-bold text-weprom-dark tracking-[0.07em] uppercase border-l-4 border-blue-600 pl-4 lg:pl-6">
           Insights & Strategy
         </h3>
       </div>

@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Determina si estamos en cualquier ruta de blog
+  const isBlogPage = location.pathname.startsWith('/blog'); 
+  
+  // Esta variable combinará el scroll con la ruta
+  const shouldShowWhiteNav = isScrolled || isBlogPage || isOpen;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -22,7 +30,7 @@ export const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full py-2 px-6 md:px-10 flex justify-between items-center z-[100] transition-all duration-500 ${
-      isScrolled ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
+      shouldShowWhiteNav ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
     }`}>
 
       {/* Branding - Contenedor del Logo */}
@@ -38,7 +46,7 @@ export const Navbar = () => {
             src="/LOGO1BLANCO.png" 
             alt="WeProm Icon" 
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
-              isScrolled || isOpen ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
+              shouldShowWhiteNav ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
             }`}
           />
           
@@ -47,7 +55,7 @@ export const Navbar = () => {
             src="/LOGO3AZUL.png" 
             alt="WeProm Icon Scrolled" 
             className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
-              isScrolled || isOpen ? 'opacity-100 scale-[0.92]' : 'opacity-0 scale-110'
+              shouldShowWhiteNav ? 'opacity-100 scale-[0.92]' : 'opacity-0 scale-110'
             }`}
           />
         </div>
@@ -65,7 +73,7 @@ export const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${isScrolled ? 'text-[#2d61e0]' : 'text-white'}`}>
+      <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${shouldShowWhiteNav ? 'text-[#2d61e0]' : 'text-white'}`}>
         <a href="#insights" className="hover:opacity-50 transition-opacity">Insights</a>
         <span className="opacity-70 font-thin">|</span>
         <a href="#contact" className="hover:opacity-50 transition-opacity">Contact</a>
@@ -81,9 +89,9 @@ export const Navbar = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="md:hidden z-[110] flex flex-col gap-1.5 p-2"
       >
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2 bg-[#2d61e0]' : (isScrolled ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'opacity-0' : (isScrolled ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2 bg-[#2d61e0]' : (isScrolled ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
+        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
+        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'opacity-0' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
+        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
       </button>
 
       {/* Mobile Overlay Menu */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Insights = () => {
   const articles = [
@@ -69,13 +70,16 @@ export const Insights = () => {
         </div>
 
         {/* BOTÓN CTA: Mismo estilo que OurApproach */}
+        {/* BOTÓN CTA: Redirección a la sección Blog */}
         <div className="reveal md:ml-14 text-center" style={{ transitionDelay: '0.6s' }}>
-          <button className="group relative w-full max-w-[25pc] overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-4 py-5 text-[12px] md:text-[14px] font-extrabold uppercase tracking-[0.2em] md:tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
-            <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
-              Access Our Insights
-            </span>
-          </button>
+          <Link to="/blog" className="inline-block w-full max-w-[25pc]">
+            <button className="group relative w-full overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-4 py-5 text-[12px] md:text-[14px] font-extrabold uppercase tracking-[0.2em] md:tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
+              <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
+                Access Our Insights
+              </span>
+            </button>
+          </Link>
         </div>
 
       </div>
