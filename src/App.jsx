@@ -163,7 +163,7 @@ function App() {
     
               <OurApproach />
     
-              <div id="insights" className="reveal">
+              <div id="insights" className="reveal scroll-mt-32">
                 <Insights />
               </div>
     

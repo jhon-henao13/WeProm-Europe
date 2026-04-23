@@ -1,10 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+
+  const handleNavigation = (e, targetId) => {
+    e.preventDefault();
+    setIsOpen(false); // Cerramos menú móvil si está abierto
+
+    if (location.pathname === '/') {
+      // Si ya estamos en la Home, buscamos el ID y hacemos scroll suave
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (targetId === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en el blog, navegamos a la home con el hash
+      navigate(`/#${targetId === 'top' ? '' : targetId}`);
+      if (targetId === 'top') window.scrollTo(0, 0);
+    }
+  };
+
+
 
   // Determina si estamos en cualquier ruta de blog
   const isBlogPage = location.pathname.startsWith('/blog'); 
@@ -35,7 +58,7 @@ export const Navbar = () => {
 
       {/* Branding - Contenedor del Logo */}
       <div 
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={(e) => handleNavigation(e, 'top')}
         className="flex items-center gap-[5px] z-[110] group cursor-pointer"
       >
         
@@ -74,9 +97,21 @@ export const Navbar = () => {
 
       {/* Desktop Menu */}
       <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${shouldShowWhiteNav ? 'text-[#2d61e0]' : 'text-white'}`}>
-        <a href="#insights" className="hover:opacity-50 transition-opacity">Insights</a>
+        <a 
+          href="#insights" 
+          onClick={(e) => handleNavigation(e, 'insights')} 
+          className="hover:opacity-50 transition-opacity"
+        >
+          Insights
+        </a>
         <span className="opacity-70 font-thin">|</span>
-        <a href="#contact" className="hover:opacity-50 transition-opacity">Contact</a>
+        <a 
+          href="#contact" 
+          onClick={(e) => handleNavigation(e, 'contact')} 
+          className="hover:opacity-50 transition-opacity"
+        >
+          Contact
+        </a>
         <div className="flex gap-4 ml-16 items-center">
           <button className="opacity-90 font-black hover:opacity-100 transition-all">ES</button>
           <span className="opacity-40">/</span>
@@ -103,8 +138,20 @@ export const Navbar = () => {
         z-[105] h-screen w-screen overflow-hidden`}
       >
         <div className="flex flex-col items-center gap-8 text-slate-900 font-montserrat font-bold text-xs uppercase tracking-[0.6em]">
-          <a href="#insights" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Insights</a>
-          <a href="#contact" onClick={() => setIsOpen(false)} className="hover:text-blue-600 transition-all">Contact</a>
+          <a 
+            href="#insights" 
+            onClick={(e) => handleNavigation(e, 'insights')} 
+            className="hover:text-blue-600 transition-all"
+          >
+            Insights
+          </a>
+          <a 
+            href="#contact" 
+            onClick={(e) => handleNavigation(e, 'contact')} 
+            className="hover:text-blue-600 transition-all"
+          >
+            Contact
+          </a>
         </div>
         
         <div className="flex gap-6 text-slate-400 font-bold text-[10px] tracking-[0.4em] uppercase">
