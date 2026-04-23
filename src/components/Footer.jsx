@@ -1,6 +1,25 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Footer = () => {
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavigation = (e, targetId) => {
+    e.preventDefault();
+
+    if (location.pathname === '/') {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en blog, vamos a la home con el hash
+      navigate(`/#${targetId}`);
+    }
+  };
+
   return (
     <footer className="bg-white pt-20 pb-10 px-8 md:px-16 border-t border-slate-100">
       <div className="max-w-full mx-auto flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0">
@@ -47,11 +66,20 @@ export const Footer = () => {
           
 
 
+          {/* Busca este bloque en la sección de Links & Whatsapp */}
           <div className="flex flex-wrap md:justify-end gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600">
             <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
             <span className="text-slate-200">|</span>
             <a href="#" className="hover:text-blue-600 transition-colors">Privacy & Terms</a>
-            <a href="#" className="hover:text-blue-600 transition-colors md:ml-4">Contact</a>
+            
+            {/* REEMPLAZAR ESTE ENLACE: */}
+            <a 
+              href="#contact" 
+              onClick={(e) => handleNavigation(e, 'contact')} 
+              className="hover:text-blue-600 transition-colors md:ml-4"
+            >
+              Contact
+            </a>
           </div>
 
         </div>
