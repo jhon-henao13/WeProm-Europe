@@ -10,12 +10,14 @@ export const Footer = () => {
     e.preventDefault();
 
     if (location.pathname === '/') {
+      // Si ya estamos en el home, scroll suave directo
       const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // Si estamos en blog, vamos a la home con el hash
+      // Si estamos en otra página, navegamos al home con el hash
+      // El useEffect en App.jsx se encargará del resto
       navigate(`/#${targetId}`);
     }
   };

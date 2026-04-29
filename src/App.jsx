@@ -18,20 +18,48 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 import { WhatsAppButton } from './components/WhatsAppButton'
-import { Routes, Route } from 'react-router-dom';
+
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { BlogIndex } from './components/BlogIndex';
 import { BlogPost } from './components/BlogPost';
 
 function App() {
+
+  const location = useLocation();
+
+
+  useEffect(() => {
+      // Si la URL tiene un hash (ej: #contact)
+      if (location.hash) {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        
+        if (element) {
+          // Pequeño timeout para asegurar que el DOM esté listo y las animaciones no bloqueen el scroll
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      } else if (location.pathname === '/') {
+        // Si vas al home sin hash desde otra página, sube al inicio
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, [location]);
+
+
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
     const observerOptions = { threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('active');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
       });
     }, observerOptions);
+
+
 
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));
@@ -102,7 +130,7 @@ function App() {
       observer.disconnect();
       window.removeEventListener('scroll', handleParallax);
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-white selection:bg-weprom-dark selection:text-white">
