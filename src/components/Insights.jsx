@@ -45,7 +45,7 @@ export const Insights = () => {
             <Link 
               to={`/blog/${article.slug.current}`}
               key={article.slug.current} 
-              className="reveal group cursor-pointer block"
+              className="reveal active group cursor-pointer block"
               style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
             >
               <div className="relative aspect-[16/10] overflow-hidden mb-6 bg-slate-100 border border-slate-50">
