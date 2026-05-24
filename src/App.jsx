@@ -7,6 +7,10 @@ import { InternationalGroup } from './components/InternationalGroup';
 import { Capabilities } from './components/Capabilities';
 import { StrategicArchitecture } from './components/StrategicArchitecture';
 import { MultisectoralExpertise } from './components/MultisectoralExpertise';
+import { WhyUs } from './components/WhyUs';
+import { Team } from './components/Team';
+import { IntPresence } from './components/IntPresence';
+import { Path } from './components/Path';
 import { OurApproach } from './components/OurApproach';
 import { Insights } from './components/Insights';
 import { Contact } from './components/Contact';
@@ -176,8 +180,23 @@ function App() {
                 <StrategicArchitecture />
               </div>
     
-    
               <MultisectoralExpertise />
+
+              <div id="por-que-nosotros" className="reveal scroll-mt-20">
+                <WhyUs />
+              </div>
+
+              <div id="team" className="reveal scroll-mt-20">
+                <Team />
+              </div>
+
+              <div id="presencia-internacional" className="reveal scroll-mt-20">
+                <IntPresence />
+              </div>
+
+              <div id="trayectoria" className="reveal scroll-mt-20">
+                <Path />
+              </div>
     
               <OurApproach />
     
