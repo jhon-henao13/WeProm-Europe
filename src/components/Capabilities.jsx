@@ -1,42 +1,59 @@
 import React from 'react';
 
 export const Capabilities = () => {
+  const serviciosInvestigacion = [
+    "Estudios de factibilidad para nuevos negocios y expansions internacionales.",
+    "Análisis comparativo de los competidores (benchmarking) e identificación de actores clave por zona y sector.",
+    "Estudios de hábitos, preferencias y percepción de marca, producto o servicio.",
+    "Mystery shopping internacional y auditorías de experiencia de compra.",
+    "Evaluación de áreas de oportunidad en empresa, sector e industria.",
+    "Encuestas y sondeos de opinión."
+  ];
+
   return (
-    <section className="relative bg-white px-8 md:px-16 overflow-visible">
-      <div className="max-w-full mx-auto pt-22 pb-0">
-        {/* Contenedor de servicios 1 y 2 - Manteniendo el margen para no chocar con el título que ahora viene de App.jsx */}
-        <div className="relative z-10 space-y-16 mt-[50px] md:mt-[100px]">
-          {/* Capacidad 1 */}
-          <div className="reveal" style={{ transitionDelay: '0.2s' }}>
-            <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
-              Market Research & Business Intelligence
-            </h3>
+    <section className="relative bg-white px-6 md:px-16 overflow-visible">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* BLOQUE INTRODUCTORIO GENERAL */}
+        <div className="relative z-30 mt-[60px] md:mt-[120px] mb-24 max-w-4xl">
+          <p className="text-slate-750 font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
+            <strong className="font-semibold text-slate-900">No operamos como una agencia.</strong> Somos un socio estratégico que integra investigación de mercados, estrategia y ejecución bajo nuestra propia metodología, con un equipo internacional que entiende los dos lados del Atlántico. Trabajamos en tres áreas que se refuerzan entre sí:
+          </p>
+        </div>
 
-            <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-8xl tracking-wide">
-              We analyze markets, sectors, and competitive environments to generate structured insights that 
-              support high-level decision-making. Our intelligence frameworks help organizations understand 
-              demand structures, risks, and opportunity landscapes across complex international contexts. We 
-              transform raw data into actionable strategic intelligence to provide a clear competitive advantage.
-            </p>
-          </div>
+        {/* 1. INVESTIGACIÓN Y ANÁLISIS DE MERCADOS */}
+        <div className="relative z-10 border-t border-slate-100 pt-16 reveal">
+          <div className="grid lg:grid-cols-12 gap-10">
+            
+            {/* Título de Bloque y Descripción */}
+            <div className="lg:col-span-5">
+              <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
+                1. Investigación y análisis de mercados — Europa y América Latina
+              </h3>
+              <p className="text-slate-600 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide mb-6">
+                Transformamos la incertidumbre en datos precisos para validar expansiones, lanzamientos o fusiones; interpretamos la información para entregar estrategias claras de marketing, comercialización y operaciones, minimizando el riesgo financiero de cada proyecto y aumentando al máximo las probabilidades de éxito.
+              </p>
+              <p className="text-slate-400 font-montserrat text-xs italic font-light leading-relaxed">
+                Hemos trabajado con prácticamente todas las industrias y sectores productivos. Si el mercado existe, tenemos la capacidad técnica y operativa para analizarlo a nivel local, nacional o internacional.
+              </p>
+            </div>
 
-          {/* Capacidad 2 */}
-          <div className="reveal" style={{ transitionDelay: '0.4s' }}>
-            <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
-              International Expansion & Market Entry
-            </h3>
-            <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
-              WeProm Europe supports companies and institutions in designing and executing expansion strategies 
-              between Europe and Latin America. From feasibility assessment to market entry architecture, we 
-              navigate the regulatory, commercial, and cultural dimensions of cross-border growth. Our 
-              methodology ensures a structured transition into new markets, minimizing friction and optimizing 
-              resource allocation.
-            </p>
+            {/* Listado de Servicios */}
+            <div className="lg:col-span-7 bg-slate-50/50 p-8 border border-slate-100">
+              <ul className="space-y-4">
+                {serviciosInvestigacion.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-slate-700 font-montserrat text-xs md:text-sm font-light leading-relaxed">
+                    <span className="text-[#2d61e0] font-medium text-xs mt-[2px]">0{idx + 1}.</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
 
       </div>
-
     </section>
   );
 };

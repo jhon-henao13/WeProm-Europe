@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -7,13 +7,22 @@ export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Mapeo completo de las nuevas secciones solicitadas por el cliente
+  const menuItems = [
+    { name: 'El momento', id: 'el-momento' },
+    { name: 'Servicios', id: 'capabilities' }, // Anclado a tu ID actual
+    { name: 'Sectores', id: 'sectores' },
+    { name: 'Equipo', id: 'equipo' },
+    { name: 'Trayectoria', id: 'trayectoria' },
+    { name: 'Insights', id: 'insights' },     // Anclado a tu ID actual
+    { name: 'Contacto', id: 'contact' },      // Anclado a tu ID actual
+  ];
 
   const handleNavigation = (e, targetId) => {
     e.preventDefault();
-    setIsOpen(false); // Cerramos menú móvil si está abierto
+    setIsOpen(false); // Cierra el menú lateral si está abierto
 
     if (location.pathname === '/') {
-      // Si ya estamos en la Home, buscamos el ID y hacemos scroll suave
       const element = document.getElementById(targetId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -21,18 +30,12 @@ export const Navbar = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
-      // Si estamos en el blog, navegamos a la home con el hash
       navigate(`/#${targetId === 'top' ? '' : targetId}`);
       if (targetId === 'top') window.scrollTo(0, 0);
     }
   };
 
-
-
-  // Determina si estamos en cualquier ruta de blog
   const isBlogPage = location.pathname.startsWith('/blog'); 
-  
-  // Esta variable combinará el scroll con la ruta
   const shouldShowWhiteNav = isScrolled || isBlogPage || isOpen;
 
   useEffect(() => {
@@ -41,7 +44,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Bloqueo de scroll cuando el menú móvil está abierto
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -52,19 +54,17 @@ export const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full py-2 px-6 md:px-10 flex justify-between items-center z-[100] transition-all duration-500 ${
-      shouldShowWhiteNav ? 'bg-white backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
+    <nav className={`fixed top-0 left-0 w-full px-6 md:px-10 flex justify-between items-center z-[100] transition-all duration-500 ${
+      shouldShowWhiteNav ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'
     }`}>
 
-      {/* Branding - Contenedor del Logo */}
+      {/* BRANDING: Lado Izquierdo (Logo) */}
       <div 
         onClick={(e) => handleNavigation(e, 'top')}
         className="flex items-center gap-[5px] z-[110] group cursor-pointer"
       >
-        
-        {/* Contenedor relativo para los iconos con tamaño fijo responsivo */}
-        <div className="relative w-[280px] h-[100px] md:w-[280px] md:h-[100px] flex-shrink-0 max-[400px]:w-[200px] max-[400px]:h-[90px] max-[310px]:w-[170px]">
-          {/* Icono Original (Blanco) */}
+        <div className="relative w-[230px] h-[75px] md:w-[280px] md:h-[100px] flex-shrink-0 max-[400px]:w-[190px] max-[400px]:h-[80px] max-[310px]:w-[160px]">
+          {/* Logo Original (Blanco) */}
           <img 
             src="/LOGO1BLANCO.png" 
             alt="WeProm Icon" 
@@ -72,8 +72,7 @@ export const Navbar = () => {
               shouldShowWhiteNav ? 'opacity-0 scale-75' : 'opacity-100 scale-100'
             }`}
           />
-          
-          {/* Icono de Scroll (Azul / icon2) */}
+          {/* Logo Scrolled (Azul) */}
           <img 
             src="/LOGO3AZUL.png" 
             alt="WeProm Icon Scrolled" 
@@ -82,83 +81,92 @@ export const Navbar = () => {
             }`}
           />
         </div>
-      
-        {/* Textos: Alineación ajustada con flex-col */}
-        {/*<div className={`flex flex-col font-montserrat transition-colors duration-500 ${
-          isScrolled || isOpen ? 'text-[#2d61e0]' : 'text-white'
-        }`}>
-          <div className="flex flex-row">
-            <span className="font-medium text-lg md:text-xl tracking-[0.3em] leading-none">WE</span> 
-            <span className="font-light text-lg md:text-xl tracking-[0.3em] leading-none">PROM</span>
-          </div>
-          <span className="font-medium text-[14px] md:text-[14px] tracking-[0.5em] mt-0 opacity-70">EUROPE</span>
-        </div>*/}
       </div>
 
-      {/* Desktop Menu */}
-      <div className={`hidden md:flex items-center gap-7 text-[10px] pr-6 font-bold uppercase tracking-[0.4em] transition-colors duration-500 ${shouldShowWhiteNav ? 'text-[#2d61e0]' : 'text-white'}`}>
-        <a 
-          href="#insights" 
-          onClick={(e) => handleNavigation(e, 'insights')} 
-          className="hover:opacity-50 transition-opacity"
+      {/* CONTROLES: Lado Derecho (CTA + Toggle) */}
+      <div className="flex items-center gap-4 md:gap-6 z-[110]">
+        
+        {/* CTA DISCRETO (Disponible en Desktop y Tablets medianas) */}
+        <a
+          href="#contact"
+          onClick={(e) => handleNavigation(e, 'contact')}
+          className={`hidden sm:inline-block text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] px-5 py-2.5 rounded-xs border transition-all duration-500 ${
+            shouldShowWhiteNav
+              ? 'border-[#2d61e0] text-[#2d61e0] hover:bg-[#2d61e0] hover:text-white'
+              : 'border-white/40 text-white hover:bg-white hover:text-slate-900 hover:border-white'
+          }`}
         >
-          Insights
+          Solicitar conversación
         </a>
-        <span className="opacity-70 font-thin">|</span>
-        <a 
-          href="#contact" 
-          onClick={(e) => handleNavigation(e, 'contact')} 
-          className="hover:opacity-50 transition-opacity"
+
+        {/* Botón Hamburger / Toggle unificado */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex flex-col gap-1.5 p-2 focus:outline-none group"
+          aria-label="Abrir menú"
         >
-          Contact
-        </a>
-        <div className="flex gap-4 ml-16 items-center">
-          <button className="opacity-90 font-black hover:opacity-100 transition-all">ES</button>
-          <span className="opacity-40">/</span>
-          <button className="opacity-90 font-black hover:opacity-100 transition-all">FR</button>
-        </div>
+          <span className={`w-6 h-0.5 transition-all duration-300 ${
+            isOpen ? 'rotate-45 translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')
+          }`}></span>
+          <span className={`w-6 h-0.5 transition-all duration-300 ${
+            isOpen ? 'opacity-0' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')
+          }`}></span>
+          <span className={`w-6 h-0.5 transition-all duration-300 ${
+            isOpen ? '-rotate-45 -translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')
+          }`}></span>
+        </button>
       </div>
 
-      {/* Mobile Toggle */}
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden z-[110] flex flex-col gap-1.5 p-2"
-      >
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? 'opacity-0' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
-        <span className={`w-6 h-0.5 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2 bg-[#2d61e0]' : (shouldShowWhiteNav ? 'bg-[#2d61e0]' : 'bg-white')}`}></span>
-      </button>
-
-      {/* Mobile Overlay Menu */}
-      {/* Mobile Overlay Menu */}
+      {/* MENU LATERAL OVERLAY (Premium Drawer Effect) */}
       <div 
-        className={`fixed inset-0 bg-white transition-all duration-700 ease-in-out flex flex-col items-center justify-center gap-12 
-        ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} 
-        /* Añadimos estas clases para asegurar que cubra todo */
-        z-[105] h-screen w-screen overflow-hidden`}
+        className={`fixed inset-y-0 right-0 h-screen bg-white shadow-2xl transition-all duration-700 ease-in-out flex flex-col justify-between p-10 md:p-16
+        ${isOpen ? 'translate-x-0 opacity-100 w-full md:w-[480px]' : 'translate-x-full opacity-0 w-full md:w-[480px]'} 
+        z-[105] overflow-y-auto`}
       >
-        <div className="flex flex-col items-center gap-8 text-slate-900 font-montserrat font-bold text-xs uppercase tracking-[0.6em]">
-          <a 
-            href="#insights" 
-            onClick={(e) => handleNavigation(e, 'insights')} 
-            className="hover:text-blue-600 transition-all"
-          >
-            Insights
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => handleNavigation(e, 'contact')} 
-            className="hover:text-blue-600 transition-all"
-          >
-            Contact
-          </a>
+        {/* Bloque superior de enlaces */}
+        <div className="mt-20 flex flex-col gap-8">
+          <p className="text-[#2d61e0] font-montserrat text-[9px] font-bold tracking-[0.4em] uppercase opacity-50 border-b border-slate-100 pb-2">
+            Navegación Corporativa
+          </p>
+          <div className="flex flex-col gap-5 text-slate-900 font-montserrat font-bold text-sm md:text-base uppercase tracking-[0.35em]">
+            {menuItems.map((item, index) => (
+              <a 
+                key={index}
+                href={`#${item.id}`} 
+                onClick={(e) => handleNavigation(e, item.id)} 
+                className="hover:text-[#2d61e0] transition-all transform hover:translate-x-2 duration-300"
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
         </div>
         
-        <div className="flex gap-6 text-slate-400 font-bold text-[10px] tracking-[0.4em] uppercase">
-          <button className="hover:text-blue-600 transition-colors">ES</button>
-          <span>/</span>
-          <button className="text-slate-900">FR</button>
+        {/* Bloque inferior: Selectores de idioma e inclusión del CTA en Mobile */}
+        <div className="flex flex-col gap-6 border-t border-slate-100 pt-6 mt-12">
+          {/* CTA visible dentro del menú desplegable SOLO para pantallas móviles pequeñas */}
+          <div className="sm:hidden w-full">
+            <a
+              href="#contact"
+              onClick={(e) => handleNavigation(e, 'contact')}
+              className="block text-center text-[10px] font-bold uppercase tracking-[0.2em] bg-[#2d61e0] text-white py-3 px-4 w-full"
+            >
+              Solicitar conversación
+            </a>
+          </div>
+
+          <div>
+            <p className="text-slate-400 font-bold text-[9px] tracking-[0.3em] uppercase mb-3">Idioma / Language</p>
+            <div className="flex gap-5 text-slate-400 font-bold text-[11px] tracking-[0.35em] uppercase">
+              <button className="text-[#2d61e0] font-black hover:opacity-100">ES</button>
+              <span className="opacity-30">/</span>
+              <button className="hover:text-[#2d61e0] transition-colors">FR</button>
+              <span className="opacity-30">/</span>
+              <button className="hover:text-[#2d61e0] transition-colors">EN</button>
+            </div>
+          </div>
         </div>
+
       </div>
     </nav>
   );

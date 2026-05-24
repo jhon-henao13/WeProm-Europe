@@ -6,28 +6,20 @@ import { WhoWeAre } from './components/WhoWeAre';
 import { InternationalGroup } from './components/InternationalGroup';
 import { Capabilities } from './components/Capabilities';
 import { StrategicArchitecture } from './components/StrategicArchitecture';
-
 import { MultisectoralExpertise } from './components/MultisectoralExpertise';
-
 import { OurApproach } from './components/OurApproach';
-
 import { Insights } from './components/Insights';
-
 import { Contact } from './components/Contact';
-
 import { Footer } from './components/Footer';
-
 import { WhatsAppButton } from './components/WhatsAppButton'
-
 import { Routes, Route, useLocation } from 'react-router-dom';
-
 import { BlogIndex } from './components/BlogIndex';
 import { BlogPost } from './components/BlogPost';
+
 
 function App() {
 
   const location = useLocation();
-
 
   useEffect(() => {
       // Si la URL tiene un hash (ej: #contact)
@@ -140,47 +132,45 @@ function App() {
           <main className="relative">
             <Hero />
             {/* Envolvemos las secciones en contenedores reveal para la transición */}
-            <div className="reveal">
+            <div id="el-momento" className="reveal scroll-mt-20">
               <AboutSection />
             </div>
-            <div className="reveal">
+
+            <div id="equipo" className="reveal scroll-mt-20">
               <WhoWeAre />
             </div>
     
-              <InternationalGroup />
-    
-    
+              {/* <InternationalGroup /> */}
     
               {/* Sección Unificada de Capacidades */}
-              <div id="capabilities" className="relative overflow-visible bg-white">
-    
+              {/* Sección Unificada de Capacidades - Reemplazo en App.jsx */}
+              <div id="capabilities" className="relative overflow-visible bg-white pt-24 md:pt-32">
+                      
                 {/* BLOQUE INMÓVIL (Sticky) */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
-                  {/* 1. Contenedor sticky con top aumentado para bajar el título */}
-                  <div className="sticky top-40 w-full">
-                    
-                    {/* 2. BARRA BLANCA SÓLIDA: Cubre el texto al hacer scroll */}
-                    <div className="bg-white w-full py-6 px-8 md:px-16">
-                      <div className="max-w-full mx-auto relative">
+                  <div className="sticky top-24 w-full">
+                      
+                    {/* BARRA BLANCA SÓLIDA */}
+                    <div className="bg-white w-full py-6 px-6 md:px-16">
+                      <div className="max-w-7xl mx-auto relative pt-8">
                         
-                        {/* Título: El bg-white aquí asegura que no haya transparencia */}
-                        <h2 className="reveal text-[oklch(0.54_0.2_263.94)] text-4xl md:text-[60px] font-bold uppercase leading-tight pointer-events-auto bg-white inline-block">
-                          Strategic Capabilities
+                        <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-2">
+                          Capacidades estratégicas
+                        </p>
+                        <h2 className="reveal text-slate-900 font-montserrat text-3xl md:text-[50px] font-semibold uppercase leading-tight pointer-events-auto bg-white inline-block tracking-wide">
+                          Tres áreas de acción.
                         </h2>
-      
-                        {/* 3. ISOTIPO: Nítido (opacity-100), sin blur, desplazado a la derecha (mitad fuera) */}
-                        
-                        <div className="absolute top-0 right-0 w-[30%] translate-x-[13%] opacity-15 select-none pointer-events-none">
-                          <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale brightness-50" />
+                      
+                        {/* ISOTIPO TRASLÚCIDO DE RESPALDO */}
+                        <div className="absolute top-0 right-0 w-[25%] translate-x-[10%] opacity-10 select-none pointer-events-none hidden md:block">
+                          <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale" />
                         </div>
-      
+                      
                       </div>
                     </div>
                   </div>
                 </div>            
-    
-    
-              
+                      
                 {/* CONTENIDO QUE HACE SCROLL */}
                 <Capabilities />
                 <StrategicArchitecture />

@@ -1,68 +1,87 @@
 import React from 'react';
 
 export const StrategicArchitecture = () => {
+  const serviciosConsultoria = [
+    "Desarrollo de ideas de negocio, diversificación y nuevos productos.",
+    "Reingeniería de negocio y estructura organizacional.",
+    "Expansión comercial nacional e internacional con plan de entrada estructurado.",
+    "Profesionalización e inteligencia de negocios en áreas comerciales y marketing.",
+    "Estrategias de comercio exterior, logística internacional y gestión aduanera.",
+    "Esquemas de franquicias y redes de distribución.",
+    "Relaciones públicas, alianzas estratégicas y eventos de networking institucional.",
+    "Automatización comercial e inteligencia artificial aplicada al crecimiento de negocios.",
+    "Coaching ejecutivo y consultoría de alto nivel para puestos directivos y mandos intermedios."
+  ];
+
+  const serviciosMarketing = [
+    "Desarrollo de nuevas marcas: nombre comercial, imagen e identidad.",
+    "Estrategia de posicionamiento para marcas, productos y servicios en nuevos mercados.",
+    "Comunicación corporativa e institucional internacional.",
+    "Comunicación digital, fortalecimiento de presencia online y posicionamiento web.",
+    "Diseño e implementación de campañas de promoción internacional.",
+    "Presencia y acompañamiento en ferias, foros y eventos comerciales clave.",
+    "Desarrollo de alianzas estratégicas e institucionales."
+  ];
+
   return (
-    <section className="relative bg-white px-8 md:px-16 overflow-visible border-b border-slate-50">
-      <div className="max-w-full mx-auto pb-32">
-        {/* Espaciado para que no se pegue al bloque anterior, manteniendo la fluidez */}
-        <div className="relative z-10 space-y-20 pt-16 md:pt-20">
-          
-          {/* Bloque 1 */}
-          <div className="reveal group" style={{ transitionDelay: '0.1s' }}>
-            <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
-              Strategic Positioning & Communication
-            </h3>
-              <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
-                In competitive and international markets, positioning is a fundamental pillar of commercial viability. We help 
-                organizations define and articulate authoritative value narratives, ensuring coherence between market 
-                realities, brand perception and institutional communication. By deploying targeted communication strategies 
-                and effective outreach initiatives, we accelerate market entry and strengthen commercial influence.
-              </p>
-            </div>
-
-            {/* Bloque 2 */}
-            <div className="reveal group" style={{ transitionDelay: '0.2s' }}>
-              <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
-                Global Trade & Supply Chain Architecture
+    <section className="relative bg-white px-6 md:px-16 overflow-visible border-b border-slate-100">
+      <div className="max-w-7xl mx-auto pb-32 pt-20 space-y-24">
+        
+        {/* 2. CONSULTORÍA EN CREACIÓN, DESARROLLO Y EXPANSIÓN */}
+        <div className="reveal border-t border-slate-100 pt-16">
+          <div className="grid lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-5">
+              <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
+                2. Consultoría en creación, desarrollo y expansión de negocios — de la estrategia a la ejecución.
               </h3>
-              <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
-                Beyond strategy, we provide the technical architecture for international trade. Our expertise covers the 
-                complexities of global logistics, customs compliance, and tariff optimization, allowing us to manage the entire 
-                trade cycle. We navigate regulatory frameworks to mitigate risk and ensure operational efficiency, facilitating 
-                cross-border trade flows.
+              <p className="text-slate-600 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+                Diseñamos y ejecutamos estrategias de creación, consolidación y expansión transcontinental. Acompañamos cada etapa del proceso —desde la concepción de una idea, hasta la operación local— con un equipo internacional que conoce ambos contextos regulatorios, comerciales y culturales.
               </p>
             </div>
-
-            {/* Bloque 3 */}
-            <div className="reveal group" style={{ transitionDelay: '0.3s' }}>
-              <h3 className="text-[1.1rem] font-bold mb-6 text-weprom-dark tracking-[0.3em] uppercase border-l-4 border-blue-600 pl-6 transition-all duration-500 group-hover:pl-8">
-                Territorial & Country Brand Strategy
-              </h3>
-              <p className="text-black font-montserrat leading-snug text-lg font-normal max-w-2xl max-w-5xl tracking-wide">
-                Territories compete for investment, talent, and economic relevance. WeProm Europe collaborates with 
-                governments and institutions in developing strategic frameworks for Foreign Direct Investment (FDI) 
-                attraction, territorial positioning, and international perception management. We design economic 
-                promotion initiatives that help entities build resilient business ecosystems.
-              </p>
+            <div className="lg:col-span-7 bg-slate-50/50 p-8 border border-slate-100">
+              <ul className="space-y-4">
+                {serviciosConsultoria.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-slate-700 font-montserrat text-xs md:text-sm font-light leading-relaxed">
+                    <span className="text-[#2d61e0] font-medium text-xs mt-[2px]">0{idx + 1}.</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {/* Botón Call to Action */}
-            {/* Botón Call to Action conectado a Contact */}
-            <div className="reveal pt-0">
-              <a href="#contact" className="inline-block w-full md:w-[17pc]">
-                <button className="group relative w-full overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-12 py-5 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-blue-700 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2),inset_0_0_15px_rgba(59,130,246,0.2)] hover:scale-105 active:scale-95">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
-                  
-                  <span className="relative z-10 transition-transform duration-500 group-hover:tracking-[0.5em]">
-                    Contact us
-                  </span>
-                </button>
-              </a>
-            </div>
-
-
-
           </div>
+        </div>
+
+        {/* 3. MARKETING Y POSICIONAMIENTO INTERNACIONAL */}
+        <div className="reveal border-t border-slate-100 pt-16">
+          <div className="grid lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-5">
+              <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
+                3. Marketing y posicionamiento internacional
+              </h3>
+              <p className="text-slate-600 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+                Ayudamos a empresas y organismos a construir presencia, reputación y visibilidad en mercados internacionales. Diseñamos y ejecutamos estrategias de posicionamiento de marca, comunicación internacional y relaciones públicas que conectan con audiencias clave en Europa y América Latina.
+              </p>
+            </div>
+            <div className="lg:col-span-7 bg-slate-50/50 p-8 border border-slate-100">
+              <ul className="space-y-4">
+                {serviciosMarketing.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-4 text-slate-700 font-montserrat text-xs md:text-sm font-light leading-relaxed">
+                    <span className="text-[#2d61e0] font-medium text-xs mt-[2px]">0{idx + 1}.</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* SECCIÓN INTERNA DE LLAMADA A LA ACCIÓN (CTA FINAL) */}
+        <div className="reveal pt-4 flex justify-start">
+          <a href="#contact" className="group inline-flex items-center gap-6 border border-slate-900 bg-slate-900 text-white px-10 py-5 font-montserrat text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 hover:bg-[#2d61e0] hover:border-[#2d61e0] w-full md:w-auto justify-center">
+            Conversemos sobre tu proyecto
+            <span className="text-xs transform transition-transform duration-300 group-hover:translate-x-2">→</span>
+          </a>
+        </div>
 
       </div>
     </section>

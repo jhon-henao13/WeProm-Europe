@@ -1,95 +1,96 @@
 import React from 'react';
 
-export const Hero = () => (
-  <section className="relative min-h-[120vh] flex items-center overflow-hidden pt-0">
-    {/* Contenedor de Imagen con Parallax */}
-    <div 
-      className="absolute inset-0 z-0 will-change-transform"
-      /*style={{
-        transform: 'translateY(var(--parallax-hero-y, 0))',
-        height: '100%' // Un poco más de altura para el margen de movimiento
-      }}*/
-    >
-      <img 
-        id="parallax-hero"
-        src="/hero-image2.webp"
-        alt="WeProm Strategic Background" 
-        className="w-full h-full object-cover "
-      />
-      <div className="absolute inset-0 bg-slate-950/0 mix-blend-multiply"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent"></div>
-    </div>
-    
+export const Hero = () => {
+  // Datos de la banda de cifras solicitados por el cliente
+  const stats = [
+    { value: '+35', label: 'Años de experiencia' },
+    { value: '+10 000', label: 'Proyectos realizados' },
+    { value: '+1 000', label: 'Clientes globales' },
+    { value: '3', label: 'Sedes internacionales' }
+  ];
 
-    {/* Contenido con Animación de entrada */}
-    <div className="relative z-10 max-w-[100%] mx-auto px-8 md:px-16 w-full animate-fadeIn">
-      <div className="max-w-5xl">
-
-        {/*<p className="text-slate-300 font-bold tracking-[0.5em] uppercase text-[10px] mb-8 block opacity-0 animate-[slideUp_0.8s_ease-out_forwards]">
-          Strategic Intelligence • Europe & Latin America
-        </p>*/}
-        
-        
-
-        {/*<h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.1] mb-8 tracking-wide reveal">
-          International Market Expansion & <br className="hidden md:block" />
-          <span className="block font-montserrat tracking-wider mt-2 md:mt-[10px]">Business Development</span>
-          <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
-            Between Europe and Latin America
-          </span>
-        </h1>*/}
-
-
-        <h1 className="font-montserrat text-3xl md:text-5xl font-semibold text-white leading-tight md:leading-[1.2] mb-8 tracking-wide reveal" style={{ textWrap: 'balance' }}>
-          {/* Primera línea: El concepto principal completo */}
-          <span className="block">
-            International Market Expansion & Business Development
-          </span>
-          
-          {/* Segunda línea: La ubicación geográfica */}
-          <span className="block font-montserrat font-semibold text-3xl md:text-5xl mt-2 md:mt-[10px] tracking-wide">
-            Between Europe and Latin America
-          </span>
-        </h1>
-
-
-        <div className="space-y-8 text-white max-w-4xl leading-relaxed text-[1.25rem] mb-7 reveal opacity-100">
-          <p className="font-montserrat tracking-widest font-normal leading-snug">
-            WeProm Europe is a strategy and market intelligence firm based in France,
-            specialized in international expansion, brand positioning, and cross-border
-            business development between Europe and Latin America.
-
-          </p>
-          <p className="font-montserrat font-light opacity-98 tracking-wider border-l border-white/20 pl-6 italic leading-snug text-[1.2rem]">
-            We support companies, institutions and territories in navigating complex markets,
-            reducing uncertainty and transforming information into strategic decisions.
-  
-          </p>
-        </div>
-
-        <div className="reveal">
-          <a href="#capabilities" className="inline-block w-full md:w-[25pc]">
-            <button className="group relative w-full overflow-hidden bg-white/15 border border-white/30 backdrop-blur-md text-white px-12 py-5 text-[11px] font-extrabold uppercase tracking-[0.4em] rounded-full transition-all duration-700 ease-in-out shadow-[0_0_0_0_rgba(255,255,255,0.3)] hover:bg-white hover:text-weprom-dark hover:border-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
-              
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
-              
-              <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">
-                Explore Our Capabilities
-                <span className="text-[14px] transform transition-transform duration-500 group-hover:translate-x-2">
-                  →
-                </span>
-              </span>
-          
-              <div className="absolute inset-0 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] rounded-full pointer-events-none"></div>
-            </button>
-          </a>
-        </div>
-
-
+  return (
+    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-32 md:pt-40">
+      
+      {/* BACKGROUND: Contenedor de Imagen con Parallax */}
+      <div className="absolute inset-0 z-0 will-change-transform">
+        <img 
+          id="parallax-hero"
+          src="/hero-image2.webp"
+          alt="WeProm Strategic Background" 
+          className="w-full h-full object-cover brightness-[0.50]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950/90"></div>
       </div>
-    </div>
+      
+      {/* PRINCIPAL: Contenido del Hero */}
+      <div className="relative z-10 max-w-full mx-auto px-8 md:px-16 w-full flex-grow flex items-center">
+        <div className="max-w-5xl w-full">
 
-    {/* CSS Inline para animaciones (puedes moverlo a index.css si prefieres) */}
-    
-  </section>
-);
+          {/* Antetítulo (Kicker) */}
+          <p className="reveal text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] md:text-[12px] mb-6 block">
+            Promoción y desarrollo de negocios entre Europa y América Latina
+          </p>
+          
+          {/* Título Principal (H1) con text-balance equilibrado */}
+          <h1 className="reveal font-montserrat text-3xl md:text-[54px] font-semibold text-white leading-tight md:leading-[1.15] mb-8 tracking-wide" style={{ textWrap: 'balance' }}>
+            Conectamos las dos regiones con mayor convergencia comercial y estratégica del mundo.
+          </h1>
+
+          {/* Subtítulo (Lead) Estilo Editorial Premium */}
+          <div className="reveal space-y-6 text-slate-200 max-w-4xl leading-relaxed text-sm md:text-base mb-10">
+            <p className="font-montserrat tracking-wide font-light border-l-2 border-[#2d61e0] pl-6">
+              WeProm Europe es la sede europea de un grupo internacional con más de{' '}
+              <strong className="font-semibold text-white">35 años</strong>, tres generaciones y más de{' '}
+              <strong className="font-semibold text-white">1,000 proyectos ejecutados</strong>. Acompañamos a empresas, inversionistas e instituciones de Europa y América Latina a abrir mercados, consolidar negocios y construir alianzas comerciales en el corredor más estratégico del momento.
+            </p>
+          </div>
+
+          {/* CTAs: Dos botones uno al lado del otro */}
+          <div className="reveal flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            
+            {/* Botón Primario (Oscuro/Corporativo) */}
+            <a href="#contact" className="w-full sm:w-auto">
+              <button className="group relative w-full sm:w-64 overflow-hidden bg-slate-900 border border-slate-800 text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-[#2d61e0] hover:border-[#2d61e0] shadow-xl">
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Conversemos
+                  <span className="text-[13px] transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
+              </button>
+            </a>
+
+            {/* Botón Secundario (Contorno Estilizado) */}
+            <a href="#capabilities" className="w-full sm:w-auto">
+              <button className="group relative w-full sm:w-64 overflow-hidden bg-white/5 border border-white/20 backdrop-blur-sm text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-white hover:text-slate-950 hover:border-white">
+                <span className="relative z-10 flex items-center justify-center">
+                  Ver nuestros servicios
+                </span>
+              </button>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      {/* INFERIOR: Banda de cifras corporativa (4 Columnas) */}
+      <div className="relative z-10 w-full bg-slate-950/40 backdrop-blur-md border-t border-white/5 py-8 md:py-12 mt-16 px-8 md:px-16">
+        <div className="max-w-full mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 text-center lg:text-left">
+          {stats.map((stat, index) => (
+            <div key={index} className="reveal flex flex-col justify-center lg:border-l lg:border-white/10 lg:pl-8 first:border-0 first:pl-0">
+              {/* Número grande */}
+              <span className="font-montserrat text-3xl md:text-4xl lg:text-[42px] font-light text-white tracking-tight leading-none mb-2 block">
+                {stat.value}
+              </span>
+              {/* Descripción */}
+              <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400 leading-snug">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </section>
+  );
+};
