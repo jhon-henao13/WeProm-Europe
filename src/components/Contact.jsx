@@ -1,111 +1,290 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Building2, User, Globe, MessageSquare, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    company: '',
+    email: '',
+    market: '',
+    sector: '',
+    message: '',
+    newsletter: false,
+    privacy: false,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Lógica para el manejo de envíos estratégicos o integración de API corporativa
+    console.log('Formulario enviado:', formData);
+  };
+
   return (
-    <section className="relative bg-white py-12 px-8 md:px-16 overflow-hidden border-b border-slate-50">
-      <div className="max-w-full mx-auto flex flex-col min-[1201px]:flex-row gap-16 min-[1201px]:gap-24">
+    <section className="relative bg-white py-24 md:py-32 px-6 md:px-16 overflow-hidden border-b border-slate-200">
+      <div className="max-w-7xl mx-auto">
         
-        {/* LADO IZQUIERDO: Información de contacto */}
-        <div className="w-full min-[1201px]:w-[55%] z-10">
-          <div className="reveal" style={{ transitionDelay: '0.1s' }}>
-            <h3 className="text-[2.2rem] lg:text-[1.4rem] md:text-[1.8rem] sm:text-[1.6rem] xs:text-[1.2rem] max-[700px]:text-[1.4rem] font-bold mb-8 text-weprom-dark tracking-[0.1em] uppercase border-l-4 border-blue-600 pl-6 leading-tight">
-              Contact WeProm Europe
-            </h3>
-
-
-           {/* <p className="text-black font-montserrat text-[1.35rem] font-normal max-w-3xl mt-10 ml-3 leading-relaxed">
-              For institutional cooperation, partnerships or business inquiries, <br/> 
-              our team remains available for confidential and strategic discussions.
-            </p>*/}
-
-            <p className="text-black font-montserrat text-[1rem] min-[1134px]:text-[1.35rem] max-[1133px]:text-[1.15rem] lg:text-[1.2rem] md:text-[1.2rem] sm:text-[1.1rem] min-[700px]:text-[0.95rem] font-normal max-w-full mt-2 leading-snug">
-              <span className="block min-[670px]:whitespace-nowrap">
-                For institutional cooperation, partnerships or business inquiries,
-              </span>
-              <span className="block min-[670px]:whitespace-nowrap">
-                our team remains available for confidential and strategic discussions.
-              </span>
-            </p>
-            
-
-            {/* Lista de datos de contacto */}
-            <div className="mt-12 space-y-8 ml-3">
-              <div className="flex items-center space-x-5 group">
-                <div className="p-3 rounded-full bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <span className="text-black text-2xl font-montserrat font-normal tracking-wide max-[640px]:text-[1.25rem]">info@wepromeurope.com</span>
-              </div>
-
-              <div className="flex items-center space-x-5 group">
-                <div className="p-3 rounded-full bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <span className="text-black text-2xl font-montserrat font-normal tracking-wide max-[640px]:text-[1.25rem]">+33 7 59 93 72 77</span>
-              </div>
-
-              <div className="flex items-center space-x-5 group">
-                <div className="p-3 rounded-full bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <span className="text-black text-2xl font-montserrat font-normal tracking-wide max-[640px]:text-[1.25rem]">142 Rue de Rivoli, 75001, Paris, France.</span>
-              </div>
-            </div>
-          </div>
+        {/* ENCABEZADO DE SECCIÓN DE ALTA FIDELIDAD */}
+        <div className="mb-16 md:mb-20">
+          <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4 block">
+            Contacto
+          </p>
+          <h2 className="text-slate-900 font-montserrat text-2xl md:text-4xl lg:text-[40px] font-semibold leading-tight tracking-wide mb-6">
+            Conversemos sobre tu proyecto.
+          </h2>
+          <div className="w-16 h-[2px] bg-[#2d61e0] mb-6" />
+          <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide max-w-4xl">
+            Para cooperación institucional, alianzas o consultas comerciales, nuestro equipo está disponible para conversaciones confidenciales y estratégicas.
+          </p>
         </div>
 
-        {/* LADO DERECHO: Formulario */}
-        <div className="w-full min-[1201px]:w-[35%] z-10">
-          <form className="reveal space-y-6" style={{ transitionDelay: '0.3s' }}>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-              <div className="space-y-2">
-                <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Full name</label>
-                <input type="text" placeholder="Your name" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
+        {/* ESTRUCTURA RETICULAR ASIMÉTRICA: DOS COLUMNAS */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* COLUMNA IZQUIERDA: DATOS INSTITUCIONALES E IMAGEN CORPORATIVA */}
+          <div className="lg:col-span-5 space-y-10">
+            
+            {/* Corporativo / Sede Central */}
+            <div className="space-y-4">
+              <h4 className="text-slate-900 font-montserrat text-xs font-bold uppercase tracking-[0.3em] text-[#2d61e0]">
+                Sede Central
+              </h4>
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <MapPin className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <h5 className="font-montserrat font-semibold text-slate-900 text-base">WeProm Europe</h5>
+                  <p className="text-black font-montserrat text-base font-light mt-1">
+                    142 Rue de Rivoli, 75001 Paris, France
+                  </p>
+                </div>
               </div>
-              <div className="space-y-2">
-                <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Company</label>
-                <input type="text" placeholder="Company name" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
+            </div>
+
+            <hr className="border-slate-100" />
+
+            {/* Canales Confidenciales y Direcciones */}
+            <div className="space-y-6">
+              <h4 className="text-slate-900 font-montserrat text-xs font-bold uppercase tracking-[0.3em] text-[#2d61e0]">
+                Canales Estratégicos
+              </h4>
+
+              {/* Información General */}
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <Mail className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600">Más información</span>
+                  <a href="mailto:info@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    info@wepromeurope.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Dirección Comercial */}
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <Mail className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Dirección Comercial</span>
+                  <a href="mailto:lisa.lenselle@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    lisa.lenselle@wepromeurope.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Dirección General */}
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <Mail className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Dirección General</span>
+                  <a href="mailto:jose.ventura@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    jose.ventura@wepromeurope.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Teléfono / WhatsApp */}
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <Phone className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Teléfono / WhatsApp</span>
+                  <a href="https://wa.me/33782469209" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    +33 7 82 46 92 09
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Email</label>
-              <input type="email" placeholder="you@example.com" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all" />
-            </div>
+          </div>
 
-            <div className="space-y-2">
-              <label className="text-[13px] uppercase tracking-[0.3em] font-bold text-black ml-1">Message</label>
-              <textarea rows="4" placeholder="Tell us about your project…" className="w-full bg-white border border-slate-300 mt-[8px] rounded-[13px] px-6 py-4 font-montserrat focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none"></textarea>
-            </div>
+          {/* COLUMNA DERECHA: FORMULARIO CORPORATIVO DE ALTA GAMA */}
+          <div className="lg:col-span-7 bg-slate-50 border border-slate-200/60 p-8 md:p-12 shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Nombre completo */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                    Nombre completo *
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="Ej. Alexander von Humboldt" 
+                      className="w-full bg-white border border-slate-200 pl-11 pr-4 py-3.5 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all shadow-inner"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                    />
+                  </div>
+                </div>
 
-            <div className="flex items-start space-x-3 py-2">
-              <input type="checkbox" className="mt-1 w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500" />
-              <p className="text-[12px] text-slate-500 font-montserrat leading-relaxed max-w-full">
-                I agree to the Privacy Policy and the processing of my personal data.
-              </p>
-            </div>
+                {/* Empresa o institución */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                    Empresa o institución
+                  </label>
+                  <div className="relative">
+                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
+                    <input 
+                      type="text" 
+                      placeholder="Nombre de la organización" 
+                      className="w-full bg-white border border-slate-200 pl-11 pr-4 py-3.5 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all shadow-inner"
+                      value={formData.company}
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
+                    />
+                  </div>
+                </div>
+              </div>
 
-            <div className="pt-0">
-              <button type="submit" className="group relative w-full min-[1201px]:w-full overflow-hidden bg-transparent border-2 border-blue-500/50 backdrop-blur-[4px] text-blue-600 px-2 py-4 text-[12px] font-extrabold uppercase tracking-[0.4em] rounded-[15px] transition-all duration-700 ease-out shadow-[inset_0_2px_4px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.1)] hover:border-blue-600 hover:text-white hover:bg-blue-600 hover:shadow-[0_10px_25px_rgba(59,130,246,0.2)] hover:scale-[1.02] active:scale-95">
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Email */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                    Email corporativo *
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
+                    <input 
+                      type="email" 
+                      required
+                      placeholder="ejemplo@organizacion.com" 
+                      className="w-full bg-white border border-slate-200 pl-11 pr-4 py-3.5 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all shadow-inner"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    />
+                  </div>
+                </div>
 
-                <span className="relative z-10 flex items-center justify-center gap-4 transition-all duration-500 group-hover:gap-6">
-                  Send Message
-                  <span className="text-[14px] transform transition-transform duration-500 group-hover:translate-x-2">
-                    →
+                {/* Mercado de interés */}
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                    Mercado de interés
+                  </label>
+                  <div className="relative">
+                    <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5] pointer-events-none" />
+                    <select 
+                      className="w-full bg-white border border-slate-200 pl-11 pr-4 py-3.5 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all appearance-none cursor-pointer shadow-inner"
+                      value={formData.market}
+                      onChange={(e) => setFormData({...formData, market: e.target.value})}
+                    >
+                      <option value="" disabled>Selecciona una opción</option>
+                      <option value="Europa">Europa</option>
+                      <option value="América Latina">América Latina</option>
+                      <option value="Ambos">Ambos</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sector */}
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                  Sector industrial o económico
+                </label>
+                <div className="relative">
+                  <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
+                  <input 
+                    type="text" 
+                    placeholder="Ej. Logística, Fintech, Agroalimentario" 
+                    className="w-full bg-white border border-slate-200 pl-11 pr-4 py-3.5 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all shadow-inner"
+                    value={formData.sector}
+                    onChange={(e) => setFormData({...formData, sector: e.target.value})}
+                  />
+                </div>
+              </div>
+
+              {/* Mensaje */}
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
+                  Mensaje u objetivos del proyecto *
+                </label>
+                <div className="relative">
+                  <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-slate-400 stroke-[1.5]" />
+                  <textarea 
+                    rows="4" 
+                    required
+                    placeholder="Describe detalladamente los alcances o requerimientos estratégicos de tu consulta corporativa..." 
+                    className="w-full bg-white border border-slate-200 pl-11 pr-4 py-4 text-sm text-slate-900 font-montserrat focus:border-[#2d61e0] outline-none transition-all resize-none shadow-inner leading-relaxed"
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  ></textarea>
+                </div>
+              </div>
+
+              {/* Casillas de Verificación y Consentimiento */}
+              <div className="space-y-3 pt-2">
+                {/* Suscribirme al Newsletter */}
+                <label className="flex items-start gap-3 cursor-pointer select-none group">
+                  <input 
+                    type="checkbox" 
+                    className="mt-0.5 w-4 h-4 border-slate-300 rounded text-[#2d61e0] focus:ring-[#2d61e0]"
+                    checked={formData.newsletter}
+                    onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
+                  />
+                  <span className="text-xs text-slate-600 font-montserrat font-light leading-snug group-hover:text-slate-900 transition-colors">
+                    Acepto suscribirme al Newsletter institucional para recibir reportes mensuales.
                   </span>
-                </span>
+                </label>
 
-              </button>
-            </div>
-          </form>
+                {/* Política de privacidad */}
+                <label className="flex items-start gap-3 cursor-pointer select-none group">
+                  <input 
+                    type="checkbox" 
+                    required
+                    className="mt-0.5 w-4 h-4 border-slate-300 rounded text-[#2d61e0] focus:ring-[#2d61e0]"
+                    checked={formData.privacy}
+                    onChange={(e) => setFormData({...formData, privacy: e.target.checked})}
+                  />
+                  <span className="text-xs text-slate-600 font-montserrat font-light leading-snug group-hover:text-slate-900 transition-colors">
+                    Acepto la <span className="underline font-medium">Política de Privacidad</span> y el tratamiento confidencial de mis datos personales. *
+                  </span>
+                </label>
+              </div>
+
+              {/* Botón de Envío Premium */}
+              <div className="pt-4">
+                <button 
+                  type="submit" 
+                  className="group relative w-full overflow-hidden bg-slate-900 border border-slate-900 text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-[#2d61e0] hover:border-[#2d61e0] flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                >
+                  <span>Enviar mensaje</span>
+                  <ArrowRight className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </div>
+
+            </form>
+          </div>
+
         </div>
 
       </div>

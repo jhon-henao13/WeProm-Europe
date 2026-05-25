@@ -54,7 +54,7 @@ export const WhyUs = () => {
           <h2 className="text-slate-900 font-montserrat text-3xl md:text-[45px] font-semibold uppercase leading-tight tracking-wide mb-8">
             Somos el puente estratégico entre Europa y América Latina.
           </h2>
-          <p className="text-slate-600 font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
+          <p className="text-black font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
             Hay agencias para servicios puntuales, asesores para tareas específicas y firmas consultoras para proyectos ambiciosos. <strong className="font-medium text-slate-900">Nosotros operamos en un espacio distinto:</strong> somos un socio estratégico bilateral que promueve negocios, inversión y posicionamiento comercial entre Europa y América Latina, acompañando a cada cliente desde el primer estudio de oportunidad hasta la operación local consolidada.
           </p>
         </div>
@@ -71,9 +71,7 @@ export const WhyUs = () => {
                   <div className="w-9 h-9 bg-slate-50 border border-slate-200 text-[#2d61e0] flex items-center justify-center transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white group-hover:border-[#2d61e0]">
                     {pilar.icon}
                   </div>
-                  <div className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">
-                    Pilar // 0{idx + 1}
-                  </div>
+                  
                 </div>
 
                 <h3 className="text-slate-900 font-montserrat text-base font-semibold uppercase tracking-wide mb-4 transition-colors duration-200 group-hover:text-[#2d61e0]">
@@ -81,7 +79,7 @@ export const WhyUs = () => {
                 </h3>
                 
                 {/* Renderizado limpio respetando los saltos de línea del texto */}
-                <p className="text-slate-800 font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide whitespace-pre-line">
+                <p className="text-black font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide whitespace-pre-line">
                   {pilar.text}
                 </p>
               </div>
@@ -102,7 +100,7 @@ export const WhyUs = () => {
             <p className="font-montserrat text-lg md:text-2xl font-light leading-relaxed tracking-wide mb-8 text-slate-100">
               "WeProm Europe no es una opción más en el mercado de la internacionalización. Es la opción para quienes entienden que entrar a un nuevo mercado sin el socio correcto no es una apuesta — <strong className="font-medium text-white border-b border-[#2d61e0] pb-1">es un riesgo evitable.</strong>"
             </p>
-            <p className="text-slate-400 font-montserrat text-xs md:text-sm font-light tracking-wide uppercase">
+            <p className="text-slate-300 font-montserrat text-xs md:text-sm font-light tracking-wide uppercase">
               Trabajamos con empresas que toman decisiones serias. <span className="text-[#2d61e0] font-medium">//</span> Y nos comprometemos con sus resultados de la misma manera.
             </p>
           </div>

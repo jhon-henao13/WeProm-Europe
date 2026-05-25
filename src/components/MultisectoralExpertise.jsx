@@ -60,7 +60,7 @@ export const MultisectoralExpertise = () => {
           <h2 className="text-slate-900 font-montserrat text-3xl md:text-[45px] font-semibold uppercase leading-tight tracking-wide mb-8">
             Trabajamos donde Europa y América Latina se necesitan.
           </h2>
-          <p className="text-slate-800 font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
+          <p className="text-black font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
             Operamos con un enfoque multisectorial, con especial atención en las verticales donde el corredor Europa-LATAM concentra la mayor parte de las oportunidades reales. En cada uno hemos acompañado proyectos —algunos hoy considerados referencia en su industria.
           </p>
         </div>
@@ -84,7 +84,7 @@ export const MultisectoralExpertise = () => {
                 </h3>
                 
                 {/* Descripción */}
-                <p className="text-slate-700 font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide">
+                <p className="text-black font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide">
                   {sector.desc}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export const MultisectoralExpertise = () => {
 
         {/* PIE DE SECCIÓN (FOOTNOTE DE ALTO IMPACTO) */}
         <div className="reveal border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <p className="text-slate-700 font-montserrat text-xs md:text-sm italic font-light max-w-3xl leading-relaxed">
+          <p className="text-black font-montserrat text-xs md:text-base italic font-light max-w-3xl leading-relaxed">
             Como grupo multisectorial, operamos en todos los niveles de la industria. Tenemos la capacidad operativa para concretar negocios y proyectos en cualquier mercado, sin importar su escala local o internacional.
           </p>
           

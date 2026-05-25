@@ -13,6 +13,7 @@ import { IntPresence } from './components/IntPresence';
 import { Path } from './components/Path';
 import { OurApproach } from './components/OurApproach';
 import { Insights } from './components/Insights';
+import { NewInsights } from './components/NewInsights';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton'
@@ -161,7 +162,7 @@ function App() {
                         <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-2">
                           Capacidades estratégicas
                         </p>
-                        <h2 className="reveal text-slate-900 font-montserrat text-3xl md:text-[50px] font-semibold uppercase leading-tight pointer-events-auto bg-white inline-block tracking-wide">
+                        <h2 className="reveal text-slate-900 font-montserrat text-3xl md:text-[40px] font-semibold uppercase leading-tight pointer-events-auto bg-white inline-block tracking-wide">
                           Tres áreas de acción.
                         </h2>
                       
@@ -198,10 +199,11 @@ function App() {
                 <Path />
               </div>
     
-              <OurApproach />
-    
+              {/* <OurApproach /> */}
+
               <div id="insights" className="reveal scroll-mt-32">
-                <Insights />
+                {/* <Insights /> */} {/* Comentado de forma segura para no arriesgar la app */}
+                <NewInsights />   {/* Nueva versión estática institucional premium */}
               </div>
     
               <div id="contact" className="reveal scroll-mt-48">

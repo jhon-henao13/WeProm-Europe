@@ -65,7 +65,7 @@ export const AboutSection = () => {
               </p>
             </div>
             <div className="lg:col-span-7">
-              <p className="text-slate-800 font-montserrat text-sm md:text-base font-light  leading-relaxed tracking-wide">
+              <p className="text-black font-montserrat text-sm md:text-base font-light  leading-relaxed tracking-wide">
                 La firma del Acuerdo Global Modernizado UE-México, la entrada en vigor del Acuerdo  UE-Mercosur el 1 de mayo de 2026 —que crea una zona comercial de 700 millones de   personas— y el bicentenario México-Francia, dan marco político e institucional a la   nueva agenda económica bilateral.
               </p>
             </div>
@@ -73,7 +73,7 @@ export const AboutSection = () => {
     
           {/* SUBTÍTULO E INDICADORES (GRID 2x2) */}
           <div className="border-t border-slate-200 pt-16 mb-16">
-            <h3 className="text-slate-500 font-montserrat text-[11px] font-bold uppercase tracking-[0.  3em] mb-12">
+            <h3 className="text-slate-500 font-montserrat text-[11px] font-bold uppercase tracking-[0.3em] mb-12">
               Las cifras lo confirman
             </h3>
             
@@ -86,7 +86,7 @@ export const AboutSection = () => {
                   <div className="font-montserrat text-2xl md:text-3xl font-light text-[#2d61e0]  tracking-tight mb-4">
                     {card.metric}
                   </div>
-                  <p className="text-slate-600 font-montserrat text-xs md:text-sm font-normal   leading-relaxed tracking-wide">
+                  <p className="text-black font-montserrat text-xs md:text-sm font-normal   leading-relaxed tracking-wide">
                     {card.text}
                   </p>
                 </div>

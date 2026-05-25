@@ -88,7 +88,7 @@ export const Path = () => {
               Más de 10,000 proyectos a lo largo de 35 años desarrollando negocios multisectoriales.
             </h2>
             <div className="w-16 h-[2px] bg-[#2d61e0] mb-6" />
-            <p className="text-slate-800 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+            <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
               Nuestro equipo ha contribuido directamente al desarrollo de negocios exitosos en diversos sectores, conectando mercados, impulsando marcas y generando resultados que superan expectativas.
             </p>
           </div>
@@ -152,7 +152,7 @@ export const Path = () => {
 
         {/* TEXTO DE CONSOLIDACIÓN Y BARRAS DE PROGRESO DEBAJO DEL CARRUSEL */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-16 border-b border-slate-200">
-          <p className="max-w-2xl text-slate-800 font-montserrat text-base md:text-sm font-light tracking-wide leading-relaxed">
+          <p className="max-w-2xl text-slate-800 font-montserrat text-base md:text-base font-light tracking-wide leading-relaxed">
             Hemos logrado posicionar múltiples empresas en nuevos territorios, optimizar procesos comerciales y desarrollar alianzas estratégicas que hoy siguen generando valor.
           </p>
           

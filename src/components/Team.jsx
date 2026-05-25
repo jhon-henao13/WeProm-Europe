@@ -137,7 +137,7 @@ export const Team = () => {
             <h2 className="text-slate-900 font-montserrat text-3xl md:text-[35px] font-semibold uppercase leading-tight tracking-wide mb-6">
               Somos un equipo multicultural, multidisciplinario y multigeneracional.
             </h2>
-            <p className="text-slate-800 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+            <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
               Combinamos décadas de experiencia internacional con la visión y agilidad de las nuevas generaciones. Nuestro equipo reúne perfiles de distintas disciplinas — marketing, comercio exterior, finanzas, economía, comunicación, relaciones internacionales y más — porque internacionalizar un negocio requiere exactamente eso: visión integral, no especialización aislada.
             </p>
           </div>
@@ -231,7 +231,7 @@ export const Team = () => {
                 {activeMember.role}
               </span>
             </div>
-            <p className="text-slate-800 font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide max-w-5xl transition-opacity duration-300">
+            <p className="text-black font-montserrat text-xs md:text-xl font-light leading-relaxed tracking-wide max-w-5xl transition-opacity duration-300">
               {activeMember.desc}
             </p>
           </div>
@@ -239,7 +239,7 @@ export const Team = () => {
 
         {/* PIE DE SECCIÓN */}
         <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal">
-          <p className="text-slate-400 font-montserrat text-xs md:text-sm italic font-light leading-relaxed">
+          <p className="text-black font-montserrat text-xs md:text-base italic font-light leading-relaxed">
             Respaldados por el equipo internacional de Grupo WeProm con más de 50 colaboradores y 30 asesores asociados en Europa, América Latina y Norteamérica.
           </p>
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 bg-slate-50 border border-slate-200 px-3 py-1.5 whitespace-nowrap select-none">

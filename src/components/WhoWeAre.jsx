@@ -20,7 +20,7 @@ export const WhoWeAre = () => {
           </div>
 
           {/* Cuerpo Principal (3 Párrafos Cortos Solicitados) */}
-          <div className="space-y-6 text-slate-600 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide mb-14 max-w-3xl">
+          <div className="space-y-6 text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide mb-14 max-w-3xl">
             <p>
               WeProm Europe es la sede europea de <strong className="font-medium text-slate-900">Grupo WeProm</strong>, una firma internacional con más de 35 años experiencia, tres generaciones y más de 10,000 proyectos ejecutados para empresas globales, gobiernos e instituciones en Europa, América Latina, Norteamérica y Asia.
             </p>
@@ -45,7 +45,7 @@ export const WhoWeAre = () => {
               <cite className="not-italic block font-montserrat text-xs font-bold uppercase tracking-[0.2em] text-[#2d61e0]">
                 — José Miguel Ventura Michel
               </cite>
-              <span className="block font-montserrat text-[10px] uppercase tracking-[0.15em] text-slate-400 mt-1">
+              <span className="block font-montserrat text-[10px] uppercase tracking-[0.15em] text-slate-700 mt-1">
                 Director General, WeProm Europe
               </span>
             </footer>

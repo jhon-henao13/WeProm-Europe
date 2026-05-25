@@ -53,7 +53,7 @@ export const IntPresence = () => {
             Estratégicamente posicionados en tres mercados clave del comercio bilateral.
           </h2>
           <div className="w-12 h-[2px] bg-[#2d61e0] mb-6" />
-          <p className="text-slate-800 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+          <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
             Operamos desde Europa, América Latina y Norteamérica con sedes propias estratégicamente ubicadas en los principales hubs comerciales de cada región.
           </p>
         </div>
@@ -92,7 +92,7 @@ export const IntPresence = () => {
                   <div className="flex items-center gap-2 mb-6">
                     <span className={`w-1.5 h-1.5 rounded-full ${isMatriz ? 'bg-[#2d61e0]' : 'bg-[#2d61e0]'}`} />
                     <p className={`font-montserrat text-xs font-medium uppercase tracking-widest ${
-                      isMatriz ? 'text-slate-300' : 'text-slate-500'
+                      isMatriz ? 'text-slate-300' : 'text-black'
                     }`}>
                       {location.city}
                     </p>
@@ -100,7 +100,7 @@ export const IntPresence = () => {
 
                   {/* Breve Descriptivo Requerido */}
                   <p className={`font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide ${
-                    isMatriz ? 'text-slate-300' : 'text-slate-600'
+                    isMatriz ? 'text-slate-300' : 'text-black'
                   }`}>
                     {location.description}
                   </p>
@@ -119,7 +119,7 @@ export const IntPresence = () => {
 
         {/* PIE DE SECCIÓN */}
         <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal">
-          <p className="text-slate-700 font-montserrat text-xs md:text-sm font-light tracking-wide leading-relaxed">
+          <p className="text-slate-800 font-montserrat text-xs md:text-base font-light tracking-wide leading-relaxed">
             * Una operación integrada entre las tres regiones que más oportunidades generan hoy.
           </p>
           <div className="flex items-center gap-3">
