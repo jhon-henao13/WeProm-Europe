@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export const Navbar = () => {
+export const Navbar = ({ currentLang, onLangChange }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -158,13 +158,29 @@ export const Navbar = () => {
           <div>
             <p className="text-slate-400 font-bold text-[9px] tracking-[0.3em] uppercase mb-3">Idioma / Language</p>
             <div className="flex gap-5 text-slate-400 font-bold text-[11px] tracking-[0.35em] uppercase">
-              <button className="text-[#2d61e0] font-black hover:opacity-100">ES</button>
+              <button 
+                onClick={() => onLangChange('ES')} 
+                className={`transition-colors duration-300 ${currentLang === 'ES' ? 'text-[#2d61e0] font-black' : 'hover:text-[#2d61e0]'}`}
+              >
+                ES
+              </button>
               <span className="opacity-30">/</span>
-              <button className="hover:text-[#2d61e0] transition-colors">FR</button>
+              <button 
+                onClick={() => onLangChange('FR')} 
+                className={`transition-colors duration-300 ${currentLang === 'FR' ? 'text-[#2d61e0] font-black' : 'hover:text-[#2d61e0]'}`}
+              >
+                FR
+              </button>
               <span className="opacity-30">/</span>
-              <button className="hover:text-[#2d61e0] transition-colors">EN</button>
+              <button 
+                onClick={() => onLangChange('EN')} 
+                className={`transition-colors duration-300 ${currentLang === 'EN' ? 'text-[#2d61e0] font-black' : 'hover:text-[#2d61e0]'}`}
+              >
+                EN
+              </button>
             </div>
           </div>
+          
         </div>
 
       </div>

@@ -120,16 +120,16 @@ export const Footer = () => {
           </div>
 
           {/* Enlaces Legales */}
-          <div className="order-1 md:order-2 flex flex-wrap justify-center gap-x-4 gap-y-2 font-medium uppercase tracking-[0.1em] text-slate-500">
-            <a href="/aviso-legal" className="hover:text-[#2d61e0] transition-colors duration-300">Aviso Legal</a>
-            <span>·</span>
-            <a href="/politica-privacidad" className="hover:text-[#2d61e0] transition-colors duration-300">Política de Privacidad</a>
-            <span>·</span>
-            <a href="/politica-cookies" className="hover:text-[#2d61e0] transition-colors duration-300">Política de Cookies</a>
-            <span>·</span>
-            <button className="bg-transparent border-none p-0 cursor-pointer text-slate-500 hover:text-[#2d61e0] uppercase tracking-[0.1em] font-medium text-[11px] transition-colors duration-300">
-              Gestionar Cookies
-            </button>
+          {/* Enlaces Legales Unificados en PDF */}
+          <div className="order-1 md:order-2 text-center md:text-right">
+            <a 
+              href="/weprom-europe-mentions-legales-es.pdf"
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
+            >
+              Aviso Legal · Política de Privacidad · Política de Cookies · Gestionar Cookies
+            </a>
           </div>
 
         </div>

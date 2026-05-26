@@ -25,6 +25,7 @@ import { BlogPost } from './components/BlogPost';
 function App() {
 
   const location = useLocation();
+  const [language, setLanguage] = React.useState('ES'); // Estado global de idioma para SEO dinámico
 
   useEffect(() => {
       // Si la URL tiene un hash (ej: #contact)
@@ -43,6 +44,45 @@ function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }, [location]);
+
+
+  // Control dinámico de SEO Premium según el idioma seleccionado
+  useEffect(() => {
+    const seoData = {
+      ES: {
+        title: "WeProm Europe — Promoción y desarrollo de negocios entre Europa y América Latina | París",
+        description: "Sede europea de Grupo WeProm. +35 años, 3 generaciones, +1,000 proyectos. Inteligencia, estrategia y desarrollo de negocios en el corredor Europa-América Latina."
+      },
+      FR: {
+        title: "WeProm Europe — Promotion et développement des affaires entre l’Europe et l’Amérique latine | Paris",
+        description: "Siège européen du Groupe WeProm. +35 ans, 3 générations, +1 000 projets. Intelligence, stratégie et développement d’affaires dans le corridor Europe Amérique latine."
+      },
+      EN: {
+        title: "WeProm Europe — Business Promotion & Development between Europe and Latin America | Paris",
+        description: "European headquarters of WeProm Group. 35+ years, 3 generations, 1,000+ projects. Intelligence, strategy and business development in the Europe-Latin America corridor."
+      }
+    };
+
+    // 1. Actualizar el Title de la pestaña
+    document.title = seoData[language].title;
+
+    // 2. Actualizar la Meta Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', seoData[language].description);
+    } else {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      metaDescription.content = seoData[language].description;
+      document.head.appendChild(metaDescription);
+    }
+    
+    // 3. Actualizar el atributo lang de la etiqueta HTML para accesibilidad y SEO técnico
+    document.documentElement.lang = language.toLowerCase();
+
+  }, [language]);
+
+
 
 
   useEffect(() => {
@@ -131,7 +171,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-weprom-dark selection:text-white">
-      <Navbar />
+      <Navbar currentLang={language} onLangChange={setLanguage} />
       <Routes>
         <Route path="/" element={
           <main className="relative">
