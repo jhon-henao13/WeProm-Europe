@@ -1,77 +1,143 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight, Layers } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+// Importaciones de imágenes verticales (Trayectoria)
+import cocaColaImg from '../assets/path/cocacola.png';
+import mcdonaldsImg from '../assets/path/mcdonals.png';
+import selloRojoImg from '../assets/path/sellorojo.png';
+import kiaImg from '../assets/path/kia.png';
+import mercedesImg from '../assets/path/mercedes.png';
+import lizMueblesImg from '../assets/path/lizmuebles.png';
+
+import vitromexImg from '../assets/path/vitromex.png';
+import tequilahuizacheImg from '../assets/path/tequilahuizache.png';
+import promexicoImg from '../assets/path/promexico.png';
 
 const PROJECTS_DATA = [
-  {
-    brand: "Coca-Cola",
-    description: "Desarrollo de estrategia de marketing comercial y eventos especiales a nivel nacional, rompiendo récord histórico de ventas."
-  },
-  {
-    brand: "McDonald’s",
-    description: "Validación de entrada al mercado latinoamericano, desarrollo de estrategia operacional y esquema de franquicias."
-  },
-  {
-    brand: "Sello Rojo",
-    description: "Desarrollo del área de Mercadotecnia y creación de campañas promocionales para más de 60 productos a nivel nacional."
-  },
-  {
-    brand: "KIA",
-    description: "Creación de campaña promocional y de posicionamiento de marca para más de 13 concesionarios a nivel nacional."
-  },
-  {
-    brand: "Mercedes-Benz",
-    description: "Creación de campaña a nivel nacional para el lanzamiento de la línea eléctrica EQ de Mercedes-Benz."
-  },
-  {
-    brand: "Liz Muebles",
-    description: "Desarrollo y ejecución de plan de marketing nacional y expansión en Centro y Sudamérica."
-  },
-  {
-    brand: "Vitromex",
-    description: "Desarrollo del área comercial y estrategia de marketing a nivel nacional rompiendo récords en ventas."
-  },
-  {
-    brand: "Tequila Huizache",
-    description: "Desarrollo de imagen de marca, estrategia de posicionamiento e identificación de nicho de negocio con exitosa entrada al mercado europeo."
-  },
-  {
-    brand: "ProMéxico",
-    description: "Creación y dirección del área de marketing, comunicación y relaciones públicas a nivel mundial."
-  }
+  { id: 1, brand: "Coca-Cola", image: cocaColaImg },
+  { id: 2, brand: "McDonald’s", image: mcdonaldsImg },
+  { id: 3, brand: "Sello Rojo", image: selloRojoImg },
+  { id: 4, brand: "KIA", image: kiaImg },
+  { id: 5, brand: "Mercedes-Benz", image: mercedesImg },
+  { id: 6, brand: "Liz Muebles", image: lizMueblesImg },
+  { id: 7, brand: "Vitromex", image: vitromexImg },
+  { id: 8, brand: "Tequila Huizache", image: tequilahuizacheImg },
+  { id: 9, brand: "ProMéxico", image: promexicoImg },
 ];
 
 export const Path = () => {
   const scrollContainerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Sincronizar el indicador activo basado en el scroll real (para Mobile y Desktop por igual)
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const rafRef = useRef(null);
+  const interactionTimeoutRef = useRef(null);
+
+  // Duplicamos la data para que el scroll infinito nunca encuentre un tope visual
+  const duplicatedProjects = [...PROJECTS_DATA, ...PROJECTS_DATA];
+
+  useEffect(() => {
+    let lastTime = 0;
+    const SPEED = 0.45; // Velocidad óptima ultra-premium de deslizamiento
+
+    const step = (now) => {
+      if (!lastTime) lastTime = now;
+      const dt = now - lastTime;
+      lastTime = now;
+
+      const el = scrollContainerRef.current;
+      if (el && !isDragging.current && !isUserInteracting) {
+        const halfScrollWidth = el.scrollWidth / 2;
+        
+        // Si pasa de la mitad del contenedor duplicado, resetea al inicio imperceptiblemente
+        if (el.scrollLeft >= halfScrollWidth) {
+          el.scrollLeft = el.scrollLeft - halfScrollWidth;
+        } else {
+          el.scrollLeft += SPEED * (dt / 16.67);
+        }
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current);
+    };
+  }, [isUserInteracting]);
+
+  const resetUserInteractionTimeout = () => {
+    setIsUserInteracting(true);
+    if (interactionTimeoutRef.current) clearTimeout(interactionTimeoutRef.current);
+    interactionTimeoutRef.current = setTimeout(() => {
+      setIsUserInteracting(false);
+    }, 1500); // Se reanuda de forma fluida a los 1.5 segundos de inactividad
+  };
+
   const handleScroll = () => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, clientWidth } = scrollContainerRef.current;
-      const index = Math.round(scrollLeft / (clientWidth * 0.8)); // Ajustado a la proporción visual
-      setActiveIndex(Math.min(Math.max(index, 0), PROJECTS_DATA.length - 1));
+      const { scrollLeft, scrollWidth } = scrollContainerRef.current;
+      const halfScrollWidth = scrollWidth / 2;
+      
+      // Normalizar el scroll real para calcular el índice correcto del 0 al 5
+      const currentScroll = scrollLeft % halfScrollWidth;
+      const card = scrollContainerRef.current.firstChild;
+      if (card) {
+        const cardWidth = card.offsetWidth + 24; // ancho + gap (6 = 24px)
+        const index = Math.round(currentScroll / cardWidth) % PROJECTS_DATA.length;
+        setActiveIndex(index);
+      }
     }
   };
 
   const scrollToIndex = (index) => {
     if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.firstChild.offsetWidth + 32; // Ancho + gap
-      scrollContainerRef.current.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-      });
-      setActiveIndex(index);
+      resetUserInteractionTimeout();
+      const card = scrollContainerRef.current.firstChild;
+      if (card) {
+        const cardWidth = card.offsetWidth + 24;
+        scrollContainerRef.current.scrollTo({
+          left: index * cardWidth,
+          behavior: 'smooth'
+        });
+        setActiveIndex(index % PROJECTS_DATA.length);
+      }
     }
   };
 
   const handlePrev = () => {
-    const nextIndex = activeIndex - 1 < 0 ? PROJECTS_DATA.length - 1 : activeIndex - 1;
-    scrollToIndex(nextIndex);
+    resetUserInteractionTimeout();
+    const prevIndex = activeIndex - 1 < 0 ? PROJECTS_DATA.length - 1 : activeIndex - 1;
+    scrollToIndex(prevIndex);
   };
 
   const handleNext = () => {
+    resetUserInteractionTimeout();
     const nextIndex = activeIndex + 1 >= PROJECTS_DATA.length ? 0 : activeIndex + 1;
     scrollToIndex(nextIndex);
+  };
+
+  const onMouseDown = (e) => {
+    if (!scrollContainerRef.current) return;
+    isDragging.current = true;
+    resetUserInteractionTimeout();
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollStart.current = scrollContainerRef.current.scrollLeft;
+  };
+
+  const onMouseMove = (e) => {
+    if (!isDragging.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const dist = (x - startX.current) * 1.25; // Sensibilidad de arrastre balanceada
+    scrollContainerRef.current.scrollLeft = scrollStart.current - dist;
+  };
+
+  const onMouseUp = () => {
+    isDragging.current = false;
   };
 
   return (
@@ -112,51 +178,59 @@ export const Path = () => {
           </div>
         </div>
 
-        {/* CONTENEDOR DEL INTERACTIVO CON SNAPPING */}
-        <div className="relative -mx-6 md:-mx-16 px-6 md:px-16 mb-12">
+        {/* CONTENEDOR INTERACTIVO CON EVENTOS CORREGIDOS */}
+        <div className="relative -mx-6 md:-mx-16 px-6 md:px-16 mb-12 group/container">
           <div 
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8 touch-pan-x"
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseUp}
+            onTouchStart={resetUserInteractionTimeout}
+            className="flex gap-6 overflow-x-auto scrollbar-none pb-8 touch-pan-x"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: 'touch',
+              cursor: isDragging.current ? 'grabbing' : 'grab'
             }}
           >
-            {PROJECTS_DATA.map((project, idx) => (
+            {duplicatedProjects.map((project, idx) => (
               <div 
-                key={idx}
-                className="w-[85vw] sm:w-[45vw] lg:w-[30vw] shrink-0 bg-white border border-slate-200/60 p-8 md:p-10 snap-start flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 hover:border-slate-300 group select-none min-h-[260px]"
+                key={`${project.id}-${idx}`}
+                onClick={() => scrollToIndex(idx % PROJECTS_DATA.length)}
+                className="w-[70vw] sm:w-[40vw] lg:w-[22vw] shrink-0 aspect-[3/4] bg-slate-100 border border-slate-200/40 overflow-hidden relative group cursor-pointer transition-all duration-500 hover:shadow-xl hover:shadow-slate-300/30 hover:border-slate-300/80"
               >
-                <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="font-mono text-[10px] tracking-widest text-[#2d61e0]/80 font-bold uppercase">
-                      Case Study // 0{idx + 1}
-                    </span>
-                    <Layers className="w-4 h-4 text-slate-300 group-hover:text-[#2d61e0] transition-colors duration-300 stroke-[1.5]" />
-                  </div>
-                  <h3 className="text-slate-900 font-montserrat text-lg font-semibold uppercase tracking-wider mb-4">
-                    {project.brand}
-                  </h3>
-                  <p className="text-slate-600 font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide">
-                    {project.description}
-                  </p>
-                </div>
-                
-                <div className="w-0 h-[2px] bg-[#2d61e0] group-hover:w-full transition-all duration-500 mt-6" />
+                {/* Imagen con efecto Zoom interactivo */}
+                <img 
+                  src={project.image} 
+                  alt={project.brand}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+
+                {/* Gradiente Premium de protección de contraste */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                {/* Indicador sutil de línea superior de enfoque */}
+                <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#2d61e0] group-hover:w-full transition-all duration-500 ease-out" />
               </div>
             ))}
           </div>
+
+          {/* Degradados ópticos laterales premium para suavizar los bordes en Desktop */}
+          <div className="absolute top-0 left-0 h-[calc(100%-2rem)] w-16 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none hidden md:block" />
+          <div className="absolute top-0 right-0 h-[calc(100%-2rem)] w-16 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none hidden md:block" />
         </div>
 
         {/* TEXTO DE CONSOLIDACIÓN Y BARRAS DE PROGRESO DEBAJO DEL CARRUSEL */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-16 border-b border-slate-200">
-          <p className="max-w-2xl text-slate-800 font-montserrat text-base md:text-base font-light tracking-wide leading-relaxed">
+          <p className="max-w-2xl text-slate-800 font-montserrat text-sm md:text-base font-light tracking-wide leading-relaxed">
             Hemos logrado posicionar múltiples empresas en nuevos territorios, optimizar procesos comerciales y desarrollar alianzas estratégicas que hoy siguen generando valor.
           </p>
           
-          {/* Indicadores Visuales Dot Matrix */}
+          {/* Indicadores Visuales Dot Matrix exactos basados en la longitud real */}
           <div className="flex items-center gap-1.5 overflow-x-auto py-2">
             {PROJECTS_DATA.map((_, idx) => (
               <button
@@ -171,7 +245,7 @@ export const Path = () => {
           </div>
         </div>
 
-        {/* BANDA INFERIOR: METRICAS CONSOLIDADAS (Diseño Espejo del Hero) */}
+        {/* BANDA INFERIOR: METRICAS CONSOLIDADAS */}
         <div className="pt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 text-center lg:text-left">
           <div className="reveal flex flex-col justify-center lg:border-l lg:border-slate-200 lg:pl-8 first:border-0 first:pl-0">
             <span className="font-montserrat text-3xl md:text-4xl lg:text-[42px] font-light text-slate-900 tracking-tight leading-none mb-2 block">
