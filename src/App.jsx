@@ -28,22 +28,33 @@ function App() {
   const [language, setLanguage] = React.useState('ES'); // Estado global de idioma para SEO dinámico
 
   useEffect(() => {
-      // Si la URL tiene un hash (ej: #contact)
-      if (location.hash) {
-        const id = location.hash.replace('#', '');
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      
+      // Intentos repetidos en milisegundos cortos por si la página externa tarda en renderizar
+      const scrollToElement = () => {
         const element = document.getElementById(id);
-        
         if (element) {
-          // Pequeño timeout para asegurar que el DOM esté listo y las animaciones no bloqueen el scroll
-          setTimeout(() => {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }, 100);
+          element.scrollIntoView({ behavior: 'smooth' });
+          return true;
         }
-      } else if (location.pathname === '/') {
-        // Si vas al home sin hash desde otra página, sube al inicio
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return false;
+      };
+
+      // Primer intento inmediato
+      if (!scrollToElement()) {
+        // Intentos de respaldo (Fallback) si el DOM no estaba listo
+        const timer = setTimeout(scrollToElement, 100);
+        const longTimer = setTimeout(scrollToElement, 350);
+        return () => {
+          clearTimeout(timer);
+          clearTimeout(longTimer);
+        };
       }
-    }, [location]);
+    } else if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location.pathname, location.hash]);
 
 
   // Control dinámico de SEO Premium según el idioma seleccionado
@@ -221,7 +232,10 @@ function App() {
                 <StrategicArchitecture />
               </div>
     
-              <MultisectoralExpertise />
+            
+              <div id="sectores" className="reveal scroll-mt-20">
+                <MultisectoralExpertise />
+              </div>
 
               <div id="por-que-nosotros" className="reveal scroll-mt-20">
                 <WhyUs />

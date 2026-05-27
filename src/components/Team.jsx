@@ -437,7 +437,7 @@ export const Team = () => {
 
         {/* CAJÓN EXECUTIVO DE DETALLE */}
         <div className="bg-slate-50 border border-slate-200/60 p-8 md:p-10 rounded-sm transition-all duration-300 min-h-[180px] flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-          <div className="flex-shrink-0 bg-[#2d61e0]/10 text-[#2d61e0] w-12 h-12 flex items-center justify-center border border-[#2d61e0]/20 rounded-full font-montserrat font-bold text-sm">
+          <div className="flex-shrink-0 bg-[#2d61e0]/10 text-[#2d61e0] w-12 h-12 flex items-center justify-center border border-[#2d61e0]/20 rounded-xs font-montserrat font-bold text-sm">
             {activeMember.initials}
           </div>
           <div className="flex-1">

@@ -12,7 +12,7 @@ export const Navbar = ({ currentLang, onLangChange }) => {
     { name: 'El momento', id: 'el-momento' },
     { name: 'Servicios', id: 'capabilities' }, // Anclado a tu ID actual
     { name: 'Sectores', id: 'sectores' },
-    { name: 'Equipo', id: 'equipo' },
+    { name: 'Equipo', id: 'team' },
     { name: 'Trayectoria', id: 'trayectoria' },
     { name: 'Insights', id: 'insights' },     // Anclado a tu ID actual
     { name: 'Contacto', id: 'contact' },      // Anclado a tu ID actual
@@ -22,16 +22,20 @@ export const Navbar = ({ currentLang, onLangChange }) => {
     e.preventDefault();
     setIsOpen(false); // Cierra el menú lateral si está abierto
 
+    const targetHash = targetId === 'top' ? '' : `#${targetId}`;
+
     if (location.pathname === '/') {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else if (targetId === 'top') {
+      if (targetId === 'top') {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     } else {
-      navigate(`/#${targetId === 'top' ? '' : targetId}`);
-      if (targetId === 'top') window.scrollTo(0, 0);
+      // Si estamos en otra página (ej. /blog), navegamos al home con su respectivo hash
+      navigate(`/${targetHash}`);
     }
   };
 
