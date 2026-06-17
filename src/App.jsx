@@ -21,6 +21,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { BlogIndex } from './components/BlogIndex';
 import { BlogPost } from './components/BlogPost';
 import { MarketOpportunity } from './components/MarketOpportunity';
+import { InteractiveBackground } from './components/InteractiveBackground';
 
 
 function App() {
@@ -191,7 +192,9 @@ function App() {
             <MarketOpportunity />
             {/* Envolvemos las secciones en contenedores reveal para la transición */}
             <div id="el-momento" className="reveal scroll-mt-20">
-              <AboutSection />
+              <InteractiveBackground>
+                <AboutSection />
+              </InteractiveBackground>
             </div>
 
             <div id="equipo" className="reveal scroll-mt-20">

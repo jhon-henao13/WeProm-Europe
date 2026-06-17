@@ -10,6 +10,20 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-serif: "Lora", serif;
 
+  @keyframes fluid-slow {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(40px, -60px) scale(1.15); }
+    66% { transform: translate(-30px, 30px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes particle-float {
+    0% { transform: translateY(0px) translateX(0px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+  }
+
   /* Animaciones personalizadas para el Hero */
   @keyframes subtle-zoom {
     from { scale: 1; }
@@ -41,6 +55,14 @@
 }
 
 @layer utilities {
+
+  .animate-fluid-slow {
+    animation: fluid-slow 22s ease-in-out infinite alternate;
+  }
+
+  .animate-particle-float {
+    animation: particle-float infinite linear;
+  }
 
 
   .text-\[2\.9rem\] {
