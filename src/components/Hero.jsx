@@ -28,13 +28,13 @@ export const Hero = () => {
         <div className="max-w-5xl w-full">
 
           {/* Antetítulo (Kicker) */}
-          <p className="reveal text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] md:text-[12px] mb-6 block">
+          <p className="reveal text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[16px] md:text-[18px] mb-6 block">
             Promoción y desarrollo de negocios entre Europa y América Latina
           </p>
           
           {/* Título Principal (H1) con text-balance equilibrado */}
-          <h1 className="reveal font-montserrat text-3xl md:text-[54px] font-semibold text-white leading-tight md:leading-[1.15] mb-8 tracking-wide" style={{ textWrap: 'balance' }}>
-            Conectamos las dos regiones con mayor convergencia comercial y estratégica del mundo.
+          <h1 className="reveal font-montserrat text-3xl md:text-[46px] font-semibold text-white leading-tight md:leading-[1.15] mb-8 tracking-wide" style={{ textWrap: 'balance' }}>
+            Conectamos las dos regiones con mayor potencial de integración estratégica en el mundo: Europa y América Latina.
           </h1>
 
           {/* Subtítulo (Lead) Estilo Editorial Premium */}
@@ -42,7 +42,7 @@ export const Hero = () => {
             <p className="font-montserrat tracking-wide font-light border-l-2 border-[#2d61e0] pl-6">
               WeProm Europe es la sede europea de un grupo internacional con más de{' '}
               <strong className="font-semibold text-white">35 años</strong>, tres generaciones y más de{' '}
-              <strong className="font-semibold text-white">1,000 proyectos ejecutados</strong>. Acompañamos a empresas, inversionistas e instituciones de Europa y América Latina a abrir mercados, consolidar negocios y construir alianzas comerciales en el corredor más estratégico del momento.
+              <strong className="font-semibold text-white">10,000 proyectos ejecutados</strong>. Ayudamos a empresas e instituciones a entrar y crecer en nuevos mercados entre Europa y América Latina con menor riesgo y mayor probabilidad de éxito.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export const Hero = () => {
             <a href="#capabilities" className="w-full sm:w-auto">
               <button className="group relative w-full sm:w-64 overflow-hidden bg-white/5 border border-white/20 backdrop-blur-sm text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-white hover:text-slate-950 hover:border-white">
                 <span className="relative z-10 flex items-center justify-center">
-                  Ver nuestros servicios
+                  Ver cómo trabajamos
                 </span>
               </button>
             </a>
