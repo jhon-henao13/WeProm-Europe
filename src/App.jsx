@@ -20,6 +20,7 @@ import { WhatsAppButton } from './components/WhatsAppButton'
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { BlogIndex } from './components/BlogIndex';
 import { BlogPost } from './components/BlogPost';
+import { MarketOpportunity } from './components/MarketOpportunity';
 
 
 function App() {
@@ -187,6 +188,7 @@ function App() {
         <Route path="/" element={
           <main className="relative">
             <Hero />
+            <MarketOpportunity />
             {/* Envolvemos las secciones en contenedores reveal para la transición */}
             <div id="el-momento" className="reveal scroll-mt-20">
               <AboutSection />
