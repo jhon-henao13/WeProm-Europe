@@ -77,7 +77,7 @@ export const AboutSection = () => {
               {cards.map((card, index) => (
                 <div 
                   key={index} 
-                  className="bg-white/[0.03] backdrop-blur-md border border-white/10 p-8 md:p-10 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-[#2d61e0]/20 hover:border-[#2d61e0]/50 hover:bg-white/[0.06] flex flex-col justify-between group rounded-sm"
+                  className="bg-black/[0.30] backdrop-blur-md border border-white/10 p-8 md:p-10 shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-[#2d61e0]/20 hover:border-[#2d61e0]/50 hover:bg-black/[0.45] flex flex-col justify-between group rounded-sm"
                 >
                   <div>
                     <div className="font-montserrat text-2xl md:text-3xl font-light text-[#2d61e0] tracking-tight mb-4 group-hover:scale-105 transform origin-left transition-transform duration-500">
@@ -127,7 +127,7 @@ export const AboutSection = () => {
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-none text-center max-w-4xl mx-auto shadow-2xl">
+            <div className="bg-black/[0.35] backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-none text-center max-w-4xl mx-auto shadow-2xl">
               <p className="text-slate-200 font-montserrat text-xs md:text-sm lg:text-base font-medium uppercase tracking-wide leading-relaxed">
                 <strong className="font-bold text-[#2d61e0]">La oportunidad es real. Pero, en ambos sentidos, convertirla en crecimiento exige claridad estratégica, estructura y capacidad de ejecución.</strong>
               </p>
