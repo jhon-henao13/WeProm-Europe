@@ -7,35 +7,35 @@ const processSteps = [
     title: "Diagnóstico de entrada al mercado",
     subtitle: "Clarificamos la oportunidad antes de tomar decisiones.",
     description:
-      "Investigación de mercado, análisis de factibilidad, benchmarking competitivo y evaluación de oportunidades.",
+      "Investigación de mercado, estudios de factibilidad, benchmarking, conocimiento de la audiencia, panorama competitivo, actores clave y mapeo de oportunidades.",
   },
   {
     number: "02",
     title: "Dirección estratégica",
-    subtitle: "Definimos qué significa una oportunidad real.",
+    subtitle: "Definimos qué significa la oportunidad y hasta dónde puede llegar realmente.",
     description:
-      "Posicionamiento, propuesta de valor, priorización de mercados y reducción de riesgos.",
+      "Estrategia de posicionamiento, propuesta de valor, priorización de mercados, reducción de riesgos y primeras decisiones estratégicas.",
   },
   {
     number: "03",
     title: "Ruta de entrada al mercado",
-    subtitle: "Estructuramos el camino viable para avanzar.",
+    subtitle: "Estructuramos el camino hacia el nuevo mercado.",
     description:
-      "Modelo de acceso, alianzas estratégicas, institucionalización y preparación operativa.",
+      "Estrategia comercial, plan financiero, esquemas de distribución, desarrollo de modelo de socios, acercamiento institucional, logística de exportación/entrada, requerimientos operativos y preparación local.",
   },
   {
     number: "04",
     title: "Mensaje y posicionamiento",
-    subtitle: "Adaptamos la oferta al contexto local.",
+    subtitle: "Adaptamos la oferta y el contexto local.",
     description:
-      "Narrativa de marca, relaciones institucionales, comunicación corporativa y presencia digital.",
+      "Narrativa de marca, argumentos de venta, estrategia de comunicación, materiales de pitch, presencia digital, comunicación corporativa y adaptación cultural.",
   },
   {
     number: "05",
     title: "Activación local",
-    subtitle: "Convertimos oportunidades en acción.",
+    subtitle: "Hacemos la oportunidad visible, accesible y accionable.",
     description:
-      "Networking estratégico, eventos, relaciones públicas, reuniones comerciales y generación de vínculos.",
+      "Contacto con socios, herramientas comerciales, comunicación y contenido, campañas, relaciones públicas, eventos, medios, redes sociales y ejecución de terreno.",
   },
   {
     number: "06",
@@ -76,7 +76,7 @@ export const HowWeWork = () => {
               Nuestro proceso de expansión internacional
             </h2>
 
-          <p className="mt-8 text-slate-600 leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
+          <p className="mt-8 text-black leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
             <b>Una forma estructurada de hacer avanzar oportunidades UE-LATAM, acompañados por expertos en cada paso. </b>
             La expansión internacional no es una sola acción. Es un proceso claro.
           </p>
@@ -168,7 +168,7 @@ export const HowWeWork = () => {
                       {step.subtitle}
                     </p>
             
-                    <p className="text-slate-500 text-sm leading-relaxed font-light mt-auto">
+                    <p className="text-slate-950 text-sm leading-relaxed font-light mt-auto">
                       {step.description}
                     </p>
                   </div>
@@ -208,10 +208,9 @@ export const HowWeWork = () => {
               No forzamos cada proyecto por el mismo camino.
             </h3>
 
-            <p className="mt-5 text-slate-600 leading-relaxed">
-              Evaluamos las áreas de crecimiento de cada organización y
-              diseñamos el siguiente paso adecuado para avanzar con mayor
-              probabilidad de éxito.
+            <p className="mt-5 text-slate-800 leading-relaxed">
+              Evaluamos las áreas de crecimiento de cada actor y
+              construimos el siguiente paso para hacerlo avanzar
             </p>
 
             <a
