@@ -209,7 +209,7 @@ export const InteractiveBackground = ({ children, className = '' }) => {
       className={`relative w-full h-full overflow-hidden ${className}`}
       style={{
         // Combina el fondo oscuro corporativo con un degradado radial profundo para simular viñeta y luces de estudio
-        background: 'radial-gradient(circle at 50% 50%, #2d61e0 -30%, #0b0f19 70%, #05070b 100%)'
+        background: 'radial-gradient(circle at 50% 50%, #2d61e0 -60%, #0b0f19 70%, #05070b 100%)'
       }}
     >
         
