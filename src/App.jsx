@@ -22,6 +22,7 @@ import { BlogIndex } from './components/BlogIndex';
 import { BlogPost } from './components/BlogPost';
 import { MarketOpportunity } from './components/MarketOpportunity';
 import { InteractiveBackground } from './components/InteractiveBackground';
+import { HowWeWork } from './components/HowWeWork';
 
 
 function App() {
@@ -199,6 +200,10 @@ function App() {
 
             <div id="equipo" className="reveal scroll-mt-20">
               <WhoWeAre />
+            </div>
+
+            <div className="reveal">
+              <HowWeWork />
             </div>
     
               {/* <InternationalGroup /> */}
