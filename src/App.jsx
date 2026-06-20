@@ -267,13 +267,15 @@ function App() {
                 </InteractiveLightBackground>
               </div>
 
-              <div id="team" className="reveal scroll-mt-20">
-                <Team />
+              <div id="team" className="reveal scroll-mt-13">
+                <InteractiveLightBackground>
+                  <Team />
+                </InteractiveLightBackground>
               </div>
 
-              <div id="presencia-internacional" className="reveal scroll-mt-20">
+              {/* <div id="presencia-internacional" className="reveal scroll-mt-20">
                 <IntPresence />
-              </div>
+              </div> */}
 
               <div id="trayectoria" className="reveal scroll-mt-20">
                 <Path />

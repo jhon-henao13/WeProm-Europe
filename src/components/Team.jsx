@@ -3,10 +3,18 @@ import React, { useState, useRef, useEffect } from 'react';
 // ─────────────────────────────────────────────────────────────
 // Importaciones de imágenes del equipo migrado (Ruta Europe)
 // ─────────────────────────────────────────────────────────────
-import joseMiguelImg from '../assets/team/mike.png';
-import juanCarlosPImg from '../assets/team/juancarlosvsr.png';
-import juanCarlosMImg from '../assets/team/JUANCARLOS.png';
-import emiliaImg      from '../assets/team/Emilia López.png';
+import joseMiguelImg from '../assets/team/mike3.png';
+import juanCarlosPImg from '../assets/team/juancarlosvsr3.png';
+import juanCarlosMImg from '../assets/team/JUANCARLOS3.png';
+import emiliaImg from '../assets/team/emiliaLopez.png';
+import pabloGarza from '../assets/team/pabloGarza.png';
+import gustavoCuellar from '../assets/team/gustavoCuellar.png';
+import oscarSantamaria from '../assets/team/oscarSantamaria.png';
+import joshBinner from '../assets/team/joshBinner.png';
+import joeKaram from '../assets/team/joeKaram.png';
+import carlosMartinez from '../assets/team/carlosMartinez.png';
+import LisaLenselle from '../assets/team/LisaLenselle.png';
+
 
 // ─────────────────────────────────────────────────────────────
 // Estructura de Datos Oficial de WeProm Europe
@@ -42,20 +50,20 @@ const TEAM_DATA = [
     role: "Consultor Internacional Asociado, WeProm Europe",
     desc: "Más de 35 años de experiencia en cooperación internacional, atracción de inversión extranjera, y desarrollo de negocios entre México y la Unión Europea para el sector público y privado.",
     initials: "OS",
-    image: null
+    image: oscarSantamaria
   },
   {
     id: 5,
     name: "Lisa Lenselle",
-    role: "Dirección Comercial y Relaciones Públicas",
+    role: "Dirección Comercial y Relaciones Con Cuentas Clave",
     desc: "Marketing internacional, y desarrollo de oportunidades comerciales con experiencia en sectores públicos y privados en Europa y LATAM.",
     initials: "LL",
-    image: null
+    image: LisaLenselle
   },
   {
     id: 6,
     name: "Emilia López Matute",
-    role: "Dirección de Comunicación",
+    role: "Directora de Comunicación Institucional, Política y Corporativa",
     desc: "Especialización en comunicación política, corporativa, y digital, enfocada en el desarrollo de estrategias multicanal para la promoción y posicionamiento de marcas e instituciones.",
     initials: "EL",
     image: emiliaImg
@@ -66,7 +74,7 @@ const TEAM_DATA = [
     role: "Gestión de Procesos y Riesgos Financieros",
     desc: "Ingeniero especializado en entornos financieros internacionales, asesorando a clientes globales en análisis funcionales y gestión de riesgos financieros.",
     initials: "JK",
-    image: null
+    image: joeKaram
   },
   {
     id: 8,
@@ -74,7 +82,7 @@ const TEAM_DATA = [
     role: "Operaciones y Expansión Internacional",
     desc: "Asesor internacional para proyectos de planeación estratégica, innovación, sustentabilidad y expansión, especializado en fusiones, adquisiciones y transformación comercial en corporativos multinacionales.",
     initials: "JB",
-    image: null
+    image: joshBinner
   },
   {
     id: 9,
@@ -82,7 +90,7 @@ const TEAM_DATA = [
     role: "Creatividad y Comunicación Europa-LATAM",
     desc: "Desarrollo de áreas creativas y tropicalización de estrategias de comunicación, con una profunda comprensión multicultural.",
     initials: "PG",
-    image: null
+    image: pabloGarza
   },
   {
     id: 10,
@@ -90,7 +98,7 @@ const TEAM_DATA = [
     role: "Internacionalización y Cultura de Negocios",
     desc: "Especialista en internacionalización empresarial, enfocado en diseño de modelos de negocio y planes de trabajo para startups y empresas globales adaptados a nuevos mercados.",
     initials: "GC",
-    image: null
+    image: gustavoCuellar
   },
   {
     id: 11,
@@ -98,7 +106,7 @@ const TEAM_DATA = [
     role: "Relaciones Diplomáticas y Asuntos Legales Internacionales",
     desc: "Abogado internacional especializado en relaciones exteriores, implantación en nuevos mercados y asesoría jurídica.",
     initials: "CM",
-    image: null
+    image: carlosMartinez
   }
 ];
 
@@ -380,7 +388,7 @@ export const Team = () => {
   };
 
   return (
-    <section className="w-full py-24 md:py-32 overflow-hidden bg-white border-b border-slate-100">
+    <section className="w-full py-24 md:py-32 overflow-hidden bg-transparent border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
 
         {/* CABECERA */}
@@ -391,7 +399,7 @@ export const Team = () => {
           <h2 className="text-slate-900 font-montserrat text-3xl md:text-[35px] font-semibold uppercase leading-tight tracking-wide mb-6">
             Somos un equipo multicultural, multidisciplinario, y multigeneracional.
           </h2>
-          <p className="text-slate-700 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+          <p className="text-black font-montserrat text-sm md:text-base font-normal leading-relaxed tracking-wide">
             Combinamos décadas de experiencia internacional con la visión y agilidad de las nuevas generaciones. 
             Nuestro equipo reúne perfiles de distintas disciplinas — marketing, comercio exterior, finanzas, economía, 
             comunicación, relaciones internacionales y más — porque internacionalizar un negocio requiere exactamente eso: 
@@ -458,8 +466,8 @@ export const Team = () => {
 
         {/* PIE DE SECCIÓN */}
         <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal">
-          <p className="text-slate-500 font-montserrat text-xs md:text-sm italic font-light leading-relaxed max-w-4xl">
-            Respaldados por el equipo internacional de Grupo WeProm con más de 50 colaboradores y 30 asesores asociados en Europa, América Latina y Norteamérica.
+          <p className="text-slate-900 font-montserrat text-base md:text-xl italic font-light leading-relaxed max-w-4xl">
+            Respaldados por el equipo internacional de Grupo WeProm con <b>más de 40 colaboradores</b> y <b>50 asesores asociados a nivel mundial</b>
           </p>
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 bg-slate-50 border border-slate-200 px-3 py-1.5 whitespace-nowrap select-none">
             Global Network Asset
