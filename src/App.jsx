@@ -23,6 +23,7 @@ import { BlogPost } from './components/BlogPost';
 import { MarketOpportunity } from './components/MarketOpportunity';
 import { InteractiveBackground } from './components/InteractiveBackground';
 import { HowWeWork } from './components/HowWeWork';
+import { InteractiveLightBackground } from './components/InteractiveLightBackground';
 
 
 function App() {
@@ -190,7 +191,14 @@ function App() {
         <Route path="/" element={
           <main className="relative">
             <Hero />
-            <MarketOpportunity />
+
+            <div id="opportunity" className="reveal scroll-mt-20">
+              <InteractiveLightBackground>
+                <MarketOpportunity />
+              </InteractiveLightBackground>
+              
+            </div>
+
             {/* Envolvemos las secciones en contenedores reveal para la transición */}
             <div id="el-momento" className="reveal scroll-mt-20">
               <InteractiveBackground>
@@ -199,11 +207,15 @@ function App() {
             </div>
 
             <div id="equipo" className="reveal scroll-mt-20">
-              <WhoWeAre />
+              <InteractiveLightBackground>
+                <WhoWeAre />
+              </InteractiveLightBackground>
             </div>
 
             <div className="reveal">
-              <HowWeWork />
+              <InteractiveLightBackground>
+                <HowWeWork />
+              </InteractiveLightBackground>
             </div>
     
               {/* <InternationalGroup /> */}

@@ -292,7 +292,7 @@ export const WhoWeAre = () => {
   ];
 
   return (
-    <section className="bg-white border-t border-slate-100 overflow-hidden min-h-screen py-24 px-6 md:px-16 lg:px-24 relative">
+    <section className="bg-transparent border-t border-slate-100 overflow-hidden min-h-screen py-24 px-6 md:px-16 lg:px-24 relative">
       
       {/* Sutil textura geométrica de fondo */}
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-60 pointer-events-none select-none z-0" />

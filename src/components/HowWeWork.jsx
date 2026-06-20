@@ -48,7 +48,7 @@ const processSteps = [
 
 export const HowWeWork = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-24">
+    <section className="relative overflow-hidden bg-transparent py-16 md:py-24">
 
       {/* Fondo */}
       <div className="absolute inset-0 pointer-events-none">

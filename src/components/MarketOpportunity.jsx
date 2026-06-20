@@ -17,7 +17,7 @@ export const MarketOpportunity = () => {
   ];
 
   return (
-    <section id="oportunidad" className="relative bg-white py-24 md:py-32 overflow-hidden border-b border-slate-100">
+    <section id="oportunidad" className="relative bg-transparent py-24 md:py-32 overflow-hidden border-b border-slate-100">
       <div className="max-w-[90%] xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* PARTE 1: BLOQUE EDITORIAL ASIMÉTRICO */}
