@@ -211,35 +211,32 @@ function App() {
               {/* Sección Unificada de Capacidades */}
               {/* Sección Unificada de Capacidades - Reemplazo en App.jsx */}
               <div id="capabilities" className="relative overflow-visible bg-white pt-24 md:pt-32">
-                      
-                {/* BLOQUE INMÓVIL (Sticky) */}
+                {/* BLOQUE INMÓVIL (Sticky) - sin cambios */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
                   <div className="sticky top-24 w-full">
-                      
-                    {/* BARRA BLANCA SÓLIDA */}
                     <div className="bg-white w-full py-6 px-6 md:px-16">
                       <div className="max-w-7xl mx-auto relative pt-8">
-                        
                         <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-2">
                           Capacidades estratégicas
                         </p>
                         <h2 className="reveal text-slate-900 font-montserrat text-3xl md:text-[40px] font-semibold uppercase leading-tight pointer-events-auto bg-white inline-block tracking-wide">
                           Tres áreas de acción.
                         </h2>
-                      
-                        {/* ISOTIPO TRASLÚCIDO DE RESPALDO */}
-                        <div className="absolute top-0 right-0 w-[25%] translate-x-[10%] opacity-10 select-none pointer-events-none hidden md:block">
+                        {/* <div className="absolute top-0 right-0 w-[25%] translate-x-[10%] opacity-10 select-none pointer-events-none hidden md:block">
                           <img src="/isotipo.png" alt="" className="w-full h-auto object-contain grayscale" />
-                        </div>
-                      
+                        </div> */}
                       </div>
                     </div>
                   </div>
-                </div>            
-                      
-                {/* CONTENIDO QUE HACE SCROLL */}
-                <Capabilities />
-                <StrategicArchitecture />
+                </div>
+
+                {/* CONTENIDO QUE HACE SCROLL con fondo interactivo */}
+                <InteractiveBackground className="relative z-10">
+                  <div className="space-y-0"> {/* Para asegurar que los hijos se apilen sin espacio extra */}
+                    <Capabilities />
+                    <StrategicArchitecture />
+                  </div>
+                </InteractiveBackground>
               </div>
     
             

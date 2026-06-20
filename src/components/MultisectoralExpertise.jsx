@@ -84,7 +84,7 @@ export const MultisectoralExpertise = () => {
                 </h3>
                 
                 {/* Descripción */}
-                <p className="text-black font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide">
+                <p className="text-white font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide">
                   {sector.desc}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export const MultisectoralExpertise = () => {
 
         {/* PIE DE SECCIÓN (FOOTNOTE DE ALTO IMPACTO) */}
         <div className="reveal border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <p className="text-black font-montserrat text-xs md:text-base italic font-light max-w-3xl leading-relaxed">
+          <p className="text-white font-montserrat text-xs md:text-base italic font-light max-w-3xl leading-relaxed">
             Como grupo multisectorial, operamos en todos los niveles de la industria. Tenemos la capacidad operativa para concretar negocios y proyectos en cualquier mercado, sin importar su escala local o internacional.
           </p>
           
