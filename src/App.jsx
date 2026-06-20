@@ -267,7 +267,7 @@ function App() {
                 <NewInsights />   {/* Nueva versión estática institucional premium */}
               </div>
     
-              <div id="contact" className="reveal scroll-mt-48">
+              <div id="contact" className="reveal scroll-mt-15">
                 <Contact />
               </div>
     
