@@ -84,7 +84,7 @@ export const MultisectoralExpertise = () => {
                 </h3>
                 
                 {/* Descripción */}
-                <p className="text-white font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide">
+                <p className="text-black font-montserrat text-xs md:text-base font-light leading-relaxed tracking-wide">
                   {sector.desc}
                 </p>
               </div>
