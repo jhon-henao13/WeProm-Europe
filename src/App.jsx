@@ -218,6 +218,7 @@ function App() {
               </InteractiveLightBackground>
             </div>
     
+    
               {/* <InternationalGroup /> */}
     
               {/* Sección Unificada de Capacidades */}
