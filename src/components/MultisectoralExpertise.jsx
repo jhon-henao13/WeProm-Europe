@@ -14,37 +14,37 @@ export const MultisectoralExpertise = () => {
     {
       icon: <Plane className="w-6 h-6 stroke-[1.25]" />,
       title: "Aeronáutica y aeroespacial",
-      desc: "México es el país donde Francia tiene su mayor fuerza laboral aeronáutica fuera de Europa, generando 1 de cada 4 empleos en la industria aeroespacial mexicana. Acompañamos a proveedores Tier 2/3 y maquiladoras certificadas en su entrada al otro lado del Atlántico."
+      desc: "La aviación entre Europa y América Latina combina crecimiento de conectividad, exigencias de sostenibilidad y una fuerte demanda de proveedores especializados. Apoyamos a empresas, clústeres e instituciones a identificar socios estratégicos, resolver requisitos técnicos y rutas de certificación, y estructurar su entrada entre ambas regiones."
     },
     {
       icon: <Car className="w-6 h-6 stroke-[1.25]" />,
       title: "Automotriz y autopartes",
-      desc: "Trabajamos con fabricantes y proveedores especializados que buscan colocarse fuera del comercio intrafirma de las grandes marcas, con un foco creciente en electromovilidad, electrónica de potencia y sensores."
+      desc: "La electrificación, las baterías y la reorganización de las cadenas de suministro están transformando la industria a ambos lados del Atlántico. Ayudamos a fabricantes y proveedores a posicionarse fuera del comercio intrafirma de las grandes marcas y a integrarse en nuevas cadenas de valor internacionales. "
     },
     {
       icon: <Apple className="w-6 h-6 stroke-[1.25]" />,
       title: "Agroalimentaria y agroindustria",
-      desc: "El acuerdo modernizado UE-México prevé acceso libre de aranceles para más del 83% de los productos agroalimentarios. Posicionamos productores mexicanos premium en el mercado europeo y empresas francesas en el mercado latinoamericano."
+      desc: "América Latina es una región clave de producción agroalimentaria y Europa uno de los mercados más exigentes en calidad, trazabilidad y sostenibilidad. Acompañamos a productores y marcas a validar nichos de negocio, adaptar su oferta a nuevos mercados y construir relaciones comerciales sostenibles entre ambas regiones."
     },
     {
       icon: <Zap className="w-6 h-6 stroke-[1.25]" />,
       title: "Energías limpias y transición ecológica",
-      desc: "Hidrógeno verde, energía solar, eólica, eficiencia energética: la complementariedad entre Plan México y France 2030 abre proyectos bancables vía AFD-Proparco, BEI y Global Gateway."
+      desc: "Renovables, hidrógeno verde y eficiencia energética están impulsando la cooperación entre Europa y América Latina. Apoyamos la identificación de oportunidades, la construcción de alianzas estratégicas y la estructuración de proyectos viables con potencial de crecimiento."
     },
     {
       icon: <Activity className="w-6 h-6 stroke-[1.25]" />,
       title: "Salud, farma y dispositivos médicos",
-      desc: "Comercio intraindustrial consolidado: México importa medicamentos franceses, Europa importa dispositivos mexicanos. Acompañamos registros, posicionamiento y entrada a nuevos mercados en ambos sentidos."
+      desc: "El sector combina demanda creciente, innovación y estándares regulatorios estrictos en ambas regiones. Acompañamos a empresas e instituciones a gestionar requisitos regulatorios, identificar socios locales y estructurar su entrada a nuevos mercados."
     },
     {
       icon: <Cpu className="w-6 h-6 stroke-[1.25]" />,
       title: "Tecnologías de la información, IA y deep-tech",
-      desc: "La French Tech, Next México, Plan México TI: iniciativas públicas para conectar startups y scale-ups. Acompañamos a nuestros clientes en misiones comerciales y match-making sectorial."
+      desc: "La cooperación digital entre Europa y América Latina abre oportunidades en inteligencia artificial, datos y ciberseguridad. Ayudamos a startups, scale-ups e instituciones a convertir su innovación en pilotos, alianzas y estrategias de entrada y penetración de mercado."
     },
     {
       icon: <Sparkles className="w-6 h-6 stroke-[1.25]" />,
-      title: "Lujo, cosméticos y bienes de consumo premium",
-      desc: "Empresas familiares europeas en expansión hacia LATAM y marcas premium latinoamericanas hacia retail europeo: dos sentidos del mismo flujo."
+      title: "Cosmética, cuidado personal y bienes premium ",
+      desc: "Europa es referente global en cosmética y bienes de alto valor; América Latina ofrece mercados dinámicos y consumidores cada vez más sofisticados. Acompañamos a las empresas en la viabilidad y entrada a mercados, el acceso regulatorio y la construcción de canales comerciales y alianzas de distribución. "
     }
   ];
 
@@ -58,7 +58,7 @@ export const MultisectoralExpertise = () => {
             Sectores estratégicos
           </p>
           <h2 className="text-slate-100 font-montserrat text-3xl md:text-[45px] font-semibold uppercase leading-tight tracking-wide mb-8">
-            Europa-latam oportunidad real por sector y donde entramos nosotros
+            Trabajamos donde Europa y América Latina se necesitan.
           </h2>
           <p className="text-white font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
             Operamos con un enfoque multisectorial, con especial atención en las verticales donde el corredor Europa-LATAM concentra la mayor parte de las oportunidades reales. En cada uno hemos acompañado proyectos —algunos hoy considerados referencia en su industria.
@@ -70,7 +70,7 @@ export const MultisectoralExpertise = () => {
           {sectores.map((sector, idx) => (
             <div 
               key={idx} 
-              className="bg-black/30 p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:bg-slate-50/1 group border border-white/15"
+              className="bg-black/30 p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:bg-black/60 group border border-white/15"
             >
               <div>
                 {/* Contenedor del Icono Estilo Minimal */}

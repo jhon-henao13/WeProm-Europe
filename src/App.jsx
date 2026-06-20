@@ -278,7 +278,9 @@ function App() {
               </div> */}
 
               <div id="trayectoria" className="reveal scroll-mt-20">
-                <Path />
+                <InteractiveBackground>
+                  <Path />
+                </InteractiveBackground>
               </div>
     
               {/* <OurApproach /> */}
