@@ -218,7 +218,7 @@ function App() {
               </InteractiveLightBackground>
             </div>
     
-    
+
               {/* <InternationalGroup /> */}
     
               {/* Sección Unificada de Capacidades */}
@@ -262,7 +262,9 @@ function App() {
               </div>
 
               <div id="por-que-nosotros" className="reveal scroll-mt-20">
-                <WhyUs />
+                <InteractiveLightBackground>
+                  <WhyUs />
+                </InteractiveLightBackground>
               </div>
 
               <div id="team" className="reveal scroll-mt-20">

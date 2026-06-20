@@ -58,7 +58,7 @@ export const MultisectoralExpertise = () => {
             Sectores estratégicos
           </p>
           <h2 className="text-slate-100 font-montserrat text-3xl md:text-[45px] font-semibold uppercase leading-tight tracking-wide mb-8">
-            Trabajamos donde Europa y América Latina se necesitan.
+            Europa-latam oportunidad real por sector y donde entramos nosotros
           </h2>
           <p className="text-white font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
             Operamos con un enfoque multisectorial, con especial atención en las verticales donde el corredor Europa-LATAM concentra la mayor parte de las oportunidades reales. En cada uno hemos acompañado proyectos —algunos hoy considerados referencia en su industria.

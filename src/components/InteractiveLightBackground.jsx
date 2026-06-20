@@ -16,9 +16,9 @@ export const InteractiveLightBackground = ({ children, className = '' }) => {
     const CONFIG = {
       divisorDensidad: 18000, // Número más alto = menos partículas en pantalla
       maxParticulas: 60,      // Límite estricto para proteger los 60fps
-      opacidadBase: 0.52,     // Opacidad base de los nodos (0 a 1)
-      opacidadLineas: 0.48,   // Opacidad de los enlaces sinápticos
-      opacidadMouse: 0.55     // Opacidad de los haces de luz hacia el cursor
+      opacidadBase: 0.45,     // Opacidad base de los nodos (0 a 1)
+      opacidadLineas: 0.41,   // Opacidad de los enlaces sinápticos
+      opacidadMouse: 0.48     // Opacidad de los haces de luz hacia el cursor
     };
 
     const resizeCanvas = () => {

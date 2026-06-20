@@ -43,7 +43,7 @@ export const WhyUs = () => {
   ];
 
   return (
-    <section className="relative bg-[#f8fafc] py-24 md:py-32 px-6 md:px-16 overflow-hidden border-b border-slate-200">
+    <section className="relative bg-transparent py-24 md:py-32 px-6 md:px-16 overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto relative z-20">
         
         {/* CABECERA PRINCIPAL */}
@@ -55,7 +55,7 @@ export const WhyUs = () => {
             Somos el puente estratégico entre Europa y América Latina.
           </h2>
           <p className="text-black font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
-            Hay agencias para servicios puntuales, asesores para tareas específicas y firmas consultoras para proyectos ambiciosos. <strong className="font-medium text-slate-900">Nosotros operamos en un espacio distinto:</strong> somos un socio estratégico bilateral que promueve negocios, inversión y posicionamiento comercial entre Europa y América Latina, acompañando a cada cliente desde el primer estudio de oportunidad hasta la operación local consolidada.
+            Hay agencias para servicios puntuales, asesores para tareas específicas y firmas consultoras para proyectos ambiciosos. <strong className="font-medium text-slate-900">Nosotros operamos en un espacio distinto:</strong> somos un <strong className="font-medium text-slate-900">socio estratégico bilateral</strong> que promueve negocios, inversión y posicionamiento comercial entre Europa y América Latina, acompañando a cada cliente desde el primer estudio de oportunidad hasta la operación local consolidada.
           </p>
         </div>
 
