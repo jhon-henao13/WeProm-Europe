@@ -241,7 +241,11 @@ function App() {
     
             
               <div id="sectores" className="reveal scroll-mt-20">
-                <MultisectoralExpertise />
+
+                <InteractiveBackground>
+                  <MultisectoralExpertise />
+                </InteractiveBackground>
+                
               </div>
 
               <div id="por-que-nosotros" className="reveal scroll-mt-20">
