@@ -24,6 +24,7 @@ import { MarketOpportunity } from './components/MarketOpportunity';
 import { InteractiveBackground } from './components/InteractiveBackground';
 import { HowWeWork } from './components/HowWeWork';
 import { InteractiveLightBackground } from './components/InteractiveLightBackground';
+import Brands from './components/Brands';
 
 
 function App() {
@@ -280,6 +281,7 @@ function App() {
               <div id="trayectoria" className="reveal scroll-mt-20">
                 <InteractiveBackground>
                   <Path />
+                  <Brands />
                 </InteractiveBackground>
               </div>
     

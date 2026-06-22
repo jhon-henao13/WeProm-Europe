@@ -139,7 +139,7 @@ export const Path = () => {
   };
 
   return (
-    <section className="relative bg-transparent py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-transparent pt-24 md:pt-32 pb-4 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-16">
         
         {/* ENCABEZADO EDITORIAL */}
