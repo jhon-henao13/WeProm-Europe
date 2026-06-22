@@ -32,12 +32,16 @@ export const Footer = () => {
             <p className="text-slate-900 font-montserrat text-base font-light leading-relaxed max-w-md tracking-wide">
               Promoción y desarrollo de negocios entre Europa y América Latina.
             </p>
-            <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-slate-400 uppercase pt-2">
-              <span>France</span>
-              <span className="text-slate-200">•</span>
+            <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase pt-2">
+
+              <a href="#inicio" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">France</a>
+
+              <span className="text-slate-300">•</span>
               <a href="https://grupoweprom.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">México</a>
-              <span className="text-slate-200">•</span>
-              <span>USA</span>
+              <span className="text-slate-300">•</span>
+
+              <a href="https://weprom.us " target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">USA</a>
+
             </div>
           </div>
 

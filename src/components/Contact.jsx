@@ -24,7 +24,7 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* ENCABEZADO DE SECCIÓN DE ALTA FIDELIDAD */}
-        <div className="mb-16 md:mb-20">
+        <div className="mb-8 md:mb-14">
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4 block">
             Contacto
           </p>
@@ -44,7 +44,7 @@ export const Contact = () => {
           <div className="lg:col-span-5 space-y-10">
             
             {/* Corporativo / Sede Central */}
-            <div className="space-y-4">
+            <div className="space-y-4 mb-4">
               <h4 className="text-slate-900 font-montserrat text-xs font-bold uppercase tracking-[0.3em] text-[#2d61e0]">
                 Sede Central
               </h4>
@@ -55,7 +55,8 @@ export const Contact = () => {
                 <div>
                   <h5 className="font-montserrat font-semibold text-slate-900 text-base">WeProm Europe</h5>
                   <p className="text-black font-montserrat text-base font-light mt-1">
-                    142 Rue de Rivoli, 75001 Paris, France
+                    {/* 142 Rue de Rivoli, 75001 Paris, France */}
+                     55. Av Marceau, Paris 16ème, France 
                   </p>
                 </div>
               </div>
@@ -88,15 +89,15 @@ export const Contact = () => {
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Dirección Comercial</span>
-                  <a href="mailto:lisa.lenselle@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
-                    lisa.lenselle@wepromeurope.com
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">Dirección de Comunicación y Asuntos Públicos</span>
+                  <a href="mailto:emilia.lopez@wepromeurope.com  " className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    emilia.lopez@wepromeurope.com  
                   </a>
                 </div>
               </div>
 
               {/* Dirección General */}
-              <div className="flex items-start gap-4 group">
+              {/* <div className="flex items-start gap-4 group">
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -106,7 +107,7 @@ export const Contact = () => {
                     jose.ventura@wepromeurope.com
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               {/* Teléfono / WhatsApp */}
               <div className="flex items-start gap-4 group">
