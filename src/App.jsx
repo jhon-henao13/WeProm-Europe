@@ -287,10 +287,9 @@ function App() {
     
               {/* <OurApproach /> */}
 
-              <div id="insights" className="reveal scroll-mt-32">
-                {/* <Insights /> */} {/* Comentado de forma segura para no arriesgar la app */}
-                <NewInsights />   {/* Nueva versión estática institucional premium */}
-              </div>
+              {/* <div id="insights" className="reveal scroll-mt-32">
+                <NewInsights />
+              </div> */}
     
               <div id="contact" className="reveal scroll-mt-15">
                 <Contact />

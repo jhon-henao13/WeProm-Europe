@@ -22,6 +22,13 @@ export const Navbar = ({ currentLang, onLangChange }) => {
     e.preventDefault();
     setIsOpen(false); // Cierra el menú lateral si está abierto
 
+    // 🚀 NUEVA CONDICIÓN: Redirección segura para Insights hacia el Blog
+    if (targetId === 'insights') {
+      navigate('/blog');
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // Asegura que empiece arriba
+      return;
+    }
+
     const targetHash = targetId === 'top' ? '' : `#${targetId}`;
 
     if (location.pathname === '/') {
