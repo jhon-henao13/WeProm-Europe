@@ -25,12 +25,25 @@ import { InteractiveBackground } from './components/InteractiveBackground';
 import { HowWeWork } from './components/HowWeWork';
 import { InteractiveLightBackground } from './components/InteractiveLightBackground';
 import Brands from './components/Brands';
+import { SplashLoader } from './components/SplashLoader';
 
 
 function App() {
 
   const location = useLocation();
   const [language, setLanguage] = React.useState('ES'); // Estado global de idioma para SEO dinámico
+
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  // Efecto complementario para congelar el scroll del Body mientras carga
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isLoading]);
 
   useEffect(() => {
     if (location.hash) {
@@ -187,6 +200,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-weprom-dark selection:text-white">
+
+      {/* 🚀 Renderizado condicional del Splash Loader */}
+      {isLoading && <SplashLoader onComplete={() => setIsLoading(false)} />}
+
       <Navbar currentLang={language} onLangChange={setLanguage} />
       <Routes>
         <Route path="/" element={

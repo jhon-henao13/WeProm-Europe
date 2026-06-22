@@ -194,6 +194,7 @@ export const Path = () => {
               cursor: isDragging.current ? 'grabbing' : 'grab'
             }}
           >
+            
             {duplicatedProjects.map((project, idx) => (
               <div 
                 key={`${project.id}-${idx}`}
