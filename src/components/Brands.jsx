@@ -40,7 +40,7 @@ export default function TwoSectionBrands() {
             
             {/* Texto superior */}
             <div className="text-center mb-16">
-                <h1 className="font-aston text-5xl sm:text-4xl font-medium text-white mt-2">
+                <h1 className="font-aston text-5xl sm:text-3xl max-[666px]:!text-2xl font-medium text-white mt-2">
                     Algunos de nuestros clientes
                 </h1>
             </div>
