@@ -1,21 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
-export const Navbar = ({ currentLang, onLangChange }) => {
+// export const Navbar = ({ currentLang, onLangChange }) => {
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const [isOpen, setIsOpen] = useState(false);
+//   const location = useLocation();
+//   const navigate = useNavigate();
+
+export const Navbar = () => {
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   // Mapeo completo de las nuevas secciones solicitadas por el cliente
+  // const menuItems = [
+  //   { name: 'El momento', id: 'el-momento' },
+  //   { name: 'Servicios', id: 'capabilities' }, // Anclado a tu ID actual
+  //   { name: 'Sectores', id: 'sectores' },
+  //   { name: 'Equipo', id: 'team' },
+  //   { name: 'Trayectoria', id: 'trayectoria' },
+  //   { name: 'Insights', id: 'insights' },     // Anclado a tu ID actual
+  //   { name: 'Contacto', id: 'contact' },      // Anclado a tu ID actual
+  // ];
+
   const menuItems = [
-    { name: 'El momento', id: 'el-momento' },
-    { name: 'Servicios', id: 'capabilities' }, // Anclado a tu ID actual
-    { name: 'Sectores', id: 'sectores' },
-    { name: 'Equipo', id: 'team' },
-    { name: 'Trayectoria', id: 'trayectoria' },
-    { name: 'Insights', id: 'insights' },     // Anclado a tu ID actual
-    { name: 'Contacto', id: 'contact' },      // Anclado a tu ID actual
+    { id: 'el-momento', label: t.navbar.menuItems.moment },
+    { id: 'capabilities', label: t.navbar.menuItems.services },
+    { id: 'sectores', label: t.navbar.menuItems.sectors },
+    { id: 'team', label: t.navbar.menuItems.team },
+    { id: 'trayectoria', label: t.navbar.menuItems.track },
+    { id: 'insights', label: t.navbar.menuItems.insights },
+    { id: 'contact', label: t.navbar.menuItems.contact },
   ];
 
   const handleNavigation = (e, targetId) => {
@@ -107,8 +127,34 @@ export const Navbar = ({ currentLang, onLangChange }) => {
               : 'border-white/40 text-white hover:bg-white hover:text-slate-900 hover:border-white'
           }`}
         >
-          Solicitar conversación
+          {t.navbar.cta}
         </a>
+
+        
+        {/* SELECTOR DE IDIOMA (nuevo) */}
+        <div className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+          <button
+            onClick={() => setLanguage('ES')}
+            className={`transition-colors ${language === 'ES' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+          >
+            ES
+          </button>
+          <span className="text-slate-300">|</span>
+          <button
+            onClick={() => setLanguage('FR')}
+            className={`transition-colors ${language === 'FR' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+          >
+            FR
+          </button>
+          <span className="text-slate-300">|</span>
+          <button
+            onClick={() => setLanguage('EN')}
+            className={`transition-colors ${language === 'EN' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+          >
+            EN
+          </button>
+        </div>
+
 
         {/* Botón Hamburger / Toggle unificado */}
         <button 
@@ -137,7 +183,7 @@ export const Navbar = ({ currentLang, onLangChange }) => {
         {/* Bloque superior de enlaces */}
         <div className="mt-20 flex flex-col gap-8">
           <p className="text-[#2d61e0] font-montserrat text-[9px] font-bold tracking-[0.4em] uppercase opacity-50 border-b border-slate-100 pb-2">
-            Navegación Corporativa
+            {t.navbar.menuLabel}
           </p>
           <div className="flex flex-col gap-5 text-slate-900 font-montserrat font-bold text-sm md:text-base uppercase tracking-[0.35em]">
             {menuItems.map((item, index) => (
@@ -147,7 +193,7 @@ export const Navbar = ({ currentLang, onLangChange }) => {
                 onClick={(e) => handleNavigation(e, item.id)} 
                 className="hover:text-[#2d61e0] transition-all transform hover:translate-x-2 duration-300"
               >
-                {item.name}
+                {item.label}
               </a>
             ))}
           </div>
@@ -162,14 +208,14 @@ export const Navbar = ({ currentLang, onLangChange }) => {
               onClick={(e) => handleNavigation(e, 'contact')}
               className="block text-center text-[10px] font-bold uppercase tracking-[0.2em] bg-[#2d61e0] text-white py-3 px-4 w-full"
             >
-              Solicitar conversación
+              {t.navbar.cta}
             </a>
           </div>
 
           <div>
-            <p className="text-slate-400 font-bold text-[9px] tracking-[0.3em] uppercase mb-3">Idioma / Language</p>
+            <p className="text-slate-400 font-bold text-[9px] tracking-[0.3em] uppercase mb-3">{t.navbar.language}</p>
             <div className="flex gap-5 text-slate-400 font-bold text-[11px] tracking-[0.35em] uppercase">
-              <button 
+              {/* <button 
                 onClick={() => onLangChange('ES')} 
                 className={`transition-colors duration-300 ${currentLang === 'ES' ? 'text-[#2d61e0] font-black' : 'hover:text-[#2d61e0]'}`}
               >
@@ -188,7 +234,14 @@ export const Navbar = ({ currentLang, onLangChange }) => {
                 className={`transition-colors duration-300 ${currentLang === 'EN' ? 'text-[#2d61e0] font-black' : 'hover:text-[#2d61e0]'}`}
               >
                 EN
-              </button>
+              </button> */}
+            
+              <button onClick={() => setLanguage('ES')} className={language === 'ES' ? 'text-[#2d61e0]' : ''}>ES</button>
+              <span>/</span>
+              <button onClick={() => setLanguage('FR')} className={language === 'FR' ? 'text-[#2d61e0]' : ''}>FR</button>
+              <span>/</span>
+              <button onClick={() => setLanguage('EN')} className={language === 'EN' ? 'text-[#2d61e0]' : ''}>EN</button>
+
             </div>
           </div>
           
