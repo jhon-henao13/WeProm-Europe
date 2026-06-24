@@ -3,50 +3,50 @@ import { motion } from "framer-motion";
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../locales';
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Diagnóstico de entrada al mercado",
-    subtitle: "Clarificamos la oportunidad antes de tomar decisiones.",
-    description:
-      "Investigación de mercado, estudios de factibilidad, benchmarking, conocimiento de la audiencia, panorama competitivo, actores clave y mapeo de oportunidades.",
-  },
-  {
-    number: "02",
-    title: "Dirección estratégica",
-    subtitle: "Definimos qué significa la oportunidad y hasta dónde puede llegar realmente.",
-    description:
-      "Estrategia de posicionamiento, propuesta de valor, priorización de mercados, reducción de riesgos y primeras decisiones estratégicas.",
-  },
-  {
-    number: "03",
-    title: "Ruta de entrada al mercado",
-    subtitle: "Estructuramos el camino hacia el nuevo mercado.",
-    description:
-      "Estrategia comercial, plan financiero, esquemas de distribución, desarrollo de modelo de socios, acercamiento institucional, logística de exportación/entrada, requerimientos operativos y preparación local.",
-  },
-  {
-    number: "04",
-    title: "Mensaje y posicionamiento",
-    subtitle: "Adaptamos la oferta y el contexto local.",
-    description:
-      "Narrativa de marca, argumentos de venta, estrategia de comunicación, materiales de pitch, presencia digital, comunicación corporativa y adaptación cultural.",
-  },
-  {
-    number: "05",
-    title: "Activación local",
-    subtitle: "Hacemos la oportunidad visible, accesible y accionable.",
-    description:
-      "Contacto con socios, herramientas comerciales, comunicación y contenido, campañas, relaciones públicas, eventos, medios, redes sociales y ejecución de terreno.",
-  },
-  {
-    number: "06",
-    title: "Optimización y crecimiento",
-    subtitle: "Consolidamos resultados sostenibles.",
-    description:
-      "Seguimiento, reporting, análisis de desempeño y escalamiento de la estrategia.",
-  },
-];
+// const processSteps = [
+//   {
+//     number: "01",
+//     title: "Diagnóstico de entrada al mercado",
+//     subtitle: "Clarificamos la oportunidad antes de tomar decisiones.",
+//     description:
+//       "Investigación de mercado, estudios de factibilidad, benchmarking, conocimiento de la audiencia, panorama competitivo, actores clave y mapeo de oportunidades.",
+//   },
+//   {
+//     number: "02",
+//     title: "Dirección estratégica",
+//     subtitle: "Definimos qué significa la oportunidad y hasta dónde puede llegar realmente.",
+//     description:
+//       "Estrategia de posicionamiento, propuesta de valor, priorización de mercados, reducción de riesgos y primeras decisiones estratégicas.",
+//   },
+//   {
+//     number: "03",
+//     title: "Ruta de entrada al mercado",
+//     subtitle: "Estructuramos el camino hacia el nuevo mercado.",
+//     description:
+//       "Estrategia comercial, plan financiero, esquemas de distribución, desarrollo de modelo de socios, acercamiento institucional, logística de exportación/entrada, requerimientos operativos y preparación local.",
+//   },
+//   {
+//     number: "04",
+//     title: "Mensaje y posicionamiento",
+//     subtitle: "Adaptamos la oferta y el contexto local.",
+//     description:
+//       "Narrativa de marca, argumentos de venta, estrategia de comunicación, materiales de pitch, presencia digital, comunicación corporativa y adaptación cultural.",
+//   },
+//   {
+//     number: "05",
+//     title: "Activación local",
+//     subtitle: "Hacemos la oportunidad visible, accesible y accionable.",
+//     description:
+//       "Contacto con socios, herramientas comerciales, comunicación y contenido, campañas, relaciones públicas, eventos, medios, redes sociales y ejecución de terreno.",
+//   },
+//   {
+//     number: "06",
+//     title: "Optimización y crecimiento",
+//     subtitle: "Consolidamos resultados sostenibles.",
+//     description:
+//       "Seguimiento, reporting, análisis de desempeño y escalamiento de la estrategia.",
+//   },
+// ];
 
 export const HowWeWork = () => {
 
@@ -98,9 +98,9 @@ export const HowWeWork = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {processSteps.map((step, index) => (
+            {phases.map((phase, index) => (
               <motion.div
-                key={step.number}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -155,27 +155,27 @@ export const HowWeWork = () => {
                         
                       "
                     >
-                      {step.number}
+                      {String(index + 1).padStart(2, '0')}
                     </span>
 
                     {/* Badge Técnico de Etapa */}
                     <div className="text-[10px] uppercase font-bold tracking-widest text-slate-400 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100 group-hover:border-[#2d61e0]/10 group-hover:bg-[#2d61e0]/5 group-hover:text-[#2d61e0] transition-all duration-500">
-                      Fase {step.number}
+                      Fase {String(index + 1).padStart(2, '0')}
                     </div>
                   </div>
             
                   {/* Contenido Principal */}
                   <div className="relative z-10 flex-1 flex flex-col">
                     <h3 className="font-montserrat text-slate-900 font-medium text-xl leading-snug tracking-tight mb-3 group-hover:text-[#2d61e0] transition-colors duration-300">
-                      {step.title}
+                      {phase.title}
                     </h3>
             
                     <p className="text-[#2d61e0]/90 text-xs font-medium tracking-wide leading-relaxed mb-4 uppercase">
-                      {step.subtitle}
+                      {phase.key}
                     </p>
             
                     <p className="text-slate-950 text-sm leading-relaxed font-light mt-auto">
-                      {step.description}
+                      {phase.detail}
                     </p>
                   </div>
             
@@ -210,14 +210,14 @@ export const HowWeWork = () => {
         >
           <div className="max-w-4xl mx-auto text-center">
 
-            <h3 className="font-montserrat text-2xl md:text-3xl font-semibold text-slate-900">
-              No forzamos cada proyecto por el mismo camino.
+            <h3 className="font-montserrat text-xl md:text-2xl font-semibold text-slate-900">
+              {t.howWeWork.closing}
             </h3>
 
-            <p className="mt-5 text-slate-800 leading-relaxed">
+            {/* <p className="mt-5 text-slate-800 leading-relaxed">
               Evaluamos las áreas de crecimiento de cada actor y
               construimos el siguiente paso para hacerlo avanzar
-            </p>
+            </p> */}
 
             <a
               href="#contact"
@@ -243,7 +243,7 @@ export const HowWeWork = () => {
               hover:shadow-[0_20px_40px_rgba(45,97,224,0.35)]
             "
             >
-              Solicitar diagnóstico de entrada a mercado
+              {t.howWeWork.cta}
             </a>
 
           </div>

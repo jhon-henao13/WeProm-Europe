@@ -39,35 +39,21 @@ const Brain = ({ size = 20, className = "" }) => (
   </svg>
 );
 
-// --- Logo Weprom (SVG) ---
 const WepromLogo = ({ className = "" }) => (
-  <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780.55 712.65" className={`w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 drop-shadow-[0_0_50px_rgba(89,157,223,0.25)] transition-all duration-500 ${className}`}>
+  <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" className={`w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 transition-all duration-500 ${className}`}>
     <defs>
-      <linearGradient id="Degradado_sin_nombre_194" x1="689.73" y1="503.15" x2="689.73" y2="506.87" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stopColor="#f09428"/><stop offset=".21" stopColor="#f29d2b"/><stop offset=".64" stopColor="#f7ac31"/><stop offset="1" stopColor="#f9b233"/>
+      <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4A7FFF"/>
+        <stop offset="100%" stopColor="#1A43A8"/>
       </linearGradient>
-      <linearGradient id="Degradado_sin_nombre_194-2" x1="734.92" y1="96.62" x2="734.92" y2="554.63" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#f09428"/><stop offset="1" stopColor="#f9b233"/></linearGradient>
-      <linearGradient id="Degradado_sin_nombre_6" x1="3.05" y1="515.94" x2="3.11" y2="515.84" gradientUnits="userSpaceOnUse">
-        <stop offset=".07" stopColor="#e6332a"/><stop offset="1" stopColor="#009fe3"/>
-      </linearGradient>
-      <linearGradient id="Degradado_sin_nombre_6-2" x1="81.77" y1="583.27" x2="374.34" y2="76.54" gradientUnits="userSpaceOnUse"><stop offset=".07" stopColor="#e6332a"/><stop offset="1" stopColor="#009fe3"/></linearGradient>
-      <linearGradient id="Degradado_sin_nombre_22" x1="42.84" y1="505.91" x2="42.84" y2="271.32" gradientUnits="userSpaceOnUse"><stop offset=".01" stopColor="#a3332a"/><stop offset="1" stopColor="#e6332a"/></linearGradient>
-      <linearGradient id="Degradado_sin_nombre_3" x1="728.43" y1="52.76" x2="460.78" y2="516.35" gradientUnits="userSpaceOnUse"><stop offset=".05" stopColor="#f9b233"/><stop offset="1" stopColor="#579966"/></linearGradient>
-      <linearGradient id="Degradado_sin_nombre_201" x1="72.81" y1="406.73" x2="706.31" y2="406.73" gradientUnits="userSpaceOnUse"><stop offset=".08" stopColor="#e6332a"/><stop offset=".58" stopColor="#009fe3"/><stop offset="1" stopColor="#f9b233"/></linearGradient>
-      <linearGradient id="Degradado_sin_nombre_170" x1="476.57" y1="292.44" x2="476.57" y2="683.68" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#0072bc"/><stop offset="1" stopColor="#60b87b"/></linearGradient>
     </defs>
-    <g id="Capa_1-2" data-name="Capa 1">
-      <g>
-        <path fill="url(#Degradado_sin_nombre_194)" d="M689.65,503.45c-.02,1.21.04,2.41.15,3.6,0-.34,0-.67,0-1.02-.1-1.02-.14-2.04-.14-3.08,0,.16,0,.34,0,.49Z"/>
-        <path fill="url(#Degradado_sin_nombre_194-2)" d="M689.63,73.54c-.5,31.91.61,381.87.05,428.04.07,1.52.11,3,.12,4.46,3.9,41.46,85.93,70.25,85.93,70.25-.02.33-.04.66-.07.98.04.02.07.02.07.02,1.05-62.18,4.22-381.27,4.61-419.89-22.48-67.07-71.63-81.03-90.71-83.86Z"/>
-        <path fill="url(#Degradado_sin_nombre_6)" d="M3.1,515.98s0-.02,0-.03c-.02-.19-.05-.17,0,.03h0Z"/>
-        <path fill="url(#Degradado_sin_nombre_6-2)" d="M431.96,221.95c-.13-54.69-44.85-157.97-137.14-157.99-63.84-.01-107.65,44.61-115.62,78.86-2.17,9.34-5.02,32.33-4.68,42.53.91,27.13.68,261.45-.33,275.79-.44,6.34,9,77.5-43.57,110.47-13.3,8.34-29.17,12.53-44.57,9.54-56.62-10.99-82.24-66.42-82.58-66.96,0,0,2.89,18.21,6.04,25.9,42.24,103.24,120.38,95.8,129.9,95.81,41.25.06,111.55-13.84,117.71-110.67.18-2.83-2.19-305.52-.44-309.75,8.56-63.57,46.31-76.16,61.68-77.55,79.89-12.58,113.6,84.02,113.6,84.02Z"/>
-        <path fill="url(#Degradado_sin_nombre_22)" d="M85.03,580.94c-1.33-34.92,0-214.45.64-266.37l-16.69-147.31c-45.39,9.82-59.23,54.27-64.18,71.89-9.06,32.24-2.78,235.33-1.41,274.66.02.48,4.33,8.89,11.93,19.6,12.55,17.11,35.35,40.49,69.7,47.53Z"/>
-        <path fill="url(#Degradado_sin_nombre_3)" d="M644.41,0c-93.28,0-119.15,63.97-123.25,91.33-2.17,14.48-1.84,49.14-1.91,53.97-.26,17.39,0,34.8,0,52.19,0,35.8-.58,294.56-.54,311.14.23,121.3,1.06,148.46-.19,153.58,36.49-.13,73.68-22.95,87.88-71.01.16-4.11.24-10.35.21-14.74-.21-38.72-.44-357.05-.4-364.78.27-54.87-6.83-138.05,75.64-138.83-.02-.14,70.61.32,98.71,85.14C778.08,38.21,693.73,0,644.41,0Z"/>
-        <path fill="url(#Degradado_sin_nombre_201)" d="M689.65,502.45c0-.34.01-.71.02-1.1,2.31,49.53-24.6,68.58-63.68,44.95-7.02-4.24-453.47-351.17-462.71-357.04-50.68-32.22-94.3-22-94.3-22,2.75,20.65,16.33,144.9,16.69,147.31-.64-81.57,64.92-75.98,95.29-51.61-8.3-6.66,431.17,335.9,460.54,353.92,12.4,7.6,24.78,15.6,37.68,22.34,12.61,6.6,27.45,9.42,42.05,8.26,17.39-1.38,31.93-12.96,40.25-27.49,7.3-12.75,11.86-25.71,13.93-40.34.12-.86.23-2.11.31-3.37,0,0-86.8-30.46-86.08-73.83Z"/>
-        <path fill="url(#Degradado_sin_nombre_170)" d="M431.83,578.79c-2.69-24.65,1.42-351.8.27-355.44-9.74-30.89-38.95-75.63-85.43-85.33,0,0,.71,393.75.54,405.37-1.54,102.5,60.48,163.96,132.95,168.81,133.65,8.95,126.23-121.02,126.23-121.02-30.09,101.91-163.57,88.4-174.56-12.4Z"/>
-      </g>
-    </g>
+    {/* Círculos concéntricos representativos del isotipo */}
+    <circle cx="250" cy="250" r="200" fill="none" stroke="url(#circleGrad)" strokeWidth="15" opacity="1.0" />
+    <circle cx="250" cy="250" r="140" fill="none" stroke="url(#circleGrad)" strokeWidth="15" opacity="1.3" />
+    <circle cx="250" cy="250" r="80" fill="url(#circleGrad)" />
+    {/* Nodos de conexión sugeridos en el isotipo */}
+    <circle cx="250" cy="50" r="15" fill="#4A7FFF" />
+    <circle cx="450" cy="250" r="15" fill="#1A43A8" />
   </svg>
 );
 
@@ -224,13 +210,31 @@ export const WhoWeAre = () => {
   const t = translations[language];
 
   // Configuración de las métricas clave del Grupo WeProm
+  // Iconos para las métricas (basados en los originales que funcionaban)
+  // Configuración de las métricas clave del Grupo WeProm
+  // Iconos premium optimizados con geometría institucional y UI de alta fidelidad
+  const metricIcons = [
+    // Icono 1: Alcance Global / Presencia Internacional
+    <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="0.7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M3 12h18" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c2.5 3.5 3.5 5.5 3.5 9s-1 5.5-3.5 9M12 3C9.5 6.5 8.5 8.5 8.5 12s1 5.5 3.5 9" />
+    </svg>,
+    // Icono 2: Alianzas Estratégicas / Sinergia de Negocios
+    <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="0.7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94-3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+    </svg>,
+    // Icono 3: Ecosistema / Hub de Nodos de Red
+    <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="0.7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+    </svg>
+  ];
+
+  
+  
   const metrics = t.whoWeAre.metrics.map((m, i) => ({
     ...m,
-    icon: ( // mantener los iconos fijos
-      <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-        {/* ... cada icono según el índice, o puedes usar m.icon si lo defines en el objeto de traducción, pero aquí lo dejamos fijo */}
-      </svg>
-    )
+    icon: metricIcons[i] // asignar según índice
   }));
 
   const regions = t.whoWeAre.hubs.regions.map((r, idx) => ({
@@ -343,7 +347,7 @@ export const WhoWeAre = () => {
             </div>
 
             {/* Líneas conectoras (solo visible en desktop/tablet) */}
-            <div className="hidden md:block absolute top-[330px] w-[66.66%] h-[60px] z-10">
+            <div className="hidden md:block absolute top-[390px] w-[66.66%] h-[60px] z-10">
               <div className="absolute top-0 left-1/2 w-[2px] h-[30px] bg-[#2d61e0] -translate-x-1/2"></div>
               <div className="absolute top-[30px] left-0 w-full h-[2px] bg-[#2d61e0]"></div>
               <div className="absolute top-[30px] left-0 w-2.5 h-2.5 rounded-full bg-[#2d61e0] -translate-y-1/2 -translate-x-1/2 shadow-[0_0_8px_#2d61e0]"></div>
@@ -372,7 +376,7 @@ export const WhoWeAre = () => {
                       </svg>
                     </div>
                   </div>
-                  <h4 className="text-slate-900 font-montserrat text-lg font-bold tracking-tight mb-4 group-hover:text-[#2d61e0] transition-colors duration-300">
+                  <h4 className="text-slate-900 font-montserrat text-lg font-bold tracking-[0.10em] mb-4 group-hover:text-[#2d61e0] transition-colors duration-300">
                     {region.name}
                   </h4>
                   <div className="flex-grow flex flex-col bg-slate-50 border border-slate-100 rounded-xl p-5 text-left transition-all duration-500 group-hover:bg-slate-900 group-hover:border-slate-800 relative overflow-hidden">
@@ -521,7 +525,7 @@ export const WhoWeAre = () => {
                   {t.whoWeAre.hubs.slogan}
                 </p>
 
-                <p className='text-center text-white font-monserrat text-xl mt-4 font-normal'>Una infraestructura práctica para conectar LATAM, Europa y Norteamérica.</p>
+                <p className='text-center text-white font-monserrat text-xl mt-4 font-normal'>{t.whoWeAre.hubs.closing}</p>
 
               </div>
                 
