@@ -28,7 +28,7 @@ export const Hero = () => {
         <div className="max-w-5xl w-full">
 
           {/* Antetítulo (Kicker) */}
-          <p className="reveal text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[16px] md:text-[18px] mb-6 block">
+          <p className="reveal text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[13px] md:text-[15px] mb-6 block">
             Promoción y desarrollo de negocios entre Europa y América Latina
           </p>
           
