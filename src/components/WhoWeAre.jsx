@@ -1,6 +1,8 @@
 // src/components/WhoWeAre.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 // --- Iconos SVG (tomados del Hero de ejemplo) ---
 const ArrowRight = ({ size = 20, className = "" }) => (
@@ -218,78 +220,30 @@ const PlanetVisual = () => {
 // ============================================================
 export const WhoWeAre = () => {
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
   // Configuración de las métricas clave del Grupo WeProm
-  const metrics = [
-    {
-      value: "3",
-      label: "hubs",
-      icon: (
-        <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
-        </svg>
-      )
-    },
-    {
-      value: "40+",
-      label: "colaboradores",
-      icon: (
-        <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-        </svg>
-      )
-    },
-    {
-      value: "50",
-      label: "asesores asociados",
-      icon: (
-        <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94-3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-        </svg>
-      )
-    }
-  ];
+  const metrics = t.whoWeAre.metrics.map((m, i) => ({
+    ...m,
+    icon: ( // mantener los iconos fijos
+      <svg className="w-12 h-12 text-[#2d61e0]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        {/* ... cada icono según el índice, o puedes usar m.icon si lo defines en el objeto de traducción, pero aquí lo dejamos fijo */}
+      </svg>
+    )
+  }));
 
-  // Configuración de los enlaces globales de WeProm
-  const regions = [
-    {
-      name: "WeProm LATAM",
-      label: "Sede matriz",
-      location: "GUADALAJARA, MÉXICO",
-      url: "https://grupoweprom.com",
-      desc: "Centro de operaciones para América Latina y eje histórico de nuestra trayectoria de más de 35 años.",
-      delay: "0"
-    },
-    {
-      name: "WeProm Europe",
-      label: "Sede Europea",
-      location: "PARÍS, FRANCIA",
-      url: "#",
-      desc: "Hub estratégico para el desarrollo de negocios entre Europa y Ámerica Latina.",
-      delay: "100"
-    },
-    {
-      name: "WeProm North America",
-      label: "Sede norteamericana",
-      location: "AUSTIN, TEXAS",
-      url: "https://weprom.us",
-      desc: "Plataforma estratégica para los mercados de Estados Unidos y Canadá; operación coordinada con LATAM y Europa.",
-      delay: "200"
-    }
-  ];
+  const regions = t.whoWeAre.hubs.regions.map((r, idx) => ({
+    ...r,
+    url: (() => {
+      if (idx === 0) return "https://grupoweprom.com";
+      if (idx === 1) return "#";
+      return "https://weprom.us";
+    })(),
+    delay: String(idx * 100)
+  }));
 
-
-  const sharedCapabilities = [
-    "Investigación e Inteligencia de Mercados",
-    "Marketing y Posicionamiento Internacional",
-    "Consultoría en Creación, Desarrollo y Expansión",
-    "Estrategia Comercial y Logística Internacional",
-    "Acceso y Seguimiento Institucional",
-    "Estrategia de Medios y Comunicación",
-    "Relaciones Públicas",
-    "Alianzas Estratégicas",
-    "Presencia y Acompañamiento en Eventos",
-    "Coordinación y Reporting"
-  ];
+  const sharedCapabilities = t.whoWeAre.hubs.capabilities;
 
   return (
     <section className="bg-transparent border-t border-slate-100 overflow-hidden min-h-screen py-24 px-6 md:px-16 lg:px-24 relative">
@@ -311,22 +265,22 @@ export const WhoWeAre = () => {
             className="flex flex-col items-start text-left"
           >
             <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4">
-              Quiénes somos
+              {t.whoWeAre.kicker}
             </p>
             <h2 className="text-slate-900 font-montserrat text-2xl md:text-3xl lg:text-[40px] font-semibold leading-tight tracking-wide max-w-3xl" style={{ textWrap: 'balance' }}>
-              Tres generaciones desarrollando negocios alrededor del mundo.
+              {t.whoWeAre.title}
             </h2>
             <div className="w-16 h-[2px] bg-[#2d61e0] mt-8 mb-8"></div>
             
             <div className="space-y-6 text-slate-900 font-montserrat text-sm md:text-base font-normal leading-relaxed tracking-wide max-w-2xl text-justify md:text-left">
               <p>
-                WeProm Europe es la sede europea de <strong className="font-semibold text-slate-900">Grupo WeProm</strong>, una firma internacional con más de 35 años de experiencia, tres generaciones y más de 10,000 proyectos ejecutados para empresas globales, gobiernos e instituciones en Europa, América Latina, Norteamérica y Asia.
+                {t.whoWeAre.paragraph1}
               </p>
               <p>
-                Operamos desde Francia, México y Estados Unidos, en tres de las regiones que más oportunidades generan hoy. Cada cliente accede, a través nuestro, a la infraestructura, la red y la capacidad operativa acumulada por nuestro Grupo a lo largo de más de tres décadas.
+                {t.whoWeAre.paragraph2}
               </p>
               <p>
-                Conectamos empresas, gobiernos e instituciones mediante inteligencia de negocios, estrategia, marketing y comunicación, creando alianzas sostenibles y resultados tangibles que impulsan el crecimiento económico entre ambos continentes.
+                {t.whoWeAre.paragraph3}
               </p>
             </div>
           </motion.div>
@@ -350,7 +304,7 @@ export const WhoWeAre = () => {
           <div className="w-full relative flex flex-col items-center mb-14">
             
             <p className='text-black font-montserrat font-semibold !text-xl md:text-base my-10'>
-              Infraestructura operativa internacional con capacidades compartidas y ejecución coordinada entre regiones.
+              {t.whoWeAre.groupIntro}
             </p>
 
             {/* Fila Horizontal de 3 Métricas */}
@@ -467,7 +421,7 @@ export const WhoWeAre = () => {
                   <div className="h-px w-10 bg-[#599ddf]/50" />
                       
                   <span className="font-montserrat text-[11px] md:text-xs uppercase tracking-[0.35em] text-[#599ddf] font-bold">
-                    Capacidades Compartidas
+                    {t.whoWeAre.hubs.sharedCapabilities}
                   </span>
                       
                   <div className="h-px w-10 bg-[#599ddf]/50" />
@@ -564,10 +518,7 @@ export const WhoWeAre = () => {
                   font-semibold
                 "
                 >
-                  Mismo grupo. Mismas capacidades.
-                  <span className="text-[#599ddf]">
-                    {" "}Ejecución coordinada.
-                  </span>
+                  {t.whoWeAre.hubs.slogan}
                 </p>
 
                 <p className='text-center text-white font-monserrat text-xl mt-4 font-normal'>Una infraestructura práctica para conectar LATAM, Europa y Norteamérica.</p>
@@ -584,14 +535,14 @@ export const WhoWeAre = () => {
               “
             </span>
             <p className="text-slate-800 font-montserrat text-sm md:text-[15px] font-medium italic leading-relaxed tracking-wide mb-6 relative z-10" style={{ textWrap: 'balance' }}>
-              “Conectamos culturas y economías con el propósito de generar un impacto positivo que trascienda fronteras, creando un legado de progreso, colaboración y prosperidad compartida entre ambos continentes.”
+              {t.whoWeAre.hubs.quote}
             </p>
             <footer className="author relative z-10">
               <cite className="not-italic block font-montserrat text-xs font-bold uppercase tracking-[0.2em] text-[#2d61e0]">
-                — José Miguel Ventura Michel
+                {t.whoWeAre.hubs.author}
               </cite>
               <span className="block font-montserrat text-[10px] uppercase tracking-[0.15em] text-slate-500 mt-1.5">
-                Director General, WeProm Europe
+                {t.whoWeAre.hubs.authorTitle}
               </span>
             </footer>
           </blockquote>

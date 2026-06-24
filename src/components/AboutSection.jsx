@@ -1,32 +1,17 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 export const AboutSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [showModal, setShowModal] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const cards = [
-    {
-      metric: "45,000 M€",
-      text: "Agenda Global Gateway UE–LAC en ejecución, con proyectos verdes, digitales y de integración eléctrica regional ya en marcha.",
-      source: "Comisión Europea / Servicio Europeo de Acción Exterior (SEAE)."
-    },
-    {
-      metric: "40,871 MDD",
-      text: "Récord histórico de IED en México en 2025; con Francia como cuarto inversor europeo y récord histórico francés de 1,223 MDD.",
-      source: "Secretaría de Economía del Gobierno de México."
-    },
-    {
-      metric: "+700 filiales",
-      text: "Francesas operan en México y generan más de 180,000 empleos; México es además el primer inversionista latinoamericano en Francia (≈2,800 M€).",
-      source: "CCI Franco-Mexicana / Embajada de Francia en México."
-    },
-    {
-      metric: "+35%",
-      text: "Crecimiento esperado del comercio México-UE con el TLCUEM modernizado, según el COMCE; +40% en exportaciones hacia Europa.",
-      source: "COMCE."
-    }
-  ];
+  const cards = t.about.cards;
+
+  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -47,10 +32,10 @@ export const AboutSection = () => {
           
           <div className="mb-10 md:mb-16">
             <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4">
-              El momento
+              {t.about.kicker}
             </p>
             <h2 className="text-white font-montserrat text-2xl md:text-4xl lg:text-[40px] font-semibold leading-tight md:leading-[1.2] max-w-6xl" style={{ textWrap: 'balance' }}>
-              La relación comercial entre Europa y América Latina está en una etapa de crecimiento estratégico.
+              {t.about.title}
             </h2>
             <div className="w-16 h-[2px] bg-[#2d61e0] mt-8"></div>
           </div>
@@ -58,19 +43,19 @@ export const AboutSection = () => {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start mb-16">
             <div className="lg:col-span-5">
               <p className="text-white font-montserrat text-base md:text-[17px] font-medium leading-relaxed tracking-wide border-l-4 border-[#2d61e0] pl-6 py-2">
-                Tres dinámicas convergen en 2026 y definen la nueva frontera de competitividad para ambas regiones.
+                {t.about.intro}
               </p>
             </div>
             <div className="lg:col-span-7">
               <p className="text-slate-300 font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
-                La entrada en vigor del Acuerdo UE-Mercosur el 1 de mayo de 2026 —que crea una zona comercial de 700 millones de personas—, la firma del Acuerdo Global Modernizado UE-México el 22 de mayo de 2026, y el Bicentenario de las relaciones México-Francia, ofrecen el marco político e institucional para que las empresas involucradas aprovechen e impulsen el intercambio comercial y las inversiones que den lugar a la nueva agenda económica bilateral.
+                {t.about.paragraph}
               </p>
             </div>
           </div>
     
           <div className="border-t border-white/10 pt-16 mb-24">
             <h3 className="text-slate-400 font-montserrat text-[11px] font-bold uppercase tracking-[0.3em] mb-12">
-              Las cifras lo confirman
+              {t.about.figuresKicker}
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -101,35 +86,37 @@ export const AboutSection = () => {
           <div className="border-t border-white/10 pt-16 mb-24">
             <div className="max-w-3xl mb-12">
               <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.3em] uppercase text-[11px] mb-3">
-                Perspectiva Transatlántica
+                {t.about.perspective.kicker}
               </p>
               <h3 className="text-white font-montserrat text-xl md:text-2xl font-semibold uppercase tracking-wide">
-                El corredor estratégico Francia-México
+                {t.about.perspective.title}
               </h3>
               <p className="text-slate-400 font-sans text-sm md:text-base font-light leading-relaxed mt-4">
-                Ambos mercados se muestran cada vez más receptivos a lo que la otra región puede aportar: calidad, know-how y posicionamiento europeo en México; innovación mexicana, capacidad productiva y ambición de mercados internacionales en Francia y Europa.
+                {t.about.perspective.text}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white/5 backdrop-blur-md border border-white/5 border-l-2 border-l-[#2d61e0] p-8 shadow-lg hover:shadow-[0_0_30px_rgba(45,97,224,0.15)] hover:bg-white/10 transition-all duration-300 rounded-sm">
-                <span className="text-[10px] font-bold font-montserrat uppercase tracking-[0.2em] text-[#2d61e0] block mb-3">Dirección México</span>
+                <span className="text-[10px] font-bold font-montserrat uppercase tracking-[0.2em] text-[#2d61e0] block mb-3">{t.about.perspective.block1.title}</span>
                 <p className="text-slate-300 text-sm md:text-[14.5px] leading-relaxed font-light">
-                  <strong className="font-semibold text-white">Para las empresas francesas</strong>, México representa un mercado de consumo y crecimiento dinámico, una base industrial sólida y <strong className="font-semibold text-white">una plataforma estratégica para entrar a los mercados de América Latina</strong> y Norteamérica.
+                  {/* <strong className="font-semibold text-white">Para las empresas francesas</strong>, México representa un mercado de consumo y crecimiento dinámico, una base industrial sólida y <strong className="font-semibold text-white">una plataforma estratégica para entrar a los mercados de América Latina</strong> y Norteamérica. */}
+                  {t.about.perspective.block1.text}
                 </p>
               </div>
 
               <div className="bg-[#0f172a]/60 backdrop-blur-md border border-white/5 border-l-2 border-l-weprom-gold p-8 shadow-lg hover:bg-[#0f172a]/80 transition-all duration-300 rounded-sm">
-                <span className="text-[10px] font-bold font-montserrat uppercase tracking-[0.2em] text-weprom-gold block mb-3">Dirección Europa</span>
+                <span className="text-[10px] font-bold font-montserrat uppercase tracking-[0.2em] text-weprom-gold block mb-3">{t.about.perspective.block2.title}</span>
                 <p className="text-slate-300 text-sm md:text-[14.5px] leading-relaxed font-light">
-                  <strong className="font-semibold text-white">Para las empresas mexicanas</strong>, Francia representa acceso a un mercado europeo exigente y sofisticado, mayor credibilidad institucional, sectores de alto valor y una puerta de entrada hacia <strong className="font-semibold text-white">nuevas oportunidades en Europa</strong>.
+                  {/* <strong className="font-semibold text-white">Para las empresas mexicanas</strong>, Francia representa acceso a un mercado europeo exigente y sofisticado, mayor credibilidad institucional, sectores de alto valor y una puerta de entrada hacia <strong className="font-semibold text-white">nuevas oportunidades en Europa</strong>. */}
+                  {t.about.perspective.block2.text}
                 </p>
               </div>
             </div>
 
             <div className="bg-black/[0.35] backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-none text-center max-w-4xl mx-auto shadow-2xl">
               <p className="text-slate-200 font-montserrat text-xs md:text-sm lg:text-base font-medium uppercase tracking-wide leading-relaxed">
-                <strong className="font-bold text-[#2d61e0]">La oportunidad es real. Pero, en ambos sentidos, convertirla en crecimiento exige claridad estratégica, estructura y capacidad de ejecución.</strong>
+                <strong className="font-bold text-[#2d61e0]">{t.about.perspective.highlight}</strong>
               </p>
             </div>
           </div>
@@ -141,7 +128,7 @@ export const AboutSection = () => {
             
             <div className="max-w-2xl relative z-10">
               <p className="font-montserrat text-slate-300 text-sm md:text-base font-light leading-relaxed tracking-wide">
-                Esta apertura comercial representa un eje de crecimiento determinante para medianas y grandes empresas que requieren inteligencia de mercado, estrategia y acompañamiento para posicionarse en nuevos mercados de alto potencial.
+                {t.about.perspective.closing}
               </p>
             </div>
             
@@ -150,7 +137,7 @@ export const AboutSection = () => {
                 onClick={() => window.open('/ruta-de-tu-archivo/analisis-contexto.pdf', '_blank', 'noopener,noreferrer')}
                 className="group text-white font-montserrat text-[11px] font-bold uppercase tracking-[0.25em] flex items-center gap-4 border-b border-white/30 pb-2 transition-all duration-300 hover:border-[#2d61e0] hover:text-[#2d61e0]"
               >
-                Lee nuestro análisis de contexto 
+                {t.about.perspective.cta}
                 <span className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
             </div>

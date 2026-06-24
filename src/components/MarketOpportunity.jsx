@@ -1,20 +1,13 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 export const MarketOpportunity = () => {
-  const actors = [
-    {
-      title: "Empresas",
-      desc: "Compañías preparadas para entrar, construir presencia o acelerar su crecimiento en el mercado europeo o latinoamericano."
-    },
-    {
-      title: "Instituciones",
-      desc: "Actores públicos y privados que trabajan para convertir la cooperación bilateral en proyectos reales, viables y ejecutables."
-    },
-    {
-      title: "Ecosistemas de crecimiento",
-      desc: "Redes, cámaras, grupos y socios estratégicos que buscan transformar conexiones transfronterizas en oportunidades estructuradas de crecimiento."
-    }
-  ];
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  // Los actores ahora vienen del objeto de traducción
+  const actors = t.marketOpportunity.actors;
 
   return (
     <section id="oportunidad" className="relative bg-transparent py-24 md:py-32 overflow-hidden border-b border-slate-100">
@@ -26,10 +19,11 @@ export const MarketOpportunity = () => {
           {/* Columna Izquierda: Kicker & Header Fijo Visual */}
           <div className="lg:col-span-5 sticky top-28 max-[1015px]:top-0">
             <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] md:text-[12px] mb-4 block">
-              Contexto Estratégico
+              {t.marketOpportunity.kicker}
             </p>
             <h2 className="text-slate-900 font-montserrat text-2xl md:text-[34px] font-semibold uppercase leading-tight tracking-wide">
-              Una oportunidad, <br className="hidden md:inline"/>por sí sola, no abre un mercado.
+              {/* Una oportunidad, <br className="hidden md:inline"/>por sí sola, no abre un mercado. */}
+              {t.marketOpportunity.title}
             </h2>
             <div className="w-16 h-[2px] bg-[#2d61e0] mt-8 hidden lg:block"></div>
           </div>
@@ -37,7 +31,7 @@ export const MarketOpportunity = () => {
           {/* Columna Derecha: Manifiesto y Puntos de Dolor */}
           <div className="lg:col-span-7 space-y-8 md:space-y-10 text-slate-600 text-sm md:text-base leading-relaxed font-light">
             
-            <div className="flex gap-4 items-start border-b border-slate-100 pb-6">
+            {/* <div className="flex gap-4 items-start border-b border-slate-100 pb-6">
               <span className="text-[#2d61e0] font-montserrat font-medium text-xs pt-1">01</span>
               <p>
                 <strong className="font-semibold text-slate-900">Las empresas</strong> identifican potencial, pero no siempre tienen clara la ruta adecuada para entrar en un nuevo mercado.
@@ -56,15 +50,24 @@ export const MarketOpportunity = () => {
               <p>
                 <strong className="font-semibold text-slate-900">Los ecosistemas de crecimiento, promoción e inversión</strong> generan conexiones, pero muchas veces carecen de la estructura necesaria para convertirlas en oportunidades de negocio sostenibles.
               </p>
-            </div>
+            </div> */}
+
+            {t.marketOpportunity.points.map((point, idx) => (
+              <div key={idx} className="flex gap-4 items-start border-b border-slate-100 pb-6">
+                <span className="text-[#2d61e0] font-montserrat font-medium text-xs pt-1">
+                  {String(idx + 1).padStart(2, '0')}
+                </span>
+                <p dangerouslySetInnerHTML={{ __html: point }} />
+              </div>
+            ))}
 
             <div className="pt-4">
               <p className="text-slate-900 font-medium text-base md:text-lg">
-                <strong className="font-semibold">El desafío no está únicamente en detectar el potencial o identificar una oportunidad.</strong> Está en convertirla en algo claro, estructurado y ejecutable.
+                <strong className="font-semibold">{t.marketOpportunity.challenge}</strong>
               </p>
               
               <p className="font-montserrat text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#2d61e0] mt-8 flex items-center gap-3">
-                Ahí es donde entramos nosotros <span className="text-lg">→</span>
+                {t.marketOpportunity.cta} <span className="text-lg">→</span>
               </p>
             </div>
 
@@ -79,10 +82,10 @@ export const MarketOpportunity = () => {
           
           <div className="max-w-3xl">
             <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.3em] uppercase text-[10px] mb-3">
-              Nuestra Cooperación
+              {t.marketOpportunity.cooperationKicker}
             </p>
             <h3 className="text-slate-900 font-montserrat text-lg md:text-2xl font-medium uppercase tracking-wide">
-              Trabajamos con actores que impulsan el crecimiento económico entre Europa y América Latina.
+              {t.marketOpportunity.cooperationTitle}
             </h3>
           </div>
 
@@ -116,7 +119,7 @@ export const MarketOpportunity = () => {
             </div>
             
             <p className="text-slate-200 text-sm md:text-base max-w-4xl leading-relaxed font-light relative z-10">
-              Nuestro rol se vuelve <span className="text-white font-medium">determinante</span> ahí donde una oportunidad entre Europa y América Latina requiere mayor claridad, estructura y capacidad de ejecución para convertirse en un proyecto viable.
+              {t.marketOpportunity.conclusion}
             </p>
           </div>
 

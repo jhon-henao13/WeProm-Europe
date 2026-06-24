@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 const processSteps = [
   {
@@ -47,6 +49,11 @@ const processSteps = [
 ];
 
 export const HowWeWork = () => {
+
+  const { language } = useLanguage();
+  const t = translations[language];
+  const phases = t.howWeWork.phases;
+
   return (
     <section className="relative overflow-hidden bg-transparent py-16 md:py-24">
 
@@ -69,16 +76,15 @@ export const HowWeWork = () => {
           className="text-center max-w-4xl mx-auto"
         >
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4">
-            Cómo trabajamos
+            {t.howWeWork.kicker}
           </p>
 
           <h2 className="font-montserrat text-3xl md:text-5xl font-semibold leading-tight tracking-wide bg-gradient-to-r from-slate-950 via-slate-900 to-[#2d61e0] bg-clip-text text-transparent selective-gradient-animate drop-shadow-[0_2px_10px_rgba(45,97,224,0.03)]">
-              Nuestro proceso de expansión internacional
+              {t.howWeWork.title}
             </h2>
 
           <p className="mt-8 text-black leading-relaxed text-sm md:text-base max-w-3xl mx-auto">
-            <b>Una forma estructurada de hacer avanzar oportunidades UE-LATAM, acompañados por expertos en cada paso. </b>
-            La expansión internacional no es una sola acción. Es un proceso claro.
+            {t.howWeWork.intro}
           </p>
         </motion.div>
 
