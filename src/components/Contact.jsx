@@ -83,6 +83,18 @@ export const Contact = () => {
                 </div>
               </div>
 
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
+                  <Mail className="w-4 h-4 stroke-[1.5]" />
+                </div>
+                <div>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">Dirección Comercial</span>
+                  <a href="mailto:lisa.lenselle@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    lisa.lenselle@wepromeurope.com
+                  </a>
+                </div>
+              </div>
+
               {/* Dirección Comercial */}
               <div className="flex items-start gap-4 group">
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
@@ -90,7 +102,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">Dirección de Comunicación y Asuntos Públicos</span>
-                  <a href="mailto:emilia.lopez@wepromeurope.com  " className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                  <a href="mailto:emilia.lopez@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
                     emilia.lopez@wepromeurope.com  
                   </a>
                 </div>
