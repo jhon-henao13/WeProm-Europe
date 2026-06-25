@@ -76,13 +76,20 @@ export default function TwoSectionBrands() {
                         {allBrands.map((brand, index) => (
                             <SwiperSlide key={index} className="flex items-center justify-center py-4">
                                 <div className="flex items-center justify-center h-20 sm:h-24 w-full px-4 py-4 rounded-2xl bg-transparent shadow-lg transition-transform duration-500 hover:scale-105">
+
                                     <img
                                         src={brand.src}
                                         alt={brand.alt}
-                                        className={`w-auto object-contain grayscale transition-all ${
+                                        className={`w-auto object-contain transition-all duration-500 opacity-60 hover:opacity-100 ${
                                             brand.sizeClass ? brand.sizeClass : 'h-7 sm:h-9 md:h-11'
                                         }`}
+                                        style={{ 
+                                            filter: brand.name === 'Ford' 
+                                                ? 'grayscale(100%) brightness(1.6)' 
+                                                : 'brightness(0) invert(0.85)' 
+                                        }}
                                     />
+                                    
                                 </div>
                             </SwiperSlide>
                         ))}
