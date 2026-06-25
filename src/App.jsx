@@ -325,9 +325,9 @@ function App() {
     
               {/* <OurApproach /> */}
 
-              {/* <div id="insights" className="reveal scroll-mt-32">
+              <div id="insights" className="reveal scroll-mt-32">
                 <NewInsights />
-              </div> */}
+              </div>
     
               <div id="contact" className="reveal scroll-mt-15">
                 <Contact />
