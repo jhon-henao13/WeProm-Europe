@@ -485,7 +485,6 @@ export const WhoWeAre = () => {
                         text-center
                         transition-all
                         duration-500
-                        hover:-translate-y-1
                         hover:bg-white
                         hover:shadow-[0_12px_30px_rgba(89,157,223,0.25)]
                       "

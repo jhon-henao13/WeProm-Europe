@@ -18,9 +18,9 @@ export const MarketOpportunity = () => {
           
           {/* Columna Izquierda: Kicker & Header Fijo Visual */}
           <div className="lg:col-span-5 sticky top-28 max-[1015px]:top-0">
-            <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] md:text-[12px] mb-4 block">
+            {/* <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] md:text-[12px] mb-4 block">
               {t.marketOpportunity.kicker}
-            </p>
+            </p> */}
             <h2 className="text-slate-900 font-montserrat text-2xl md:text-[34px] font-semibold uppercase leading-tight tracking-wide">
               {/* Una oportunidad, <br className="hidden md:inline"/>por sí sola, no abre un mercado. */}
               {t.marketOpportunity.title}
