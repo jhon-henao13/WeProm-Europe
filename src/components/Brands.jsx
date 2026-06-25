@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 // Rutas corregidas saliendo de src/components hacia src/assets/brands
 import Cinepolis from '../assets/brands/Cinepolis.png';
-import GrupoCaliente from '../assets/brands/Grupo_Caliente_Logo.png';
+import Promexico from '../assets/brands/promexico.png';
 import Heineken from '../assets/brands/Heineken-Logo.png';
 import Ford from '../assets/brands/LogoFord.png';
 import KIA from '../assets/brands/LogoKIA.webp';
@@ -20,7 +20,7 @@ import Volkswagen from '../assets/brands/Volkswagen_logopng.png';
 
 const brands = [
     { name: 'Cinepolis', src: Cinepolis, alt: 'Cinepolis Logo' },
-    { name: 'Grupo Caliente', src: GrupoCaliente, alt: 'Grupo Caliente Logo' },
+    { name: 'Promexico', src: Promexico, alt: 'Promexico Logo', sizeClass: 'h-16 sm:h-20 md:h-24' },
     { name: 'Heineken', src: Heineken, alt: 'Heineken Logo', sizeClass: 'h-16 sm:h-20 md:h-24' },
     { name: 'Ford', src: Ford, alt: 'Ford Logo', sizeClass: 'h-8 sm:h-10 md:h-14' },
     { name: 'KIA', src: KIA, alt: 'KIA Logo', sizeClass: 'h-20 sm:h-24 md:h-28' },
@@ -86,7 +86,10 @@ export default function TwoSectionBrands() {
                                         style={{ 
                                             filter: brand.name === 'Ford' 
                                                 ? 'grayscale(100%) brightness(1.6)' 
-                                                : 'brightness(0) invert(0.85)' 
+                                                : brand.name === 'Promexico'
+                                                ? 'grayscale(100%) brightness(1.4) contrast(1.2)'
+                                                : 'brightness(0) invert(0.85)',
+                                            mixBlendMode: brand.name === 'Promexico' ? 'multiply' : 'normal'
                                         }}
                                     />
                                     
@@ -98,11 +101,11 @@ export default function TwoSectionBrands() {
             </div>
 
             {/* Botón CTA Gris Inferior */}
-            <div className="mt-16 z-20">
+            {/* <div className="mt-16 z-20">
                 <button className="group relative px-8 py-3.5 bg-[#22252a] hover:bg-[#2d3138] text-white/90 hover:text-white border border-white/10 rounded-xl font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02]">
                     Casos de éxito
                 </button>
-            </div>
+            </div> */}
             
         </section>
     );
