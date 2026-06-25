@@ -67,7 +67,7 @@ export const MarketOpportunity = () => {
               </p>
               
               <p className="font-montserrat text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-[#2d61e0] mt-8 flex items-center gap-3">
-                {t.marketOpportunity.cta} <span className="text-lg">→</span>
+                {t.marketOpportunity.cta}
               </p>
             </div>
 

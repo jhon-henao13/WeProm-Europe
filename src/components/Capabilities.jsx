@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Capabilities = () => {
   const serviciosInvestigacion = [
-    "Estudios de factibilidad para nuevos negocios y expansions internacionales.",
+    "Estudios de factibilidad para nuevos negocios y expansiones internacionales.",
     "Análisis comparativo de los competidores (benchmarking) e identificación de actores clave por zona y sector.",
     "Estudios de hábitos, preferencias y percepción de marca, producto o servicio.",
     "Mystery shopping internacional y auditorías de experiencia de compra.",

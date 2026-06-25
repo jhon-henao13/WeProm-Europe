@@ -8,7 +8,7 @@ export const StrategicArchitecture = () => {
     "Profesionalización e inteligencia de negocios en áreas comerciales y marketing.",
     "Estrategias de comercio exterior, logística internacional y gestión aduanera.",
     "Esquemas de franquicias y redes de distribución.",
-    "Relaciones públicas, alianzas estratégicas y eventos de networking institucional.",
+    
     "Automatización comercial e inteligencia artificial aplicada al crecimiento de negocios.",
     "Coaching ejecutivo y consultoría de alto nivel para puestos directivos y mandos intermedios."
   ];
@@ -20,7 +20,7 @@ export const StrategicArchitecture = () => {
     "Comunicación digital, fortalecimiento de presencia online y posicionamiento web.",
     "Diseño e implementación de campañas de promoción internacional.",
     "Presencia y acompañamiento en ferias, foros y eventos comerciales clave.",
-    "Desarrollo de alianzas estratégicas e institucionales."
+    "Relaciones públicas, alianzas estratégicas y eventos de networking institucional.",
   ];
 
   return (
@@ -56,7 +56,7 @@ export const StrategicArchitecture = () => {
           <div className="grid lg:grid-cols-12 gap-10">
             <div className="lg:col-span-5">
               <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
-                3. Marketing y posicionamiento internacional
+                3. Marketing, Comunicación y Posicionamiento internacional
               </h3>
               <p className="text-white font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
                 Ayudamos a empresas y organismos a construir presencia, reputación y visibilidad en mercados internacionales. Diseñamos y ejecutamos estrategias de posicionamiento de marca, comunicación internacional y relaciones públicas que conectan con audiencias clave en Europa y América Latina.
