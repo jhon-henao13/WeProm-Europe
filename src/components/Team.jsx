@@ -299,7 +299,7 @@ function TeamCard({ name, role, image, initials, isActive, onClick }) {
                 borderRadius: 99,
               }}
             />
-            <p className="text-slate-300 font-montserrat text-[9px] text-center uppercase tracking-wider line-clamp-2">
+            <p className="text-slate-300 font-montserrat text-[10px] text-center uppercase tracking-wider line-clamp-2">
               {role.replace('WeProm Europe', '').replace(', ', '')}
             </p>
           </div>

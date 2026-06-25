@@ -283,12 +283,12 @@ function App() {
                 </div>
 
                 {/* CONTENIDO QUE HACE SCROLL con fondo interactivo */}
-                <InteractiveBackground className="relative z-10">
+                <InteractiveLightBackground className="relative z-10">
                   <div className="space-y-0"> {/* Para asegurar que los hijos se apilen sin espacio extra */}
                     <Capabilities />
                     <StrategicArchitecture />
                   </div>
-                </InteractiveBackground>
+                </InteractiveLightBackground>
               </div>
     
             

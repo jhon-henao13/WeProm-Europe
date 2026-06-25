@@ -34,14 +34,14 @@ export const StrategicArchitecture = () => {
               <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
                 2. Consultoría en creación, desarrollo y expansión de negocios — de la estrategia a la ejecución.
               </h3>
-              <p className="text-white font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+              <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
                 Diseñamos y ejecutamos estrategias de creación, consolidación y expansión transcontinental. Acompañamos cada etapa del proceso —desde la concepción de una idea, hasta la operación local— con un equipo internacional que conoce ambos contextos regulatorios, comerciales y culturales.
               </p>
             </div>
-            <div className="lg:col-span-7 bg-black/35 p-8 rounded-md border border-white/30">
+            <div className="lg:col-span-7 bg-slate-50/50 p-8 rounded-md border-r border-slate-200/90">
               <ul className="space-y-4">
                 {serviciosConsultoria.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4 text-white font-montserrat text-xs md:text-base font-light leading-relaxed">
+                  <li key={idx} className="flex items-start gap-4 text-black font-montserrat text-xs md:text-base font-light leading-relaxed">
                     <span className="text-[#2d61e0] font-medium text-xl mt-[2px]">0{idx + 1}.</span>
                     <span>{item}</span>
                   </li>
@@ -54,18 +54,18 @@ export const StrategicArchitecture = () => {
         {/* 3. MARKETING Y POSICIONAMIENTO INTERNACIONAL */}
         <div className="reveal border-t border-slate-100 pt-16 mb-16">
           <div className="grid lg:grid-cols-12 gap-10">
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 ">
               <h3 className="text-sm font-bold text-[#2d61e0] tracking-[0.25em] uppercase border-l-4 border-[#2d61e0] pl-6 mb-6">
                 3. Marketing, Comunicación y Posicionamiento internacional
               </h3>
-              <p className="text-white font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
+              <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide">
                 Ayudamos a empresas y organismos a construir presencia, reputación y visibilidad en mercados internacionales. Diseñamos y ejecutamos estrategias de posicionamiento de marca, comunicación internacional y relaciones públicas que conectan con audiencias clave en Europa y América Latina.
               </p>
             </div>
-            <div className="lg:col-span-7 bg-white/5 p-8 rounded-lg border border-white/15">
+            <div className="lg:col-span-7 bg-slate-50/50 p-8 rounded-md border-r border-slate-200/90">
               <ul className="space-y-4">
                 {serviciosMarketing.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4 text-white font-montserrat text-xs md:text-base font-light leading-relaxed">
+                  <li key={idx} className="flex items-start gap-4 text-black font-montserrat text-xs md:text-base font-light leading-relaxed">
                     <span className="text-[#2d61e0] font-medium text-xl mt-[2px]">0{idx + 1}.</span>
                     <span>{item}</span>
                   </li>
@@ -77,9 +77,29 @@ export const StrategicArchitecture = () => {
 
         {/* SECCIÓN INTERNA DE LLAMADA A LA ACCIÓN (CTA FINAL) */}
         <div className="reveal pt-2 pb-20 flex justify-center">
-          <a href="#contact" className="group inline-flex items-center gap-6 border border-slate-900 rounded-md bg-white/15 text-white px-10 py-5 font-montserrat text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 hover:bg-[#2d61e0] hover:border-[#2d61e0] w-full md:w-auto justify-center">
+          <a href="#contact" className="
+              inline-flex
+              items-center
+              justify-center
+              mt-10
+              px-10
+              py-4
+              bg-slate-900
+              text-white
+              text-[11px]
+              font-bold
+              uppercase
+              tracking-[0.3em]
+              border
+              border-slate-900
+              transition-all
+              duration-500
+              hover:bg-[#2d61e0]
+              hover:border-[#2d61e0]
+              hover:shadow-[0_20px_40px_rgba(45,97,224,0.35)]
+            ">
             Conversemos sobre tu proyecto
-            <span className="text-xs transform transition-transform duration-300 group-hover:translate-x-2">→</span>
+            <span className="text-xs transform transition-transform duration-300 group-hover:translate-x-2 pl-6"> →</span>
           </a>
         </div>
 
