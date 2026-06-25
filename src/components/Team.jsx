@@ -299,9 +299,10 @@ function TeamCard({ name, role, image, initials, isActive, onClick }) {
                 borderRadius: 99,
               }}
             />
-            <p className="text-slate-300 font-montserrat text-[10px] text-center uppercase tracking-wider line-clamp-2">
-              {role.replace('WeProm Europe', '').replace(', ', '')}
+            <p className="text-slate-300 font-montserrat text-[9px] sm:text-[10px] text-center uppercase tracking-wide leading-normal px-1 break-words whitespace-normal">
+              {role.replace('WeProm Europe', '').replace(/,\s*/g, ' — ')}
             </p>
+            
           </div>
         </div>
       </div>
@@ -449,15 +450,18 @@ export const Team = () => {
             {activeMember.initials}
           </div>
           <div className="flex-1">
-            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4">
-              <h4 className="text-slate-900 font-montserrat text-base font-bold uppercase tracking-wider">
+
+            <div className="flex flex-col md:flex-row md:items-start md:items-center gap-2 md:gap-4 mb-4 w-full">
+              <h4 className="text-slate-900 font-montserrat text-base font-bold uppercase tracking-wide inline-block whitespace-normal">
                 {activeMember.name}
               </h4>
               <span className="hidden md:inline text-slate-300">|</span>
-              <span className="text-[#2d61e0] font-montserrat text-xs font-semibold uppercase tracking-widest">
-                {activeMember.role}
+              <span className="text-[#2d61e0] font-montserrat text-xs font-semibold uppercase tracking-wide inline-block whitespace-normal leading-relaxed">
+                {String(activeMember.role)}
               </span>
             </div>
+
+            
             <p className="text-slate-700 font-montserrat text-sm md:text-[15px] font-light leading-relaxed tracking-wide max-w-5xl transition-all duration-300 animate-fadeIn">
               {activeMember.desc}
             </p>
