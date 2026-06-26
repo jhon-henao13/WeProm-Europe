@@ -115,9 +115,10 @@ export const Navbar = () => {
       </div>
 
       {/* CONTROLES: Lado Derecho (CTA + Toggle) */}
+      {/* CONTROLES: Lado Derecho (CTA + Toggle) */}
       <div className="flex items-center gap-4 md:gap-6 z-[110]">
-        
-        {/* CTA DISCRETO (Disponible en Desktop y Tablets medianas) */}
+                
+        {/* CTA DISCRETO (visible en sm en adelante) */}
         <a
           href="#contact"
           onClick={(e) => handleNavigation(e, 'contact')}
@@ -129,34 +130,32 @@ export const Navbar = () => {
         >
           {t.navbar.cta}
         </a>
-
         
-        {/* SELECTOR DE IDIOMA (nuevo) */}
-        <div className="hidden md:flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+        {/* SELECTOR DE IDIOMA (visible en todos los tamaños) */}
+        <div className="flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-bold uppercase tracking-widest">
           <button
             onClick={() => setLanguage('ES')}
-            className={`transition-colors ${language === 'ES' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+            className={`transition-colors ${language === 'ES' ? 'text-[#2d61e0]' : shouldShowWhiteNav ? 'text-slate-400 hover:text-slate-600' : 'text-white/70 hover:text-white'}`}
           >
             ES
           </button>
-          <span className="text-slate-300">|</span>
+          <span className={shouldShowWhiteNav ? 'text-slate-300' : 'text-white/30'}>|</span>
           <button
             onClick={() => setLanguage('FR')}
-            className={`transition-colors ${language === 'FR' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+            className={`transition-colors ${language === 'FR' ? 'text-[#2d61e0]' : shouldShowWhiteNav ? 'text-slate-400 hover:text-slate-600' : 'text-white/70 hover:text-white'}`}
           >
             FR
           </button>
-          <span className="text-slate-300">|</span>
+          <span className={shouldShowWhiteNav ? 'text-slate-300' : 'text-white/30'}>|</span>
           <button
             onClick={() => setLanguage('EN')}
-            className={`transition-colors ${language === 'EN' ? 'text-[#2d61e0]' : 'text-slate-400 hover:text-slate-600'}`}
+            className={`transition-colors ${language === 'EN' ? 'text-[#2d61e0]' : shouldShowWhiteNav ? 'text-slate-400 hover:text-slate-600' : 'text-white/70 hover:text-white'}`}
           >
             EN
           </button>
         </div>
-
-
-        {/* Botón Hamburger / Toggle unificado */}
+        
+        {/* Botón Hamburger */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
           className="flex flex-col gap-1.5 p-2 focus:outline-none group"
