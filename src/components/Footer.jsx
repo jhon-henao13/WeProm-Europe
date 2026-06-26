@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 export const Footer = () => {
   const location = useLocation();
@@ -17,6 +19,9 @@ export const Footer = () => {
     }
   };
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <footer className="bg-white pt-20 pb-12 px-6 md:px-16 border-t border-slate-200">
       <div className="max-w-7xl mx-auto">
@@ -30,17 +35,17 @@ export const Footer = () => {
               WeProm Europe
             </h3>
             <p className="text-slate-900 font-montserrat text-base font-light leading-relaxed max-w-md tracking-wide">
-              Promoción y desarrollo de negocios entre Europa y América Latina.
+              {t.footer.descriptor}
             </p>
             <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase pt-2">
 
-              <a href="#inicio" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">France</a>
+              <a href="#inicio" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">{t.footer.locations.split(' · ')[0]}</a>
 
               <span className="text-slate-300">•</span>
-              <a href="https://grupoweprom.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">México</a>
+              <a href="https://grupoweprom.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300"> {t.footer.locations.split(' · ')[1]}</a>
               <span className="text-slate-300">•</span>
 
-              <a href="https://weprom.us " target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">USA</a>
+              <a href="https://weprom.us " target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">{t.footer.locations.split(' · ')[2]}</a>
 
             </div>
           </div>
@@ -64,7 +69,7 @@ export const Footer = () => {
           {/* BLOQUE 4: REDES SOCIALES */}
           <div className="lg:col-span-2 space-y-4 lg:text-right">
             <h4 className="text-slate-900 font-montserrat text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">
-              Conectemos
+              {t.footer.cta}
             </h4>
             <div className="flex lg:justify-end items-center gap-4">
               {/* LinkedIn */}
@@ -120,7 +125,7 @@ export const Footer = () => {
           
           {/* Copyright */}
           <div className="order-2 md:order-1 font-light">
-            © 2026 WeProm Europe — All rights reserved.
+            {t.footer.copyright}
           </div>
 
           {/* Enlaces Legales */}
@@ -132,7 +137,7 @@ export const Footer = () => {
               rel="noopener noreferrer" 
               className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
             >
-              Aviso Legal · Política de Privacidad · Política de Cookies · Gestionar Cookies
+              {t.footer.legal}
             </a>
           </div>
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Building2, User, Globe, MessageSquare, ShieldCheck, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +21,9 @@ export const Contact = () => {
     console.log('Formulario enviado:', formData);
   };
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className="relative bg-white py-24 md:py-32 px-6 md:px-16 overflow-hidden border-b border-slate-200">
       <div className="max-w-7xl mx-auto">
@@ -26,14 +31,14 @@ export const Contact = () => {
         {/* ENCABEZADO DE SECCIÓN DE ALTA FIDELIDAD */}
         <div className="mb-8 md:mb-14">
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4 block">
-            Contacto
+            {t.contact.kicker}
           </p>
           <h2 className="text-slate-900 font-montserrat text-2xl md:text-4xl lg:text-[40px] font-semibold leading-tight tracking-wide mb-6">
-            Conversemos sobre tu proyecto.
+            {t.contact.title}
           </h2>
           <div className="w-16 h-[2px] bg-[#2d61e0] mb-6" />
           <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide max-w-4xl">
-            Para cooperación institucional, alianzas o consultas comerciales, nuestro equipo está disponible para conversaciones confidenciales y estratégicas.
+            {t.contact.paragraph}
           </p>
         </div>
 
@@ -46,7 +51,7 @@ export const Contact = () => {
             {/* Corporativo / Sede Central */}
             <div className="space-y-4 mb-4">
               <h4 className="text-slate-900 font-montserrat text-xs font-bold uppercase tracking-[0.3em] text-[#2d61e0]">
-                Sede Central
+                {t.contact.addressLabel}
               </h4>
               <div className="flex items-start gap-4 group">
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
@@ -56,7 +61,7 @@ export const Contact = () => {
                   <h5 className="font-montserrat font-semibold text-slate-900 text-base">WeProm Europe</h5>
                   <p className="text-black font-montserrat text-base font-light mt-1">
                     {/* 142 Rue de Rivoli, 75001 Paris, France */}
-                     55. Av Marceau, Paris 16ème, France 
+                     {t.contact.address}
                   </p>
                 </div>
               </div>
@@ -67,7 +72,7 @@ export const Contact = () => {
             {/* Canales Confidenciales y Direcciones */}
             <div className="space-y-6">
               <h4 className="text-slate-900 font-montserrat text-xs font-bold uppercase tracking-[0.3em] text-[#2d61e0]">
-                Canales Estratégicos
+                {t.contact.channels}
               </h4>
 
               {/* Información General */}
@@ -76,7 +81,7 @@ export const Contact = () => {
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600">Más información</span>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600">{t.contact.emails.info}</span>
                   <a href="mailto:info@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
                     info@wepromeurope.com
                   </a>
@@ -88,7 +93,7 @@ export const Contact = () => {
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">Dirección Comercial</span>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">{t.contact.emails.commercial}</span>
                   <a href="mailto:lisa.lenselle@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
                     lisa.lenselle@wepromeurope.com
                   </a>
@@ -101,7 +106,7 @@ export const Contact = () => {
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">Dirección de Comunicación y Asuntos Públicos</span>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-700">{t.contact.emails.communication}</span>
                   <a href="mailto:emilia.lopez@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
                     emilia.lopez@wepromeurope.com  
                   </a>
@@ -127,7 +132,7 @@ export const Contact = () => {
                   <Phone className="w-4 h-4 stroke-[1.5]" />
                 </div>
                 <div>
-                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Teléfono / WhatsApp</span>
+                  <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">{t.contact.emails.phone}</span>
                   <a href="https://wa.me/33782469209" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
                     +33 7 82 46 92 09
                   </a>
@@ -145,7 +150,7 @@ export const Contact = () => {
                 {/* Nombre completo */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                    Nombre completo *
+                    {t.contact.form.name}
                   </label>
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
@@ -163,7 +168,7 @@ export const Contact = () => {
                 {/* Empresa o institución */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                    Empresa o institución
+                    {t.contact.form.company}
                   </label>
                   <div className="relative">
                     <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
@@ -182,7 +187,7 @@ export const Contact = () => {
                 {/* Email */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                    Email corporativo *
+                    {t.contact.form.email}
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
@@ -200,7 +205,7 @@ export const Contact = () => {
                 {/* Mercado de interés */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                    Mercado de interés
+                    {t.contact.form.market}
                   </label>
                   <div className="relative">
                     <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5] pointer-events-none" />
@@ -209,11 +214,11 @@ export const Contact = () => {
                       value={formData.market}
                       onChange={(e) => setFormData({...formData, market: e.target.value})}
                     >
-                      <option value="" disabled>Selecciona una opción</option>
-                      <option value="Europa">Europa</option>
-                      <option value="América Latina">América Latina</option>
-                      <option value="Ambos">Ambos</option>
-                      <option value="Otro">Otro</option>
+                      <option value="" disabled>{t.contact.form.market}</option>
+                      <option value="Europa">{t.contact.form.marketOptions.europe}</option>
+                      <option value="América Latina">{t.contact.form.marketOptions.latam}</option>
+                      <option value="Ambos">{t.contact.form.marketOptions.both}</option>
+                      <option value="Otro">{t.contact.form.marketOptions.other}</option>
                     </select>
                   </div>
                 </div>
@@ -222,7 +227,7 @@ export const Contact = () => {
               {/* Sector */}
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                  Sector industrial o económico
+                  {t.contact.form.sector}
                 </label>
                 <div className="relative">
                   <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 stroke-[1.5]" />
@@ -239,7 +244,7 @@ export const Contact = () => {
               {/* Mensaje */}
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-700 block">
-                  Mensaje u objetivos del proyecto *
+                  {t.contact.form.message}
                 </label>
                 <div className="relative">
                   <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-slate-400 stroke-[1.5]" />
@@ -265,7 +270,7 @@ export const Contact = () => {
                     onChange={(e) => setFormData({...formData, newsletter: e.target.checked})}
                   />
                   <span className="text-xs text-slate-600 font-montserrat font-light leading-snug group-hover:text-slate-900 transition-colors">
-                    Acepto suscribirme al Newsletter institucional para recibir reportes mensuales.
+                    {t.contact.form.newsletter}
                   </span>
                 </label>
 
@@ -279,7 +284,7 @@ export const Contact = () => {
                     onChange={(e) => setFormData({...formData, privacy: e.target.checked})}
                   />
                   <span className="text-xs text-slate-600 font-montserrat font-light leading-snug group-hover:text-slate-900 transition-colors">
-                    Acepto la <span className="underline font-medium">Política de Privacidad</span> y el tratamiento confidencial de mis datos personales. *
+                    {t.contact.form.privacy}
                   </span>
                 </label>
               </div>
@@ -290,7 +295,7 @@ export const Contact = () => {
                   type="submit" 
                   className="group relative w-full overflow-hidden bg-slate-900 border border-slate-900 text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-[#2d61e0] hover:border-[#2d61e0] flex items-center justify-center gap-2 shadow-sm cursor-pointer"
                 >
-                  <span>Enviar mensaje</span>
+                  <span>{t.contact.form.submit}</span>
                   <ArrowRight className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </div>
