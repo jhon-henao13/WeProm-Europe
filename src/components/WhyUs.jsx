@@ -8,39 +8,81 @@ import {
   Eye 
 } from 'lucide-react';
 
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
+
+
 export const WhyUs = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+    // Construimos los bloques a partir de las traducciones
   const pilares = [
     {
       icon: <ShieldCheck className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 1 — Especialización privada, no orientación general",
-      text: "Las cámaras de comercio, los organismos públicos y las agencias gubernamentales de promoción cumplen un rol valioso en el ecosistema de internacionalización. Sin embargo, su mandato es amplio y su capacidad de ejecución es limitada: atienden a cientos de empresas simultáneamente, con recursos institucionales acotados y procesos estandarizados.\n\nWeProm Europe es una firma privada especializada. Cada proyecto recibe atención dedicada, estrategia personalizada y un equipo comprometido con resultados concretos — no con estadísticas de atención."
+      title: t.whyUs.sections[0].title,
+      text: `${t.whyUs.sections[0].text1}\n\n${t.whyUs.sections[0].text2}`
     },
     {
       icon: <SearchCode className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 2 — Investigación de mercados con profundidad real",
-      text: "La mayoría de los estudios de mercado que ofrecen organismos públicos son exploratorios: útiles como punto de partida, pero insuficientes para tomar decisiones de inversión o entrada a un nuevo mercado con seguridad.\n\nNosotros realizamos investigación de mercado con la profundidad que una decisión empresarial real requiere: análisis competitivo, validación de demanda, mapeo de canales, identificación de barreras de entrada y estrategia de posicionamiento. No te decimos si el mercado existe — te decimos cómo entrar y ganar en él."
+      title: t.whyUs.sections[1].title,
+      text: `${t.whyUs.sections[1].text1}\n\n${t.whyUs.sections[1].text2}`
     },
     {
       icon: <Layers className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 3 — Ciclo completo, un solo equipo",
-      text: "Internacionalizar una empresa requiere investigación, estrategia, creación de marca, desarrollo comercial, relaciones institucionales y posicionamiento. La mayoría de las empresas terminan coordinando múltiples proveedores para cada etapa, perdiendo tiempo, coherencia y dinero.\n\nWeProm Europe acompaña todo el ciclo desde un solo punto de contacto. Desde el diagnóstico inicial hasta la operación en el nuevo mercado — sin que tengas que empezar de cero con cada proveedor."
+      title: t.whyUs.sections[2].title,
+      text: `${t.whyUs.sections[2].text1}\n\n${t.whyUs.sections[2].text2}`
     },
     {
       icon: <Zap className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 4 — Agilidad, discreción y compromiso privado",
-      text: "Trabajar con una firma privada tiene ventajas concretas que pocas empresas verbalizan pero todas valoran:\n\n• Agilidad — Sin comités de aprobación, sin procesos burocráticos, sin tiempos institucionales. Tomamos decisiones rápido y ejecutamos con la misma velocidad.\n• Discreción — Tu estrategia de entrada, tus planes de expansión y tu información comercial se quedan entre nosotros. Sin registros públicos, sin expedientes institucionales, sin exposición innecesaria.\n• Compromiso real — No cobramos participaciones ni porcentajes sobre tu negocio. Nuestro modelo es de honorarios profesionales: nuestro incentivo es que tu proyecto funcione, no que te hagamos dependiente de nosotros."
+      title: t.whyUs.advantages.title,
+      text: `${t.whyUs.advantages.intro}\n\n${t.whyUs.advantages.items.map((item, i) => `• ${item}`).join('\n')}`
     },
     {
       icon: <Network className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 5 — Una red, no un directorio",
-      text: "Muchos organismos te ofrecen acceso a una base de datos de contactos. Nosotros te ofrecemos relaciones activas, construidas a lo largo de más de 35 años de operación en Europa, América Latina y Norteamérica.\n\nLa diferencia es simple: un directorio te da un nombre. Una red te abre una puerta."
+      title: t.whyUs.network.title,
+      text: `${t.whyUs.network.text}\n\n${t.whyUs.network.highlight}`
     },
     {
       icon: <Eye className="w-5 h-5 stroke-[1.25]" />,
-      title: "Bloque 6 — Experiencia que viene de adentro del sistema",
-      text: "Nuestro equipo incluye profesionales que han trabajado dentro de los organismos públicos de promoción internacional — conocemos sus procesos, sus limitaciones y sus alcances reales. Esa experiencia nos permite ofrecerte lo que ellos no pueden: ejecución privada con visión institucional."
+      title: t.whyUs.experience.title,
+      text: t.whyUs.experience.text
     }
   ];
+
+
+  // const pilares = [
+  //   {
+  //     icon: <ShieldCheck className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 1 — Especialización privada, no orientación general",
+  //     text: "Las cámaras de comercio, los organismos públicos y las agencias gubernamentales de promoción cumplen un rol valioso en el ecosistema de internacionalización. Sin embargo, su mandato es amplio y su capacidad de ejecución es limitada: atienden a cientos de empresas simultáneamente, con recursos institucionales acotados y procesos estandarizados.\n\nWeProm Europe es una firma privada especializada. Cada proyecto recibe atención dedicada, estrategia personalizada y un equipo comprometido con resultados concretos — no con estadísticas de atención."
+  //   },
+  //   {
+  //     icon: <SearchCode className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 2 — Investigación de mercados con profundidad real",
+  //     text: "La mayoría de los estudios de mercado que ofrecen organismos públicos son exploratorios: útiles como punto de partida, pero insuficientes para tomar decisiones de inversión o entrada a un nuevo mercado con seguridad.\n\nNosotros realizamos investigación de mercado con la profundidad que una decisión empresarial real requiere: análisis competitivo, validación de demanda, mapeo de canales, identificación de barreras de entrada y estrategia de posicionamiento. No te decimos si el mercado existe — te decimos cómo entrar y ganar en él."
+  //   },
+  //   {
+  //     icon: <Layers className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 3 — Ciclo completo, un solo equipo",
+  //     text: "Internacionalizar una empresa requiere investigación, estrategia, creación de marca, desarrollo comercial, relaciones institucionales y posicionamiento. La mayoría de las empresas terminan coordinando múltiples proveedores para cada etapa, perdiendo tiempo, coherencia y dinero.\n\nWeProm Europe acompaña todo el ciclo desde un solo punto de contacto. Desde el diagnóstico inicial hasta la operación en el nuevo mercado — sin que tengas que empezar de cero con cada proveedor."
+  //   },
+  //   {
+  //     icon: <Zap className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 4 — Agilidad, discreción y compromiso privado",
+  //     text: "Trabajar con una firma privada tiene ventajas concretas que pocas empresas verbalizan pero todas valoran:\n\n• Agilidad — Sin comités de aprobación, sin procesos burocráticos, sin tiempos institucionales. Tomamos decisiones rápido y ejecutamos con la misma velocidad.\n• Discreción — Tu estrategia de entrada, tus planes de expansión y tu información comercial se quedan entre nosotros. Sin registros públicos, sin expedientes institucionales, sin exposición innecesaria.\n• Compromiso real — No cobramos participaciones ni porcentajes sobre tu negocio. Nuestro modelo es de honorarios profesionales: nuestro incentivo es que tu proyecto funcione, no que te hagamos dependiente de nosotros."
+  //   },
+  //   {
+  //     icon: <Network className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 5 — Una red, no un directorio",
+  //     text: "Muchos organismos te ofrecen acceso a una base de datos de contactos. Nosotros te ofrecemos relaciones activas, construidas a lo largo de más de 35 años de operación en Europa, América Latina y Norteamérica.\n\nLa diferencia es simple: un directorio te da un nombre. Una red te abre una puerta."
+  //   },
+  //   {
+  //     icon: <Eye className="w-5 h-5 stroke-[1.25]" />,
+  //     title: "Bloque 6 — Experiencia que viene de adentro del sistema",
+  //     text: "Nuestro equipo incluye profesionales que han trabajado dentro de los organismos públicos de promoción internacional — conocemos sus procesos, sus limitaciones y sus alcances reales. Esa experiencia nos permite ofrecerte lo que ellos no pueden: ejecución privada con visión institucional."
+  //   }
+  // ];
 
   return (
     <section className="relative bg-transparent py-24 md:py-32 px-6 md:px-16 overflow-hidden border-b border-slate-200">
@@ -49,13 +91,13 @@ export const WhyUs = () => {
         {/* CABECERA PRINCIPAL */}
         <div className="max-w-4xl mb-20 reveal">
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4">
-            Por qué nosotros
+            {t.whyUs.kicker}
           </p>
           <h2 className="text-slate-900 font-montserrat text-3xl md:text-[45px] font-semibold uppercase leading-tight tracking-wide mb-8">
-            Somos el puente estratégico entre Europa y América Latina.
+            {t.whyUs.title}
           </h2>
           <p className="text-black font-montserrat text-base md:text-lg font-light leading-relaxed tracking-wide">
-            Hay agencias para servicios puntuales, asesores para tareas específicas y firmas consultoras para proyectos ambiciosos. <strong className="font-medium text-slate-900">Nosotros operamos en un espacio distinto:</strong> somos un <strong className="font-medium text-slate-900">socio estratégico bilateral</strong> que promueve negocios, inversión y posicionamiento comercial entre Europa y América Latina, acompañando a cada cliente desde el primer estudio de oportunidad hasta la operación local consolidada.
+            {t.whyUs.intro}
           </p>
         </div>
 
@@ -92,16 +134,16 @@ export const WhyUs = () => {
           <div className="absolute top-0 right-0 w-[30%] h-full opacity-5 pointer-events-none select-none hidden md:block">
             <img src="/isotipo.png" alt="" className="w-full h-full object-contain object-right scale-125 grayscale invert" />
           </div>
-          
+                
           <div className="max-w-3xl relative z-10">
             <h4 className="text-[#2d61e0] font-montserrat font-bold tracking-[0.3em] uppercase text-[11px] mb-6">
-              Declaración Institucional
+              {t.whyUs.statement.title}
             </h4>
             <p className="font-montserrat text-lg md:text-2xl font-light leading-relaxed tracking-wide mb-8 text-slate-100">
-              "WeProm Europe no es una opción más en el mercado de la internacionalización. Es la opción para quienes entienden que entrar a un nuevo mercado sin el socio correcto no es una apuesta — <strong className="font-medium text-white border-b border-[#2d61e0] pb-1">es un riesgo evitable.</strong>"
+              {t.whyUs.statement.quote}
             </p>
             <p className="text-slate-300 font-montserrat text-xs md:text-sm font-light tracking-wide uppercase">
-              Trabajamos con empresas que toman decisiones serias. <span className="text-[#2d61e0] font-medium">//</span> Y nos comprometemos con sus resultados de la misma manera.
+              {t.whyUs.closing}
             </p>
           </div>
         </div>

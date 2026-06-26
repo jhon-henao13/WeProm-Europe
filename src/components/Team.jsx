@@ -15,100 +15,101 @@ import joeKaram from '../assets/team/joeKaram.png';
 import carlosMartinez from '../assets/team/carlosMartinez.png';
 import LisaLenselle from '../assets/team/LisaLenselle.png';
 
-
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 // ─────────────────────────────────────────────────────────────
 // Estructura de Datos Oficial de WeProm Europe
 // ─────────────────────────────────────────────────────────────
-const TEAM_DATA = [
-  {
-    id: 1,
-    name: "José Miguel Ventura Michel",
-    role: "Director General, WeProm Europe",
-    desc: "Publicista, Comunicólogo y especialista en marketing trilingüe. Más de diez años de experiencia en marketing estratégico, estudios de mercado y desarrollo de negocios internacionales.",
-    initials: "JM",
-    image: joseMiguelImg
-  },
-  {
-    id: 2,
-    name: "Juan Carlos Ventura Pimentel",
-    role: "Strategic Advisor / Asesor General, Grupo WeProm",
-    desc: "Más de 35 años en marketing y desarrollo comercial internacional. Experiencia pública y privada en proyectos con gobiernos, embajadas y organismos multilaterales en América, Europa, África y Asia.",
-    initials: "JC",
-    image: juanCarlosPImg
-  },
-  {
-    id: 3,
-    name: "Juan Carlos Ventura Michel",
-    role: "Strategic Advisor / Director General, WeProm LATAM",
-    desc: "Empresario y consultor con más de 15 años de experiencia internacional en marketing, estudios de mercado, posicionamiento de marca y expansión comercial.",
-    initials: "JV",
-    image: juanCarlosMImg
-  },
-  {
-    id: 4,
-    name: "Oscar Santamaría Casas",
-    role: "Consultor Internacional Asociado, WeProm Europe",
-    desc: "Más de 35 años de experiencia en cooperación internacional, atracción de inversión extranjera, y desarrollo de negocios entre México y la Unión Europea para el sector público y privado.",
-    initials: "OS",
-    image: oscarSantamaria
-  },
-  {
-    id: 5,
-    name: "Lisa Lenselle",
-    role: "Dirección Comercial y Relaciones Con Cuentas Clave",
-    desc: "Marketing internacional, y desarrollo de oportunidades comerciales con experiencia en sectores públicos y privados en Europa y LATAM.",
-    initials: "LL",
-    image: LisaLenselle
-  },
-  {
-    id: 6,
-    name: "Emilia López Matute",
-    role: "Directora de Comunicación Institucional, Política y Corporativa",
-    desc: "Especialización en comunicación política, corporativa, y digital, enfocada en el desarrollo de estrategias multicanal para la promoción y posicionamiento de marcas e instituciones.",
-    initials: "EL",
-    image: emiliaImg
-  },
-  {
-    id: 7,
-    name: "Joe Karam",
-    role: "Gestión de Procesos y Riesgos Financieros",
-    desc: "Ingeniero especializado en entornos financieros internacionales, asesorando a clientes globales en análisis funcionales y gestión de riesgos financieros.",
-    initials: "JK",
-    image: joeKaram
-  },
-  {
-    id: 8,
-    name: "Josh Biner",
-    role: "Operaciones y Expansión Internacional",
-    desc: "Asesor internacional para proyectos de planeación estratégica, innovación, sustentabilidad y expansión, especializado en fusiones, adquisiciones y transformación comercial en corporativos multinacionales.",
-    initials: "JB",
-    image: joshBinner
-  },
-  {
-    id: 9,
-    name: "Pablo De la Garza",
-    role: "Creatividad y Comunicación Europa-LATAM",
-    desc: "Desarrollo de áreas creativas y tropicalización de estrategias de comunicación, con una profunda comprensión multicultural.",
-    initials: "PG",
-    image: pabloGarza
-  },
-  {
-    id: 10,
-    name: "Gustavo Cuéllar",
-    role: "Internacionalización y Cultura de Negocios",
-    desc: "Especialista en internacionalización empresarial, enfocado en diseño de modelos de negocio y planes de trabajo para startups y empresas globales adaptados a nuevos mercados.",
-    initials: "GC",
-    image: gustavoCuellar
-  },
-  {
-    id: 11,
-    name: "Carlos Martínez",
-    role: "Relaciones Diplomáticas y Asuntos Legales Internacionales",
-    desc: "Abogado internacional especializado en relaciones exteriores, implantación en nuevos mercados y asesoría jurídica.",
-    initials: "CM",
-    image: carlosMartinez
-  }
-];
+// const TEAM_DATA = [
+//   {
+//     id: 1,
+//     name: "José Miguel Ventura Michel",
+//     role: "Director General, WeProm Europe",
+//     desc: "Publicista, Comunicólogo y especialista en marketing trilingüe. Más de diez años de experiencia en marketing estratégico, estudios de mercado y desarrollo de negocios internacionales.",
+//     initials: "JM",
+//     image: joseMiguelImg
+//   },
+//   {
+//     id: 2,
+//     name: "Juan Carlos Ventura Pimentel",
+//     role: "Strategic Advisor / Asesor General, Grupo WeProm",
+//     desc: "Más de 35 años en marketing y desarrollo comercial internacional. Experiencia pública y privada en proyectos con gobiernos, embajadas y organismos multilaterales en América, Europa, África y Asia.",
+//     initials: "JC",
+//     image: juanCarlosPImg
+//   },
+//   {
+//     id: 3,
+//     name: "Juan Carlos Ventura Michel",
+//     role: "Strategic Advisor / Director General, WeProm LATAM",
+//     desc: "Empresario y consultor con más de 15 años de experiencia internacional en marketing, estudios de mercado, posicionamiento de marca y expansión comercial.",
+//     initials: "JV",
+//     image: juanCarlosMImg
+//   },
+//   {
+//     id: 4,
+//     name: "Oscar Santamaría Casas",
+//     role: "Consultor Internacional Asociado, WeProm Europe",
+//     desc: "Más de 35 años de experiencia en cooperación internacional, atracción de inversión extranjera, y desarrollo de negocios entre México y la Unión Europea para el sector público y privado.",
+//     initials: "OS",
+//     image: oscarSantamaria
+//   },
+//   {
+//     id: 5,
+//     name: "Lisa Lenselle",
+//     role: "Dirección Comercial y Relaciones Con Cuentas Clave",
+//     desc: "Marketing internacional, y desarrollo de oportunidades comerciales con experiencia en sectores públicos y privados en Europa y LATAM.",
+//     initials: "LL",
+//     image: LisaLenselle
+//   },
+//   {
+//     id: 6,
+//     name: "Emilia López Matute",
+//     role: "Directora de Comunicación Institucional, Política y Corporativa",
+//     desc: "Especialización en comunicación política, corporativa, y digital, enfocada en el desarrollo de estrategias multicanal para la promoción y posicionamiento de marcas e instituciones.",
+//     initials: "EL",
+//     image: emiliaImg
+//   },
+//   {
+//     id: 7,
+//     name: "Joe Karam",
+//     role: "Gestión de Procesos y Riesgos Financieros",
+//     desc: "Ingeniero especializado en entornos financieros internacionales, asesorando a clientes globales en análisis funcionales y gestión de riesgos financieros.",
+//     initials: "JK",
+//     image: joeKaram
+//   },
+//   {
+//     id: 8,
+//     name: "Josh Biner",
+//     role: "Operaciones y Expansión Internacional",
+//     desc: "Asesor internacional para proyectos de planeación estratégica, innovación, sustentabilidad y expansión, especializado en fusiones, adquisiciones y transformación comercial en corporativos multinacionales.",
+//     initials: "JB",
+//     image: joshBinner
+//   },
+//   {
+//     id: 9,
+//     name: "Pablo De la Garza",
+//     role: "Creatividad y Comunicación Europa-LATAM",
+//     desc: "Desarrollo de áreas creativas y tropicalización de estrategias de comunicación, con una profunda comprensión multicultural.",
+//     initials: "PG",
+//     image: pabloGarza
+//   },
+//   {
+//     id: 10,
+//     name: "Gustavo Cuéllar",
+//     role: "Internacionalización y Cultura de Negocios",
+//     desc: "Especialista en internacionalización empresarial, enfocado en diseño de modelos de negocio y planes de trabajo para startups y empresas globales adaptados a nuevos mercados.",
+//     initials: "GC",
+//     image: gustavoCuellar
+//   },
+//   {
+//     id: 11,
+//     name: "Carlos Martínez",
+//     role: "Relaciones Diplomáticas y Asuntos Legales Internacionales",
+//     desc: "Abogado internacional especializado en relaciones exteriores, implantación en nuevos mercados y asesoría jurídica.",
+//     initials: "CM",
+//     image: carlosMartinez
+//   }
+// ];
 
 // ─────────────────────────────────────────────────────────────
 // Estilos de Animación Premium (Centrados en la nueva escala 292px)
@@ -322,6 +323,37 @@ export const Team = () => {
   const scrollStart = useRef(0);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
 
+  const { language } = useLanguage();
+  const t = translations[language];
+
+
+    // Mapeo de imágenes (manteniendo el orden original)
+  const teamImages = [
+    joseMiguelImg,
+    juanCarlosPImg,
+    juanCarlosMImg,
+    oscarSantamaria,
+    LisaLenselle,
+    emiliaImg,
+    joeKaram,
+    joshBinner,
+    pabloGarza,
+    gustavoCuellar,
+    carlosMartinez
+  ];
+
+  // Construir el array de miembros con imágenes
+  const TEAM_DATA = t.team.members.map((member, index) => ({
+    id: index + 1,
+    name: member.name,
+    role: member.role,
+    desc: member.bio,
+    initials: member.name.split(' ').map(word => word[0]).join(''), // iniciales
+    image: teamImages[index] || null
+  }));
+
+
+
   // Duplicamos el array para simular scroll infinito fluido
   const duplicatedTeam = [...TEAM_DATA, ...TEAM_DATA];
   const activeMember = TEAM_DATA.find(m => m.id === activeId) || TEAM_DATA[0];
@@ -394,18 +426,17 @@ export const Team = () => {
 
         {/* CABECERA */}
         <div className="max-w-3xl mb-16 reveal">
+          
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4">
-            Nuestro equipo
+            {t.team.kicker}
           </p>
           <h2 className="text-slate-900 font-montserrat text-3xl md:text-[35px] font-semibold uppercase leading-tight tracking-wide mb-6">
-            Somos un equipo multicultural, multidisciplinario, y multigeneracional.
+            {t.team.title}
           </h2>
           <p className="text-black font-montserrat text-sm md:text-base font-normal leading-relaxed tracking-wide">
-            Combinamos décadas de experiencia internacional con la visión y agilidad de las nuevas generaciones. 
-            Nuestro equipo reúne perfiles de distintas disciplinas — marketing, comercio exterior, finanzas, economía, 
-            comunicación, relaciones internacionales y más — porque internacionalizar un negocio requiere exactamente eso: 
-            visión integral, no especialización aislada.
+            {t.team.intro}
           </p>
+
         </div>
 
         {/* CARRUSEL DESLIZABLE INFINITO */}
@@ -470,9 +501,11 @@ export const Team = () => {
 
         {/* PIE DE SECCIÓN */}
         <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 reveal">
+
           <p className="text-slate-900 font-montserrat text-base md:text-xl italic font-light leading-relaxed max-w-4xl">
-            Respaldados por el equipo internacional de Grupo WeProm con <b>más de 40 colaboradores</b> y <b>50 asesores asociados a nivel mundial</b>
+            {t.team.closing}
           </p>
+          
           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 bg-slate-50 border border-slate-200 px-3 py-1.5 whitespace-nowrap select-none">
             Global Network Asset
           </div>
