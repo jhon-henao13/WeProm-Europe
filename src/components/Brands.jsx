@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -35,13 +37,17 @@ const brands = [
 const allBrands = [...brands, ...brands];
 
 export default function TwoSectionBrands() {
+
+    const { language } = useLanguage();
+    const t = translations[language];
+    
     return (
         <section className="relative w-full pt-2 md:pt-6 pb-32 flex flex-col items-center justify-center overflow-hidden bg-transparent group font-montserrat select-none">
             
             {/* Texto superior */}
             <div className="text-center mb-16">
                 <h1 className="font-aston text-5xl sm:text-4xl max-[666px]:!text-2xl font-medium text-white mt-2">
-                    Han confiado en nosotros
+                    {t.path.brandLabel}
                 </h1>
             </div>
 

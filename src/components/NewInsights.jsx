@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight, FileText, Download, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 const STATIC_INSIGHTS = [
   {
@@ -25,6 +27,10 @@ const STATIC_INSIGHTS = [
 
 export const NewInsights = () => {
 
+  const { language } = useLanguage();
+  const t = translations[language];
+  const articles = t.insights.articles;
+
   const handleDossierDownload = () => {
     // Ruta del archivo del reporte mensual en la carpeta public
     const dossierUrl = '/dossiers/weprom-dossier-2026.pdf';
@@ -38,20 +44,20 @@ export const NewInsights = () => {
         {/* CABECERA EDITORIAL PREMIUM */}
         <div className="mb-16 md:mb-24">
           <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4 block">
-            Insights
+            {t.insights.kicker}
           </p>
           <h2 className="text-slate-900 font-montserrat text-2xl md:text-4xl lg:text-[35px] font-semibold leading-tight max-w-4xl tracking-wide mb-6">
-            Panorama estratégico sobre mercados, expansión y dinámicas internacionales.
+            {t.insights.title}
           </h2>
           <div className="w-16 h-[2px] bg-[#2d61e0] mb-6" />
           <p className="text-black font-montserrat text-sm md:text-base font-light leading-relaxed tracking-wide max-w-4xl">
-            WeProm Europe explora periódicamente temas relacionados con los negocios internacionales, la inteligencia de mercado, el posicionamiento territorial y la estrategia transfronteriza.
+            {t.insights.description}
           </p>
         </div>
 
         {/* GRID DE TRES TARJETAS DE ARTÍCULOS DESTACADOS */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {STATIC_INSIGHTS.map((item, index) => (
+          {articles.map((item, index) => (
             <div 
               key={index}
               className="bg-slate-50 border border-slate-200/60 p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-slate-200/60 hover:border-slate-300 group min-h-[340px]"
@@ -76,7 +82,7 @@ export const NewInsights = () => {
 
               {/* Botón de acción integrado */}
               <div className="inline-flex items-center gap-2 text-slate-900 text-[11px] font-bold uppercase tracking-[0.2em] pt-4 border-t border-slate-100 group-hover:text-[#2d61e0] transition-colors duration-300">
-                Leer artículo 
+                {t.insights.cta} 
                 <ArrowRight className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </div>
@@ -106,13 +112,13 @@ export const NewInsights = () => {
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3 text-[#2d61e0] font-montserrat font-bold tracking-[0.3em] uppercase text-[11px]">
                 <FileText className="w-4 h-4 stroke-[2]" />
-                <span>WeProm Dossier</span>
+                <span>{t.insights.dossier.label}</span>
               </div>
               <h4 className="text-white font-montserrat text-xl md:text-2xl font-medium tracking-wide">
-                Nuestro reporte mensual para empresas, gobiernos e instituciones.
+                {t.insights.dossier.label}
               </h4>
               <p className="text-slate-200 font-montserrat text-xs md:text-sm font-light leading-relaxed tracking-wide max-w-2xl">
-                Diseñado exclusivamente para líderes que operan en el corredor Europa-América Latina, recopilando las noticias e informes más determinantes del entorno transfronterizo. Lectura ejecutiva, datos verificados e información estratégica.
+                {t.insights.dossier.description}
               </p>
             </div>
 
@@ -123,7 +129,7 @@ export const NewInsights = () => {
                 className="group relative w-full lg:w-72 overflow-hidden bg-[#2d61e0] border border-[#2d61e0] text-white px-8 py-5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-500 hover:bg-transparent hover:text-white hover:border-white flex items-center justify-center gap-3 shadow-lg"
               >
                 <Download className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-y-0.5" />
-                <span>Descarga el reporte</span>
+                <span>{t.insights.dossier.cta}</span>
               </button>
             </div>
           </div>

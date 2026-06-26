@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../locales';
 
 // Importaciones de imágenes verticales (Trayectoria)
 import cocaColaImg from '../assets/path/cocacola.jpeg';
@@ -40,6 +42,9 @@ export const Path = () => {
 
   // Duplicamos la data para scroll infinito
   const duplicatedProjects = [...PROJECTS_DATA, ...PROJECTS_DATA];
+
+  const { language } = useLanguage();
+  const t = translations[language];
 
   useEffect(() => {
     let lastTime = 0;
@@ -146,14 +151,14 @@ export const Path = () => {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-3xl">
             <p className="text-[#2d61e0] font-montserrat font-bold tracking-[0.4em] uppercase text-[11px] mb-4 block">
-              Trayectoria
+              {t.path.kicker}
             </p>
             <h2 className="text-white font-montserrat text-2xl md:text-4xl lg:text-[35px] font-semibold leading-tight tracking-wide mb-6">
-              Más de 10,000 proyectos a lo largo de 35 años desarrollando negocios multisectoriales.
+              {t.path.title}
             </h2>
             <div className="w-16 h-[2px] bg-[#2d61e0] mb-6" />
             <p className="text-slate-300 font-montserrat text-base md:text-xl font-light leading-relaxed tracking-wide">
-              Nuestro equipo ha contribuido directamente al desarrollo de negocios exitosos en diversos sectores, conectando mercados, impulsando marcas y generando resultados que superan expectativas.
+              {t.path.paragraph1}
             </p>
           </div>
 
@@ -233,7 +238,7 @@ export const Path = () => {
         {/* INDICADORES (DOTS) Y TEXTO DE CIERRE */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-16 border-b border-white/10">
           <p className="max-w-2xl text-slate-300 font-montserrat text-sm md:text-base font-light tracking-wide leading-relaxed">
-            Hemos logrado posicionar múltiples empresas en nuevos territorios, optimizar procesos comerciales y desarrollar alianzas estratégicas que hoy siguen generando valor.
+            {t.path.paragraph2}
           </p>
           
           <div className="flex items-center gap-1.5 overflow-x-auto py-2">

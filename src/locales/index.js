@@ -393,6 +393,42 @@ const translations = {
       brandLabel: 'Han confiado en nosotros',
       cta: 'Casos de éxito',
     },
+
+
+        // ----- Insights -----
+    insights: {
+      kicker: 'Insights',
+      title: 'Panorama estratégico sobre mercados, expansión y dinámicas internacionales.',
+      description: 'WeProm Europe explora periódicamente temas relacionados con los negocios internacionales, la inteligencia de mercado, el posicionamiento territorial y la estrategia transfronteriza.',
+      articles: [
+        {
+          title: 'Del bicentenario al TLCUEM: la nueva etapa México-Francia.',
+          description: 'Lectura estratégica del Acuerdo Global Modernizado y de las oportunidades que abre para empresas medianas.',
+          date: 'Mayo 2026',
+          tag: 'Análisis Geopolítico'
+        },
+        {
+          title: 'Lo que cambia con el Acuerdo UE-Mercosur.',
+          description: 'Análisis de la zona comercial de 700 millones de personas que entra en vigor provisional el 1 de mayo.',
+          date: 'Mayo 2026',
+          tag: 'Acuerdos Comerciales'
+        },
+        {
+          title: 'Calendario estratégico 2026: SIAL, VivaTech, Choose France y la firma del AGM.',
+          description: 'Cómo posicionarse en los hitos del año.',
+          date: 'Junio 2026',
+          tag: 'Agenda Corporativa'
+        }
+      ],
+      cta: 'Accede a nuestros insights',
+      dossier: {
+        label: 'WeProm Dossier',
+        description: 'Nuestro reporte mensual para empresas, gobiernos e instituciones que se mueven en el corredor Europa-América Latina, con las noticias e informes más relevantes del mes. Lectura ejecutiva, datos verificados, información estratégica.',
+        cta: 'Descarga el reporte'
+      }
+    },
+
+
     // ----- Contact -----
     contact: {
       kicker: 'Contacto',
@@ -832,6 +868,40 @@ const translations = {
       brandLabel: 'Ils nous ont fait confiance',
       cta: 'Études de cas',
     },
+
+    insights: {
+      kicker: 'Insights',
+      title: 'Regards stratégiques sur les marchés, l\'expansion et les dynamiques internationales.',
+      description: 'WeProm Europe décrypte régulièrement les enjeux des affaires internationales, de l\'intelligence de marché, du positionnement territorial et de la stratégie transfrontalière.',
+      articles: [
+        {
+          title: 'Du bicentenaire au TLCUEM : la nouvelle ère Mexique-France.',
+          description: 'Lecture stratégique de l\'Accord global modernisé et des opportunités qu\'il ouvre aux entreprises de taille intermédiaire.',
+          date: 'Mai 2026',
+          tag: 'Analyse géopolitique'
+        },
+        {
+          title: 'Ce qui change avec l\'Accord UE-Mercosur.',
+          description: 'Analyse de la zone commerciale de 700 millions de personnes entrée en vigueur provisoire le 1er mai.',
+          date: 'Mai 2026',
+          tag: 'Accords commerciaux'
+        },
+        {
+          title: 'Calendrier stratégique 2026 : SIAL, VivaTech, Choose France et la signature de l\'AGM.',
+          description: 'Comment se positionner lors des grands rendez-vous de l\'année.',
+          date: 'Juin 2026',
+          tag: 'Agenda corporate'
+        }
+      ],
+      cta: 'Accéder à nos insights',
+      dossier: {
+        label: 'WeProm Dossier',
+        description: 'Notre rapport mensuel destiné aux entreprises, gouvernements et institutions actifs sur le corridor Europe-Amérique latine : les actualités et analyses les plus marquantes du mois. Lecture exécutive, données vérifiées, information stratégique.',
+        cta: 'Télécharger le rapport'
+      }
+    },
+
+
     contact: {
       kicker: 'Contact',
       title: 'Échangeons sur votre projet.',
@@ -1268,6 +1338,41 @@ const translations = {
       brandLabel: 'They have trusted us',
       cta: 'Success stories',
     },
+
+
+    insights: {
+      kicker: 'Insights',
+      title: 'Strategic perspectives on markets, expansion, and international dynamics.',
+      description: 'WeProm Europe regularly explores key topics in international business, market intelligence, territorial positioning, and cross-border strategy.',
+      articles: [
+        {
+          title: 'From the Bicentennial to the TLCUEM: the new Mexico-France era.',
+          description: 'A strategic read of the Modernized Global Agreement and the opportunities it opens for mid-sized companies.',
+          date: 'May 2026',
+          tag: 'Geopolitical Analysis'
+        },
+        {
+          title: 'What changes with the EU-Mercosur Agreement.',
+          description: 'An analysis of the 700-million-person trade zone provisionally in force since May 1.',
+          date: 'May 2026',
+          tag: 'Trade Agreements'
+        },
+        {
+          title: 'Strategic Calendar 2026: SIAL, VivaTech, Choose France, and the signing of the MGA.',
+          description: 'How to position yourself around the year\'s key milestones.',
+          date: 'June 2026',
+          tag: 'Corporate Agenda'
+        }
+      ],
+      cta: 'Access our insights',
+      dossier: {
+        label: 'WeProm Dossier',
+        description: 'Our monthly report for companies, governments, and institutions operating along the Europe-Latin America corridor — the month\'s most relevant news and briefings. Executive reading, verified data, strategic intelligence.',
+        cta: 'Download the report'
+      }
+    },
+
+
     contact: {
       kicker: 'Contact',
       title: "Let's talk about your project.",
