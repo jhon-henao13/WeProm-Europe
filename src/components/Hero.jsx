@@ -37,7 +37,7 @@ export const Hero = () => {
           </p>
           
           {/* Título Principal (H1) con text-balance equilibrado */}
-          <h1 className="reveal font-montserrat text-3xl md:text-[46px] font-semibold text-white leading-tight md:leading-[1.15] mb-8 tracking-wide" style={{ textWrap: 'balance' }}>
+          <h1 className="reveal font-montserrat text-3xl md:text-[43px] font-semibold text-white leading-tight md:leading-[1.15] mb-8 tracking-wide" style={{ textWrap: 'balance' }}>
             {t.hero.title}
           </h1>
 

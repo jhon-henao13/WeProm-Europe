@@ -145,6 +145,13 @@ const PlanetVisual = () => {
         .animate-globe-spin { animation: globe-spin 40s linear infinite; }
         .animate-spin-z { animation: orbit-spin-z linear infinite; }
         .animate-reverse-spin-z { animation: orbit-spin-z-reverse linear infinite; }
+
+        .globe-container {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+          
         .globe-mask {
           -webkit-mask-image: url('/world-map-blank.svg');
           -webkit-mask-size: 100% 100%;
@@ -161,7 +168,7 @@ const PlanetVisual = () => {
       </div>
 
       {/* Planeta central */}
-      <div className="relative z-10 w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#030914] shadow-[inset_-20px_-20px_40px_rgba(0,0,0,0.9),inset_10px_10px_30px_rgba(89,157,223,0.35),0_0_40px_rgba(89,157,223,0.15)] overflow-hidden flex items-center justify-center preserve-3d">
+      <div className="globe-container relative z-10 w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-[#030914] shadow-[inset_-20px_-20px_40px_rgba(0,0,0,0.9),inset_10px_10px_30px_rgba(89,157,223,0.35),0_0_40px_rgba(89,157,223,0.15)] overflow-hidden flex items-center justify-center preserve-3d">
         {/* Mapa giratorio */}
         <div className="absolute top-0 left-0 h-full w-[400%] animate-globe-spin flex opacity-60 mix-blend-screen">
           <div className="w-[50%] h-full bg-[#599ddf] globe-mask"></div>
