@@ -115,7 +115,6 @@ export const Navbar = () => {
       </div>
 
       {/* CONTROLES: Lado Derecho (CTA + Toggle) */}
-      {/* CONTROLES: Lado Derecho (CTA + Toggle) */}
       <div className="flex items-center gap-4 md:gap-6 z-[110]">
                 
         {/* CTA DISCRETO (visible en sm en adelante) */}

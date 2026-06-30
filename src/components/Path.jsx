@@ -3,31 +3,99 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../locales';
 
-// Importaciones de imágenes verticales (Trayectoria)
-import cocaColaImg from '../assets/path/cocacola.jpeg';
-import mcdonaldsImg from '../assets/path/mcdonals.jpeg';
-import selloRojoImg from '../assets/path/pepsi.jpeg';
-// import selloRojoImg from '../assets/path/sellorojo.png';
-import kiaImg from '../assets/path/kia.jpeg';
-import mercedesImg from '../assets/path/mercedes.jpeg';
-import fordImg from '../assets/path/ford.jpeg';
-// import lizMueblesImg from '../assets/path/lizmuebles.png';
-// import vitromexImg from '../assets/path/vitromex.png';
-import axaImg from '../assets/path/axa.jpeg';
-import tequilahuizacheImg from '../assets/path/tequilahuizache.jpeg';
-import promexicoImg from '../assets/path/promexico.jpeg';
+// // Importaciones de imágenes verticales (Trayectoria)
+// import cocaColaImg from '../assets/path/cocacola.jpeg';
+// import mcdonaldsImg from '../assets/path/mcdonals.jpeg';
+// import selloRojoImg from '../assets/path/pepsi.jpeg';
+// // import selloRojoImg from '../assets/path/sellorojo.png';
+// import kiaImg from '../assets/path/kia.jpeg';
+// import mercedesImg from '../assets/path/mercedes.jpeg';
+// import fordImg from '../assets/path/ford.jpeg';
+// // import lizMueblesImg from '../assets/path/lizmuebles.png';
+// // import vitromexImg from '../assets/path/vitromex.png';
+// import axaImg from '../assets/path/axa.jpeg';
+// import tequilahuizacheImg from '../assets/path/tequilahuizache.jpeg';
+// import promexicoImg from '../assets/path/promexico.jpeg';
 
-const PROJECTS_DATA = [
-  { id: 1, brand: "Coca-Cola", image: cocaColaImg },
-  { id: 2, brand: "McDonald’s", image: mcdonaldsImg },
-  { id: 3, brand: "Sello Rojo", image: selloRojoImg },
-  { id: 4, brand: "KIA", image: kiaImg },
-  { id: 5, brand: "Mercedes-Benz", image: mercedesImg },
-  { id: 6, brand: "Ford", image: fordImg },
-  { id: 7, brand: "Axa", image: axaImg },
-  { id: 8, brand: "Tequila Huizache", image: tequilahuizacheImg },
-  { id: 9, brand: "ProMéxico", image: promexicoImg },
+// const PROJECTS_DATA = [
+//   { id: 1, brand: "Coca-Cola", image: cocaColaImg },
+//   { id: 2, brand: "McDonald’s", image: mcdonaldsImg },
+//   { id: 3, brand: "Sello Rojo", image: selloRojoImg },
+//   { id: 4, brand: "KIA", image: kiaImg },
+//   { id: 5, brand: "Mercedes-Benz", image: mercedesImg },
+//   { id: 6, brand: "Ford", image: fordImg },
+//   { id: 7, brand: "Axa", image: axaImg },
+//   { id: 8, brand: "Tequila Huizache", image: tequilahuizacheImg },
+//   { id: 9, brand: "ProMéxico", image: promexicoImg },
+// ];
+
+
+
+// ==================== IMPORTACIONES EN ESPAÑOL (ES) ====================
+import cocaColaEs from '../assets/path/cocacola.jpeg';
+import mcdonaldsEs from '../assets/path/mcdonals.jpeg';
+import selloRojoEs from '../assets/path/pepsi.jpeg'; // Mantengo pepsi.jpeg según tu código
+import kiaEs from '../assets/path/kia.jpeg';
+import mercedesEs from '../assets/path/mercedes.jpeg';
+import fordEs from '../assets/path/ford.jpeg';
+import axaEs from '../assets/path/axa.jpeg';
+import tequilahuizacheEs from '../assets/path/tequilahuizache.jpeg';
+import promexicoEs from '../assets/path/promexico.jpeg';
+
+// ==================== IMPORTACIONES EN INGLÉS (EN) ====================
+import cocaColaEn from '../assets/path/EN/cocacola-en.jpeg';
+import mcdonaldsEn from '../assets/path/EN/mcdonalds-en.jpeg';
+import fordEn from '../assets/path/EN/ford-en.jpeg';
+import kiaEn from '../assets/path/EN/kia-en.jpeg';
+import mercedesEn from '../assets/path/EN/mercedes-en.jpeg';
+import axaEn from '../assets/path/EN/axa-en.jpeg';
+import pepsiEn from '../assets/path/EN/pepsi-en.jpeg';
+import tequilahuizacheEn from '../assets/path/EN/tequilahuizache-en.jpeg';
+import promexicoEn from '../assets/path/EN/promexico-en.jpeg';
+
+// ==================== IMPORTACIONES EN FRANCÉS (FR) ====================
+import cocaColaFr from '../assets/path/FR/cocacola-fr.jpeg';
+import mcdonaldsFr from '../assets/path/FR/mcdonalds-fr.jpeg';
+import fordFr from '../assets/path/FR/ford-fr.jpeg';
+import kiaFr from '../assets/path/FR/kia-fr.jpeg';
+import mercedesFr from '../assets/path/FR/mercedes-fr.jpeg';
+import axaFr from '../assets/path/FR/axa-fr.jpeg';
+import pepsiFr from '../assets/path/FR/pepsi-fr.jpeg';
+import tequilahuizacheFr from '../assets/path/FR/tequilahuizache-fr.jpeg';
+import promexicoFr from '../assets/path/FR/promexico-fr.jpeg';
+
+// Objeto que agrupa las imágenes por idioma de manera dinámica
+const IMAGES_BY_LANGUAGE = {
+  ES: {
+    cocaCola: cocaColaEs, mcdonalds: mcdonaldsEs, selloRojo: selloRojoEs,
+    kia: kiaEs, mercedes: mercedesEs, ford: fordEs, axa: axaEs,
+    tequilahuizache: tequilahuizacheEs, promexico: promexicoEs
+  },
+  EN: {
+    cocaCola: cocaColaEn, mcdonalds: mcdonaldsEn, selloRojo: pepsiEn, // Sello rojo usa el asset de Pepsi
+    kia: kiaEn, mercedes: mercedesEn, ford: fordEn, axa: axaEn,
+    tequilahuizache: tequilahuizacheEn, promexico: promexicoEn
+  },
+  FR: {
+    cocaCola: cocaColaFr, mcdonalds: mcdonaldsFr, selloRojo: pepsiFr, // Sello rojo usa el asset de Pepsi
+    kia: kiaFr, mercedes: mercedesFr, ford: fordFr, axa: axaFr,
+    tequilahuizache: tequilahuizacheFr, promexico: promexicoFr
+  }
+};
+
+// Base de datos de proyectos apuntando a las llaves del objeto de imágenes
+const BASE_PROJECTS = [
+  { id: 1, brand: "Coca-Cola", imgKey: "cocaCola" },
+  { id: 2, brand: "McDonald’s", imgKey: "mcdonalds" },
+  { id: 3, brand: "Sello Rojo", imgKey: "selloRojo" },
+  { id: 4, brand: "KIA", imgKey: "kia" },
+  { id: 5, brand: "Mercedes-Benz", imgKey: "mercedes" },
+  { id: 6, brand: "Ford", imgKey: "ford" },
+  { id: 7, brand: "Axa", imgKey: "axa" },
+  { id: 8, brand: "Tequila Huizache", imgKey: "tequilahuizache" },
+  { id: 9, brand: "ProMéxico", imgKey: "promexico" },
 ];
+
 
 export const Path = () => {
   const scrollContainerRef = useRef(null);
@@ -41,10 +109,19 @@ export const Path = () => {
   const interactionTimeoutRef = useRef(null);
 
   // Duplicamos la data para scroll infinito
-  const duplicatedProjects = [...PROJECTS_DATA, ...PROJECTS_DATA];
+  
 
   const { language } = useLanguage();
   const t = translations[language];
+
+  // Construye dinámicamente PROJECTS_DATA según el idioma actual
+  const PROJECTS_DATA = BASE_PROJECTS.map(project => ({
+    id: project.id,
+    brand: project.brand,
+    image: IMAGES_BY_LANGUAGE[language]?.[project.imgKey] || IMAGES_BY_LANGUAGE['ES'][project.imgKey]
+  }));
+
+  const duplicatedProjects = [...PROJECTS_DATA, ...PROJECTS_DATA];
 
   useEffect(() => {
     let lastTime = 0;
@@ -210,7 +287,7 @@ export const Path = () => {
                 <img 
                   src={project.image} 
                   alt={project.brand}
-                  className="w-full  h-full transition-transform duration-700 ease-out group-hover:scale-102"
+                  className="w-full h-full object-cover rendering-crisp transition-transform duration-700 ease-out group-hover:scale-102"
                   loading="lazy"
                 />
 
