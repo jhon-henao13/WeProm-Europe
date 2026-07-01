@@ -34,7 +34,7 @@ import translations from '../locales';
 // ==================== IMPORTACIONES EN ESPAÑOL (ES) ====================
 import cocaColaEs from '../assets/path/cocacola.jpeg';
 import mcdonaldsEs from '../assets/path/mcdonals.jpeg';
-import selloRojoEs from '../assets/path/pepsi.jpeg'; // Mantengo pepsi.jpeg según tu código
+import pepsiEs from '../assets/path/pepsi.jpeg'; // Mantengo pepsi.jpeg según tu código
 import kiaEs from '../assets/path/kia.jpeg';
 import mercedesEs from '../assets/path/mercedes.jpeg';
 import fordEs from '../assets/path/ford.jpeg';
@@ -67,17 +67,17 @@ import promexicoFr from '../assets/path/FR/promexico-fr.webp';
 // Objeto que agrupa las imágenes por idioma de manera dinámica
 const IMAGES_BY_LANGUAGE = {
   ES: {
-    cocaCola: cocaColaEs, mcdonalds: mcdonaldsEs, selloRojo: selloRojoEs,
+    cocaCola: cocaColaEs, mcdonalds: mcdonaldsEs, pepsi: pepsiEs,
     kia: kiaEs, mercedes: mercedesEs, ford: fordEs, axa: axaEs,
     tequilahuizache: tequilahuizacheEs, promexico: promexicoEs
   },
   EN: {
-    cocaCola: cocaColaEn, mcdonalds: mcdonaldsEn, selloRojo: pepsiEn, // Sello rojo usa el asset de Pepsi
+    cocaCola: cocaColaEn, mcdonalds: mcdonaldsEn, pepsi: pepsiEn, // Pepsi usa el asset de Pepsi
     kia: kiaEn, mercedes: mercedesEn, ford: fordEn, axa: axaEn,
     tequilahuizache: tequilahuizacheEn, promexico: promexicoEn
   },
   FR: {
-    cocaCola: cocaColaFr, mcdonalds: mcdonaldsFr, selloRojo: pepsiFr, // Sello rojo usa el asset de Pepsi
+    cocaCola: cocaColaFr, mcdonalds: mcdonaldsFr, pepsi: pepsiFr, // Pepsi usa el asset de Pepsi
     kia: kiaFr, mercedes: mercedesFr, ford: fordFr, axa: axaFr,
     tequilahuizache: tequilahuizacheFr, promexico: promexicoFr
   }
@@ -87,7 +87,7 @@ const IMAGES_BY_LANGUAGE = {
 const BASE_PROJECTS = [
   { id: 1, brand: "Coca-Cola", imgKey: "cocaCola" },
   { id: 2, brand: "McDonald’s", imgKey: "mcdonalds" },
-  { id: 3, brand: "Sello Rojo", imgKey: "selloRojo" },
+  { id: 3, brand: "Pepsi", imgKey: "pepsi" },
   { id: 4, brand: "KIA", imgKey: "kia" },
   { id: 5, brand: "Mercedes-Benz", imgKey: "mercedes" },
   { id: 6, brand: "Ford", imgKey: "ford" },
