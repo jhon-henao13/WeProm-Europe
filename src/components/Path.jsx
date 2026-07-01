@@ -43,26 +43,26 @@ import tequilahuizacheEs from '../assets/path/tequilahuizache.jpeg';
 import promexicoEs from '../assets/path/promexico.jpeg';
 
 // ==================== IMPORTACIONES EN INGLÉS (EN) ====================
-import cocaColaEn from '../assets/path/EN/cocacola-en.jpeg';
-import mcdonaldsEn from '../assets/path/EN/mcdonalds-en.jpeg';
-import fordEn from '../assets/path/EN/ford-en.jpeg';
-import kiaEn from '../assets/path/EN/kia-en.jpeg';
-import mercedesEn from '../assets/path/EN/mercedes-en.jpeg';
-import axaEn from '../assets/path/EN/axa-en.jpeg';
-import pepsiEn from '../assets/path/EN/pepsi-en.jpeg';
-import tequilahuizacheEn from '../assets/path/EN/tequilahuizache-en.jpeg';
-import promexicoEn from '../assets/path/EN/promexico-en.jpeg';
+import cocaColaEn from '../assets/path/EN/cocacola-en.webp';
+import mcdonaldsEn from '../assets/path/EN/mcdonalds-en.webp';
+import fordEn from '../assets/path/EN/ford-en.webp';
+import kiaEn from '../assets/path/EN/kia-en.webp';
+import mercedesEn from '../assets/path/EN/mercedes-en.webp';
+import axaEn from '../assets/path/EN/axa-en.webp';
+import pepsiEn from '../assets/path/EN/pepsi-en.webp';
+import tequilahuizacheEn from '../assets/path/EN/tequilahuizache-en.webp';
+import promexicoEn from '../assets/path/EN/promexico-en.webp';
 
 // ==================== IMPORTACIONES EN FRANCÉS (FR) ====================
-import cocaColaFr from '../assets/path/FR/cocacola-fr.jpeg';
-import mcdonaldsFr from '../assets/path/FR/mcdonalds-fr.jpeg';
-import fordFr from '../assets/path/FR/ford-fr.jpeg';
-import kiaFr from '../assets/path/FR/kia-fr.jpeg';
-import mercedesFr from '../assets/path/FR/mercedes-fr.jpeg';
-import axaFr from '../assets/path/FR/axa-fr.jpeg';
-import pepsiFr from '../assets/path/FR/pepsi-fr.jpeg';
-import tequilahuizacheFr from '../assets/path/FR/tequilahuizache-fr.jpeg';
-import promexicoFr from '../assets/path/FR/promexico-fr.jpeg';
+import cocaColaFr from '../assets/path/FR/cocacola-fr.webp';
+import mcdonaldsFr from '../assets/path/FR/mcdonalds-fr.webp';
+import fordFr from '../assets/path/FR/ford-fr.webp';
+import kiaFr from '../assets/path/FR/kia-fr.webp';
+import mercedesFr from '../assets/path/FR/mercedes-fr.webp';
+import axaFr from '../assets/path/FR/axa-fr.webp';
+import pepsiFr from '../assets/path/FR/pepsi-fr.webp';
+import tequilahuizacheFr from '../assets/path/FR/tequilahuizache-fr.webp';
+import promexicoFr from '../assets/path/FR/promexico-fr.webp';
 
 // Objeto que agrupa las imágenes por idioma de manera dinámica
 const IMAGES_BY_LANGUAGE = {
