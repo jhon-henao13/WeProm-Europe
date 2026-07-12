@@ -131,14 +131,24 @@ export const Footer = () => {
           {/* Enlaces Legales */}
           {/* Enlaces Legales Unificados en PDF */}
           <div className="order-1 md:order-2 text-center md:text-right">
-            <a 
-              href="/weprom-europe-mentions-legales-es.pdf"
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
-            >
-              {t.footer.legal}
-            </a>
+            {(() => {
+              const legalPdfMap = {
+                ES: '/weprom-europe-mentions-legales-es.pdf',
+                FR: '/Politique_de_confidentialite_FR.pdf',
+                EN: '/Privacy_Policy_EN.pdf',
+              };
+              const legalPdfUrl = legalPdfMap[language] || legalPdfMap.ES;
+              return (
+                <a 
+                  href={legalPdfUrl}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
+                >
+                  {t.footer.legal}
+                </a>
+              );
+            })()}
           </div>
 
         </div>
