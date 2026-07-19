@@ -28,6 +28,8 @@ import Brands from './components/Brands';
 import { SplashLoader } from './components/SplashLoader';
 import { useLanguage } from './context/LanguageContext';
 import translations from './locales';
+import { ConsentBanner } from './components/ConsentBanner';
+import { ConsentSettingsModal } from './components/ConsentSettingsModal';
 
 
 function App() {
@@ -342,6 +344,8 @@ function App() {
       </Routes>
       <Footer />
       <WhatsAppButton />
+      <ConsentBanner />
+      <ConsentSettingsModal />
     </div>
   );
 }

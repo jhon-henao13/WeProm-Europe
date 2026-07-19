@@ -460,6 +460,34 @@ const translations = {
         submit: 'ENVIAR MENSAJE',
       },
     },
+
+
+    // ----- Cookie Banner -----
+    cookieBanner: {
+      message: 'Utilizamos cookies para mejorar tu experiencia en nuestra web. Puedes aceptar todas o configurar tus preferencias.',
+      settingsLink: 'Configurar',
+      policyLink: 'Política de cookies',
+      accept: 'Aceptar todas',
+      reject: 'Rechazar',
+    },
+    cookieSettings: {
+      title: 'Configuración de cookies',
+      description: 'Selecciona qué tipo de cookies deseas aceptar. Las cookies necesarias son imprescindibles para el funcionamiento de la web.',
+      necessaryLabel: 'Cookies necesarias',
+      necessaryDesc: 'Imprescindibles para el funcionamiento básico de la web.',
+      analyticsLabel: 'Cookies analíticas',
+      analyticsDesc: 'Nos ayudan a entender cómo usas nuestra web para mejorarla.',
+      marketingLabel: 'Cookies de marketing',
+      marketingDesc: 'Se utilizan para mostrarte publicidad relevante.',
+      alwaysOn: 'Siempre activas',
+      save: 'Guardar preferencias',
+      rejectAll: 'Rechazar todas',
+      personalizationLabel: 'Cookies de personalización',
+      personalizationDesc: 'Permiten recordar tus preferencias de idioma, región y otras configuraciones para ofrecerte una experiencia más personalizada.',
+      policyLink: 'Política de privacidad',
+    },
+
+
     // ----- Footer -----
     footer: {
       descriptor: 'WeProm Europe - Promoción y desarrollo de negocios entre Europa y América Latina.',
@@ -476,7 +504,8 @@ const translations = {
       },
       cta: 'Conectemos',
       copyright: '© 2026 WeProm Europe - Todos los derechos reservados.',
-      legal: 'AVISO LEGAL · POLÍTICA DE PRIVACIDAD · POLÍTICA DE COOKIES · GESTIONAR COOKIES',
+      legal: 'AVISO LEGAL · POLÍTICA DE PRIVACIDAD · POLÍTICA DE COOKIES',
+      manageCookies: 'Gestionar Cookies',
     },
     // ----- Meta (SEO) -----
     meta: {
@@ -947,8 +976,34 @@ const translations = {
       },
       cta: 'Connectons-nous',
       copyright: '© 2026 WeProm Europe - Tous droits réservés.',
-      legal: 'MENTIONS LÉGALES · POLITIQUE DE CONFIDENTIALITÉ · POLITIQUE DE COOKIES · GÉRER LES COOKIES',
+      legal: 'MENTIONS LÉGALES · POLITIQUE DE CONFIDENTIALITÉ · POLITIQUE DE COOKIES',
+      manageCookies: 'Gérer les cookies',
     },
+
+    cookieBanner: {
+      message: 'Nous utilisons des cookies pour améliorer votre expérience sur notre site. Vous pouvez accepter tous les cookies ou configurer vos préférences.',
+      settingsLink: 'Configurer',
+      policyLink: 'Politique de cookies',
+      accept: 'Accepter tous',
+      reject: 'Refuser',
+    },
+    cookieSettings: {
+      title: 'Configuration des cookies',
+      description: 'Sélectionnez les types de cookies que vous souhaitez accepter. Les cookies nécessaires sont indispensables au fonctionnement du site.',
+      necessaryLabel: 'Cookies nécessaires',
+      necessaryDesc: 'Indispensables au fonctionnement de base du site.',
+      analyticsLabel: 'Cookies analytiques',
+      analyticsDesc: 'Nous aident à comprendre comment vous utilisez notre site pour l\'améliorer.',
+      marketingLabel: 'Cookies de marketing',
+      marketingDesc: 'Utilisés pour vous afficher des publicités pertinentes.',
+      alwaysOn: 'Toujours actifs',
+      save: 'Enregistrer les préférences',
+      rejectAll: 'Tout refuser',
+      personalizationLabel: 'Cookies de personnalisation',
+      personalizationDesc: 'Permettent de mémoriser vos préférences de langue, région et autres paramètres pour vous offrir une expérience plus personnalisée.',
+      policyLink: 'Politique de confidentialité',
+    },
+
     meta: {
       title: 'WeProm Europe — Promotion et développement d\'affaires entre l\'Europe et l\'Amérique latine | Paris',
       description: 'Antenne européenne du Groupe WeProm. +35 ans, 3 générations, +10 000 projets. Intelligence, stratégie et développement d\'affaires sur le corridor Europe-Amérique latine.',
@@ -1418,8 +1473,34 @@ const translations = {
       },
       cta: "Let's connect",
       copyright: '© 2026 WeProm Europe - All rights reserved.',
-      legal: 'LEGAL NOTICE · PRIVACY POLICY · COOKIE POLICY · MANAGE COOKIES',
+      legal: 'LEGAL NOTICE · PRIVACY POLICY · COOKIE POLICY',
+      manageCookies: 'Manage Cookies',
     },
+
+    cookieBanner: {
+      message: 'We use cookies to enhance your experience on our website. You can accept all or customize your preferences.',
+      settingsLink: 'Settings',
+      policyLink: 'Cookie policy',
+      accept: 'Accept all',
+      reject: 'Reject',
+    },
+    cookieSettings: {
+      title: 'Cookie settings',
+      description: 'Select which types of cookies you want to accept. Necessary cookies are essential for the website to function.',
+      necessaryLabel: 'Necessary cookies',
+      necessaryDesc: 'Essential for basic website functionality.',
+      analyticsLabel: 'Analytics cookies',
+      analyticsDesc: 'Help us understand how you use our website to improve it.',
+      marketingLabel: 'Marketing cookies',
+      marketingDesc: 'Used to show you relevant advertisements.',
+      alwaysOn: 'Always active',
+      save: 'Save preferences',
+      rejectAll: 'Reject all',
+      personalizationLabel: 'Personalization cookies',
+      personalizationDesc: 'Remember your language, region, and other preferences to offer you a more personalized experience.',
+      policyLink: 'Privacy policy',
+    },
+
     meta: {
       title: 'WeProm Europe — Business promotion and development between Europe and Latin America | Paris',
       description: 'European headquarters of Grupo WeProm. +35 years, 3 generations, +10,000 projects. Intelligence, strategy, and business development across the Europe-Latin America corridor.',

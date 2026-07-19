@@ -1,11 +1,15 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useCookies } from '../context/CookieContext';
 import translations from '../locales';
 
 export const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  // URL del PDF Legal (Ajusta esta ruta según corresponda en tu proyecto)
+  const legalPdfUrl = "/docs/aviso-legal.pdf"; 
 
   const handleNavigation = (e, targetId) => {
     e.preventDefault();
@@ -21,6 +25,10 @@ export const Footer = () => {
 
   const { language } = useLanguage();
   const t = translations[language];
+  const { openSettings } = useCookies();
+
+  // Control preventivo por si las traducciones tardan en cargar o no existen
+  if (!t || !t.footer) return null;
 
   return (
     <footer className="bg-white pt-20 pb-12 px-6 md:px-16 border-t border-slate-200">
@@ -38,15 +46,24 @@ export const Footer = () => {
               {t.footer.descriptor}
             </p>
             <div className="flex items-center gap-3 text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase pt-2">
-
-              <a href="#inicio" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">{t.footer.locations.split(' · ')[0]}</a>
+              {/* Corregido: Si es un link interno de SPA, usamos handleNavigation en vez de target_blank */}
+              <a 
+                href="#inicio" 
+                onClick={(e) => handleNavigation(e, 'inicio')} 
+                className="hover:text-[#2d61e0] transition-colors duration-300"
+              >
+                {t.footer.locations?.split(' · ')[0]}
+              </a>
 
               <span className="text-slate-300">•</span>
-              <a href="https://grupoweprom.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300"> {t.footer.locations.split(' · ')[1]}</a>
+              <a href="https://grupoweprom.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">
+                {t.footer.locations?.split(' · ')[1]}
+              </a>
               <span className="text-slate-300">•</span>
 
-              <a href="https://weprom.us " target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">{t.footer.locations.split(' · ')[2]}</a>
-
+              <a href="https://weprom.us" target="_blank" rel="noopener noreferrer" className="hover:text-[#2d61e0] transition-colors duration-300">
+                {t.footer.locations?.split(' · ')[2]}
+              </a>
             </div>
           </div>
 
@@ -120,39 +137,31 @@ export const Footer = () => {
 
         </div>
 
-        {/* PARTE INFERIOR: LEGAL & COPYRIGHT (BLOQUE 3) */}
+        {/* PARTE INFERIOR: LEGAL & COPYRIGHT */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-montserrat text-slate-400 tracking-wide">
-          
-          {/* Copyright */}
           <div className="order-2 md:order-1 font-light">
             {t.footer.copyright}
           </div>
 
-          {/* Enlaces Legales */}
-          {/* Enlaces Legales Unificados en PDF */}
-          <div className="order-1 md:order-2 text-center md:text-right">
-            {(() => {
-              const legalPdfMap = {
-                ES: '/weprom-europe-mentions-legales-es.pdf',
-                FR: '/Politique_de_confidentialite_FR.pdf',
-                EN: '/Privacy_Policy_EN.pdf',
-              };
-              const legalPdfUrl = legalPdfMap[language] || legalPdfMap.ES;
-              return (
-                <a 
-                  href={legalPdfUrl}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
-                >
-                  {t.footer.legal}
-                </a>
-              );
-            })()}
+          <div className="order-1 md:order-2 text-center md:text-right flex flex-wrap justify-center md:justify-end gap-2 items-center">
+            <a 
+              href={legalPdfUrl}
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block"
+            >
+              {t.footer.legal}
+            </a>
+            <span className="text-slate-300">·</span>
+            <button
+              type="button"
+              onClick={openSettings}
+              className="underline decoration-slate-300 hover:decoration-[#2d61e0] hover:text-[#2d61e0] font-medium uppercase tracking-[0.1em] text-slate-500 transition-all duration-300 inline-block cursor-pointer bg-transparent border-none"
+            >
+              {t.footer.manageCookies}
+            </button>
           </div>
-
         </div>
-
       </div>
     </footer>
   );
