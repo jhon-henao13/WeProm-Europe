@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Building2, User, Globe, MessageSquare, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../locales';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,8 +18,43 @@ export const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica para el manejo de envíos estratégicos o integración de API corporativa
-    console.log('Formulario enviado:', formData);
+
+    // Aquí van tus credenciales de EmailJS (obtenidas en el paso 3 y 4)
+    const SERVICE_ID = 'service_godvb4f'; // Reemplaza con tu Service ID
+    const TEMPLATE_ID = 'template_igkalfh'; // Reemplaza con tu Template ID
+    const PUBLIC_KEY = '9EKJ9Kh_CV3PaDuDL'; // Reemplaza con tu Public Key (User ID)
+
+    const templateParams = {
+      fullName: formData.fullName,
+      company: formData.company,
+      email: formData.email,
+      market: formData.market,
+      sector: formData.sector,
+      message: formData.message,
+      newsletter: formData.newsletter ? 'Sí' : 'No',
+      privacy: formData.privacy ? 'Aceptada' : 'No aceptada',
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then((response) => {
+        console.log('Correo enviado exitosamente:', response);
+        alert('Mensaje enviado correctamente. Nos pondremos en contacto pronto.');
+        // Resetear el formulario
+        setFormData({
+          fullName: '',
+          company: '',
+          email: '',
+          market: '',
+          sector: '',
+          message: '',
+          newsletter: false,
+          privacy: false,
+        });
+      })
+      .catch((error) => {
+        console.error('Error al enviar el correo:', error);
+        alert('Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+      });
   };
 
   const { language } = useLanguage();
