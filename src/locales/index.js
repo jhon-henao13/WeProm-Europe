@@ -361,12 +361,12 @@ const translations = {
         },
         {
           name: 'Lisa Lenselle',
-          role: 'Dirección Comercial y Relaciones con Cuentas Clave',
+          role: 'Relaciones con Cuentas Clave',
           bio: 'Especialista en marketing internacional y desarrollo comercial, con amplia experiencia impulsando oportunidades de negocio de los sectores público y privado en Europa y América Latina.',
         },
         {
           name: 'Emilia Lopez Matute',
-          role: 'Directora de Comunicación Institucional, Política y Corporativa',
+          role: 'Comunicación Institucional, Política y Corporativa',
           bio: 'Especialista en comunicación política, corporativa y digital, enfocada en estrategias multicanal de posicionamiento de marca e institucional a nivel internacional.',
         },
         {
@@ -378,6 +378,21 @@ const translations = {
           name: 'Josh Biner',
           role: 'Operaciones y Expansión Internacional',
           bio: 'Asesor internacional en planeación estratégica, fusiones y adquisiciones y transformación comercial para grupos multinacionales.',
+        },
+        {
+          name: 'Pablo De la Garza',
+          role: 'Creatividad y Comunicación Europa-LATAM',
+          bio: 'Especialista en creatividad y comunicación internacional, enfocado en la adaptación cultural de estrategias y el desarrollo de campañas para mercados europeos y latinoamericanos.',
+        },
+        {
+          name: 'Gustavo Cuéllar',
+          role: 'Internacionalización y Cultura de Negocios',
+          bio: 'Especialista en internacionalización empresarial, diseño de modelos de negocio y estrategias de entrada a nuevos mercados para startups y empresas con proyección global.',
+        },
+        {
+          name: 'Carlos Martínez',
+          role: 'Relaciones Diplomáticas y Asuntos Legales Internacionales',
+          bio: 'Abogado internacional especializado en relaciones diplomáticas, implantación empresarial en nuevos mercados y asesoría jurídica para operaciones internacionales.',
         },
         // Nota: añade los demás miembros si los tienes en el PDF
       ],
@@ -867,12 +882,12 @@ const translations = {
         },
         {
           name: 'Lisa Lenselle',
-          role: 'Direction commerciale et relations grands comptes',
+          role: 'Relations grands comptes',
           bio: 'Spécialiste du marketing international et du développement commercial, riche d\'une solide expérience dans la création d\'opportunités d\'affaires des secteurs public et privé en Europe et en Amérique latine.',
         },
         {
           name: 'Emilia Lopez Matute',
-          role: 'Direction de la communication institutionnelle, politique et corporate',
+          role: 'Communication institutionnelle, politique et corporate',
           bio: 'Spécialiste de la communication politique, corporate et digitale, dédiée aux stratégies multicanales de positionnement de marque et institutionnel à l\'international.',
         },
         {
@@ -885,6 +900,23 @@ const translations = {
           role: 'Opérations et expansion internationale',
           bio: 'Conseiller international en planification stratégique, fusions-acquisitions et transformation commerciale pour les groupes multinationaux.',
         },
+
+        {
+          name: 'Pablo De la Garza',
+          role: 'Créativité et communication Europe–Amérique latine',
+          bio: 'Spécialiste de la créativité et de la communication internationale, dédié à l’adaptation culturelle des stratégies et des campagnes pour les marchés européens et latino-américains.',
+        },
+        {
+          name: 'Gustavo Cuéllar',
+          role: 'Internationalisation et culture des affaires',
+          bio: 'Spécialiste de l’internationalisation des entreprises, de la conception de modèles d’affaires et des stratégies d’entrée sur de nouveaux marchés pour les startups et les entreprises à vocation internationale.',
+        },
+        {
+          name: 'Carlos Martínez',
+          role: 'Relations diplomatiques et affaires juridiques internationales',
+          bio: 'Avocat international spécialisé dans les relations diplomatiques, l’implantation sur de nouveaux marchés et le conseil juridique pour les opérations internationales.',
+        },
+
       ],
       closing: 'Soutenus par l\'équipe internationale du Groupe WeProm, riche de plus de 40 collaborateurs et 50 conseillers associés dans le monde.',
     },
@@ -1363,12 +1395,12 @@ const translations = {
         },
         {
           name: 'Lisa Lenselle',
-          role: 'Commercial Direction and Key Account Relations',
+          role: 'Key Account Relations',
           bio: 'International marketing and commercial-development specialist, with extensive experience driving public- and private-sector business opportunities across Europe and Latin America.',
         },
         {
           name: 'Emilia Lopez Matute',
-          role: 'Director of Institutional, Political, and Corporate Communication',
+          role: 'Institutional, Political, and Corporate Communication',
           bio: 'Specialist in political, corporate, and digital communication, focused on multi-channel strategies for international brand and institutional positioning.',
         },
         {
@@ -1381,6 +1413,23 @@ const translations = {
           role: 'Operations and International Expansion',
           bio: 'International advisor for strategic planning, mergers and acquisitions, and commercial transformation for multinational groups.',
         },
+
+        {
+          name: 'Pablo De la Garza',
+          role: 'Creativity and Europe–LATAM Communication',
+          bio: 'Specialist in creativity and international communication, focused on adapting communication strategies and campaigns for European and Latin American markets.',
+        },
+        {
+          name: 'Gustavo Cuéllar',
+          role: 'Internationalization and Business Culture',
+          bio: 'Specialist in business internationalization, business-model design, and market-entry strategies for startups and globally oriented companies.',
+        },
+        {
+          name: 'Carlos Martínez',
+          role: 'Diplomatic Relations and International Legal Affairs',
+          bio: 'International lawyer specializing in diplomatic relations, international market entry, and legal advisory services for cross-border business operations.',
+        },
+
       ],
       closing: 'Backed by Grupo WeProm\'s international team of more than 40 professionals and 50 associate advisors worldwide.',
     },
