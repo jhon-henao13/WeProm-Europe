@@ -14,6 +14,7 @@ import joshBinner from '../assets/team/joshBinner.png';
 import joeKaram from '../assets/team/joeKaram.png';
 import carlosMartinez from '../assets/team/carlosMartinez.png';
 import LisaLenselle from '../assets/team/LisaLenselle.png';
+import davidLeonardoImg from '../assets/team/davidLeonardoCastillo.png';
 
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../locales';
@@ -332,6 +333,7 @@ export const Team = () => {
     joseMiguelImg,
     juanCarlosPImg,
     juanCarlosMImg,
+    davidLeonardoImg,
     oscarSantamaria,
     LisaLenselle,
     emiliaImg,

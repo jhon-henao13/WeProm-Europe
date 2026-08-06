@@ -354,6 +354,13 @@ const translations = {
           role: 'Asesor Estratégico / Director General, WeProm LATAM',
           bio: 'Emprendedor y consultor con más de 15 años de experiencia internacional en marketing, estudios de mercado, posicionamiento de marca y expansión comercial.',
         },
+
+        {
+          name: 'David Leonardo Castillo',
+          role: 'Director General – WeProm North America',
+          bio: 'Consultor en ingeniería de negocios y transformación tecnológica, con más de 15 años de experiencia estructurando operaciones, equipos e implementación de IA para empresas multisectoriales.',
+        },
+
         {
           name: 'Oscar Santamaria Casas',
           role: 'Consultor Internacional Asociado, WeProm Europe',
@@ -881,6 +888,13 @@ const translations = {
           role: 'Conseiller stratégique / Directeur général, WeProm LATAM',
           bio: 'Entrepreneur et consultant fort de plus de 15 ans d\'expérience internationale en marketing, études de marché, positionnement de marque et expansion commerciale.',
         },
+
+        {
+          name: 'David Leonardo Castillo',
+          role: 'Directeur général – WeProm North America',
+          bio: 'Consultant en ingénierie d\'affaires et transformation technologique, avec plus de 15 ans d\'expérience dans la structuration d\'opérations, d\'équipes et l\'implémentation de l\'IA pour des entreprises multisectorielles.',
+        },
+
         {
           name: 'Oscar Santamaria Casas',
           role: 'Consultant international associé, WeProm Europe',
@@ -1400,6 +1414,13 @@ const translations = {
           role: 'Strategic Advisor / Managing Director, WeProm LATAM',
           bio: 'Entrepreneur and consultant with over 15 years of international experience in marketing, market research, brand positioning, and commercial expansion.',
         },
+
+        {
+          name: 'David Leonardo Castillo',
+          role: 'Managing Director – WeProm North America',
+          bio: 'Consultant in business engineering and technology transformation, with over 15 years of experience structuring operations, teams, and AI implementation for multi-sector companies.',
+        },
+
         {
           name: 'Oscar Santamaria Casas',
           role: 'Associate International Consultant, WeProm Europe',
