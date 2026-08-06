@@ -7,9 +7,17 @@ import translations from '../locales';
 export const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const t = translations[language];
+  const { openSettings } = useCookies();
 
   // URL del PDF Legal (Ajusta esta ruta según corresponda en tu proyecto)
-  const legalPdfUrl = "/docs/aviso-legal.pdf"; 
+  const legalPdfMap = {
+    ES: '/weprom-europe-mentions-legales-es.pdf',
+    FR: '/Politique_de_confidentialite_FR.pdf',
+    EN: '/Privacy_Policy_EN.pdf',
+  };
+  const legalPdfUrl = legalPdfMap[language] || legalPdfMap.ES;
 
   const handleNavigation = (e, targetId) => {
     e.preventDefault();
@@ -23,9 +31,6 @@ export const Footer = () => {
     }
   };
 
-  const { language } = useLanguage();
-  const t = translations[language];
-  const { openSettings } = useCookies();
 
   // Control preventivo por si las traducciones tardan en cargar o no existen
   if (!t || !t.footer) return null;
