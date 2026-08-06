@@ -119,12 +119,12 @@ export const Contact = () => {
                 <div>
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600">{t.contact.emails.info}</span>
                   <a href="mailto:info@wepromeurope.com" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
-                    info@wepromeurope.com
+                    contact@wepromeurope.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 group">
+              {/* <div className="flex items-start gap-4 group">
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
                   <Mail className="w-4 h-4 stroke-[1.5]" />
                 </div>
@@ -136,7 +136,7 @@ export const Contact = () => {
                 </div>
               </div>
 
-              {/* Dirección Comercial */}
+
               <div className="flex items-start gap-4 group">
                 <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-slate-50 border border-slate-200 text-slate-700 transition-colors duration-300 group-hover:bg-[#2d61e0] group-hover:text-white">
                   <Mail className="w-4 h-4 stroke-[1.5]" />
@@ -147,7 +147,7 @@ export const Contact = () => {
                     emilia.lopez@wepromeurope.com  
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               {/* Dirección General */}
               {/* <div className="flex items-start gap-4 group">
@@ -169,8 +169,8 @@ export const Contact = () => {
                 </div>
                 <div>
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">{t.contact.emails.phone}</span>
-                  <a href="https://wa.me/33782469209" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
-                    +33 7 82 46 92 09
+                  <a href="https://wa.me/33759937277" target="_blank" rel="noopener noreferrer" className="text-slate-900 font-montserrat text-base hover:text-[#2d61e0] transition-colors duration-300">
+                    +33 7 59 93 72 77
                   </a>
                 </div>
               </div>

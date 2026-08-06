@@ -32,8 +32,13 @@ export const NewInsights = () => {
   const articles = t.insights.articles;
 
   const handleDossierDownload = () => {
-    // Ruta del archivo del reporte mensual en la carpeta public
-    const dossierUrl = '/dossiers/weprom-dossier-2026.pdf';
+    // Mapeo de idioma a archivo PDF mensual
+    const reportMap = {
+      ES: '/monthlyReport/july2026ES.pdf',
+      FR: '/monthlyReport/july2026FR.pdf',
+      EN: '/monthlyReport/july2026EN.pdf',
+    };
+    const dossierUrl = reportMap[language] || reportMap.ES;
     window.open(dossierUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -94,7 +99,7 @@ export const NewInsights = () => {
           <Link to="/blog" className="inline-block w-full sm:w-auto">
             <button className="group relative w-full sm:w-80 overflow-hidden bg-transparent border border-slate-900 text-slate-900 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] transition-all duration-500 hover:bg-slate-900 hover:text-white shadow-sm">
               <span className="relative z-10">
-                Accede a nuestros insights
+                {t.insights.cta}
               </span>
             </button>
           </Link>
