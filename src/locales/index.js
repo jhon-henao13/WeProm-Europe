@@ -419,18 +419,24 @@ const translations = {
           title: 'Del bicentenario al TLCUEM: la nueva etapa México-Francia.',
           description: 'Lectura estratégica del Acuerdo Global Modernizado y de las oportunidades que abre para empresas medianas.',
           date: 'Mayo 2026',
+          readMore: 'Leer artículo',
+          placeholder: 'Imagen institucional',
           tag: 'Análisis Geopolítico'
         },
         {
           title: 'Lo que cambia con el Acuerdo UE-Mercosur.',
           description: 'Análisis de la zona comercial de 700 millones de personas que entra en vigor provisional el 1 de mayo.',
           date: 'Mayo 2026',
+          readMore: 'Leer artículo',
+          placeholder: 'Imagen institucional',
           tag: 'Acuerdos Comerciales'
         },
         {
           title: 'Calendario estratégico 2026: SIAL, VivaTech, Choose France y la firma del AGM.',
           description: 'Cómo posicionarse en los hitos del año.',
           date: 'Junio 2026',
+          readMore: 'Leer artículo',
+          placeholder: 'Imagen institucional',
           tag: 'Agenda Corporativa'
         }
       ],
@@ -938,18 +944,24 @@ const translations = {
           title: 'Du bicentenaire au TLCUEM : la nouvelle ère Mexique-France.',
           description: 'Lecture stratégique de l\'Accord global modernisé et des opportunités qu\'il ouvre aux entreprises de taille intermédiaire.',
           date: 'Mai 2026',
+          readMore: 'Lire l\'article',
+          placeholder: 'Image institutionnelle',
           tag: 'Analyse géopolitique'
         },
         {
           title: 'Ce qui change avec l\'Accord UE-Mercosur.',
           description: 'Analyse de la zone commerciale de 700 millions de personnes entrée en vigueur provisoire le 1er mai.',
           date: 'Mai 2026',
+          readMore: 'Lire l\'article',
+          placeholder: 'Image institutionnelle',
           tag: 'Accords commerciaux'
         },
         {
           title: 'Calendrier stratégique 2026 : SIAL, VivaTech, Choose France et la signature de l\'AGM.',
           description: 'Comment se positionner lors des grands rendez-vous de l\'année.',
           date: 'Juin 2026',
+          readMore: 'Lire l\'article',
+          placeholder: 'Image institutionnelle',
           tag: 'Agenda corporate'
         }
       ],
@@ -1452,18 +1464,24 @@ const translations = {
           title: 'From the Bicentennial to the TLCUEM: the new Mexico-France era.',
           description: 'A strategic read of the Modernized Global Agreement and the opportunities it opens for mid-sized companies.',
           date: 'May 2026',
+          readMore: 'Read more',
+          placeholder: 'Institutional image',
           tag: 'Geopolitical Analysis'
         },
         {
           title: 'What changes with the EU-Mercosur Agreement.',
           description: 'An analysis of the 700-million-person trade zone provisionally in force since May 1.',
           date: 'May 2026',
+          readMore: 'Read more',
+          placeholder: 'Institutional image',
           tag: 'Trade Agreements'
         },
         {
           title: 'Strategic Calendar 2026: SIAL, VivaTech, Choose France, and the signing of the MGA.',
           description: 'How to position yourself around the year\'s key milestones.',
           date: 'June 2026',
+          readMore: 'Read more',
+          placeholder: 'Institutional image',
           tag: 'Corporate Agenda'
         }
       ],

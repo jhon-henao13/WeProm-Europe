@@ -3,10 +3,36 @@ import { useParams, Link } from 'react-router-dom';
 import { client } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../lib/imageUrl';
+import { Facebook, Twitter, Linkedin, Link as LinkIcon } from 'lucide-react';
 
 export const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+
+
+  const shareOnSocial = (platform) => {
+    const url = window.location.href;
+    const text = post ? `"${post.title}" - WeProm Europe` : 'WeProm Europe';
+    let shareUrl = '';
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        break;
+      case 'copy':
+        navigator.clipboard.writeText(url).then(() => alert('Enlace copiado al portapapeles'));
+        return;
+      default:
+        return;
+    }
+    if (shareUrl) window.open(shareUrl, '_blank');
+  };
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,6 +42,7 @@ export const BlogPost = () => {
   }, [slug]);
 
   if (!post) return <div className="pt-40 text-center font-montserrat tracking-widest text-slate-400">LOADING INSIGHTS...</div>;
+  
 
   return (
     <article className="pt-48 pb-32 bg-white min-h-screen">
@@ -66,6 +93,27 @@ export const BlogPost = () => {
             }}
           />
         </div>
+
+
+        {/* Botones de compartir en redes sociales */}
+        <div className="mt-12 pt-8 border-t border-slate-100">
+          <p className="text-slate-400 text-xs uppercase tracking-widest mb-4">Compartir</p>
+          <div className="flex gap-4">
+            <button onClick={() => shareOnSocial('facebook')} className="text-slate-500 hover:text-[#1877f2] transition-colors" aria-label="Compartir en Facebook">
+              <Facebook size={20} />
+            </button>
+            <button onClick={() => shareOnSocial('twitter')} className="text-slate-500 hover:text-[#000] transition-colors" aria-label="Compartir en Twitter">
+              <Twitter size={20} />
+            </button>
+            <button onClick={() => shareOnSocial('linkedin')} className="text-slate-500 hover:text-[#0a66c2] transition-colors" aria-label="Compartir en LinkedIn">
+              <Linkedin size={20} />
+            </button>
+            <button onClick={() => shareOnSocial('copy')} className="text-slate-500 hover:text-[#2d61e0] transition-colors" aria-label="Copiar enlace">
+              <LinkIcon size={20} />
+            </button>
+          </div>
+        </div>
+
         
         {/* Footer del post para cerrar con elegancia */}
         <div className="mt-24 pt-12 border-t border-slate-100">
