@@ -451,7 +451,13 @@ const translations = {
       dossier: {
         label: 'WeProm Dossier',
         description: 'Nuestro reporte mensual para empresas, gobiernos e instituciones que se mueven en el corredor Europa-América Latina, con las noticias e informes más relevantes del mes. Lectura ejecutiva, datos verificados, información estratégica.',
-        cta: 'Descarga el reporte'
+        cta: 'Descarga el reporte',
+
+        selectMonth: 'Selecciona el mes',
+        months: {
+          july2026: 'Julio 2026',
+          // august2026: 'Agosto 2026',
+        }
       }
     },
 
@@ -983,7 +989,14 @@ const translations = {
       dossier: {
         label: 'WeProm Dossier',
         description: 'Notre rapport mensuel destiné aux entreprises, gouvernements et institutions actifs sur le corridor Europe-Amérique latine : les actualités et analyses les plus marquantes du mois. Lecture exécutive, données vérifiées, information stratégique.',
-        cta: 'Télécharger le rapport'
+        cta: 'Télécharger le rapport',
+
+        selectMonth: 'Sélectionnez le mois',
+        months: {
+          july2026: 'Juillet 2026',
+          // august2026: 'Agosto 2026',
+        }
+
       }
     },
 
@@ -1510,7 +1523,14 @@ const translations = {
       dossier: {
         label: 'WeProm Dossier',
         description: 'Our monthly report for companies, governments, and institutions operating along the Europe-Latin America corridor — the month\'s most relevant news and briefings. Executive reading, verified data, strategic intelligence.',
-        cta: 'Download the report'
+        cta: 'Download the report',
+
+        selectMonth: 'Select the month',
+        months: {
+          july2026: 'July 2026',
+          // august2026: 'August 2026',
+        }
+
       }
     },
 

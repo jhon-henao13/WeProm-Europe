@@ -10,8 +10,53 @@ import { urlFor } from '../lib/imageUrl';
 export const NewInsights = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showReportSelector, setShowReportSelector] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
+
+  const handleDossierDownload = () => {
+    setShowReportSelector(true);
+  };
+
+
+  const handleMonthSelect = (monthId) => {
+    const month = availableReports.find(m => m.id === monthId);
+    if (!month) return;
+    const dossierUrl = month.files[language] || month.files.ES;
+    window.open(dossierUrl, '_blank', 'noopener,noreferrer');
+    setShowReportSelector(false);
+  };
+
+  // Cerrar selector al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showReportSelector && !event.target.closest('.report-selector-container')) {
+        setShowReportSelector(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showReportSelector]);
+
+  const availableReports = [
+    {
+      id: 'july2026',
+      label: t.insights.dossier?.months?.july2026 || 'Julio 2026',
+      files: {
+        ES: '/monthlyReport/july2026/july2026ES.pdf',
+        FR: '/monthlyReport/july2026/july2026FR.pdf',
+        EN: '/monthlyReport/july2026/july2026EN.pdf',
+      }
+    },
+    // Agrega más meses aquí, ej:
+    // {
+    //   id: 'august2026',
+    //   label: 'Agosto 2026',
+    //   files: { ES: '/monthlyReport/august2026/august2026ES.pdf', ... }
+    // }
+  ];
+
+
 
   useEffect(() => {
     // Obtener los 3 posts más recientes desde Sanity
@@ -35,15 +80,7 @@ export const NewInsights = () => {
       });
   }, []);
 
-  const handleDossierDownload = () => {
-    const reportMap = {
-      ES: '/monthlyReport/july2026ES.pdf',
-      FR: '/monthlyReport/july2026FR.pdf',
-      EN: '/monthlyReport/july2026EN.pdf',
-    };
-    const dossierUrl = reportMap[language] || reportMap.ES;
-    window.open(dossierUrl, '_blank', 'noopener,noreferrer');
-  };
+
 
   // Función para compartir en redes sociales
   const shareOnSocial = (platform, title, slug) => {
@@ -222,19 +259,38 @@ export const NewInsights = () => {
             </div>
 
             {/* Acción Corporativa de Descarga */}
-            <div className="lg:col-span-5 flex lg:justify-end w-full">
-              <button 
-                onClick={handleDossierDownload}
-                className="group relative w-full lg:w-72 overflow-hidden bg-[#2d61e0] border border-[#2d61e0] text-white px-8 py-5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-500 hover:bg-transparent hover:text-white hover:border-white flex items-center justify-center gap-3 shadow-lg"
-              >
-                <Download className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-y-0.5" />
-                <span>{t.insights.dossier.cta}</span>
-              </button>
-            </div>
+            <div className="lg:col-span-5 flex lg:justify-end w-full relative report-selector-container">
+            <button 
+              onClick={handleDossierDownload}
+              className="group relative w-full lg:w-72 overflow-hidden bg-[#2d61e0] border border-[#2d61e0] text-white px-8 py-5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-500 hover:bg-transparent hover:text-white hover:border-white flex items-center justify-center gap-3 shadow-lg"
+            >
+              <Download className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-y-0.5" />
+              <span>{t.insights.dossier.cta}</span>
+            </button>
+            
+            {showReportSelector && (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white rounded-lg shadow-2xl border border-slate-200 p-2 min-w-[200px] z-20">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1 border-b border-slate-100">
+                  {t.insights.dossier?.selectMonth || 'Selecciona el mes'}
+                </div>
+                <div className="py-1">
+                  {availableReports.map((month) => (
+                    <button
+                      key={month.id}
+                      onClick={() => handleMonthSelect(month.id)}
+                      className="w-full text-left px-3 py-2 text-sm font-montserrat text-slate-700 hover:bg-slate-50 hover:text-[#2d61e0] transition-colors rounded"
+                    >
+                      {month.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
-
       </div>
+
+    </div>
     </section>
   );
 };
