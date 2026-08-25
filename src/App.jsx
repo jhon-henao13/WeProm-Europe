@@ -134,9 +134,6 @@ function App() {
     }
   }, [language]);
 
-
-
-
   useEffect(() => {
     // 1. Lógica de Intersection Observer (Reveal)
     const observerOptions = { threshold: 0.15 };
@@ -147,8 +144,6 @@ function App() {
         }
       });
     }, observerOptions);
-
-
 
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach((el) => observer.observe(el));

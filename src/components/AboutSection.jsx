@@ -11,7 +11,16 @@ export const AboutSection = () => {
 
   const cards = t.about.cards;
 
-  
+  // Después de const cards = t.about.cards;
+  const handleContextAnalysis = () => {
+    const pdfMap = {
+      ES: '/trimestralReport/july2026ES.pdf',
+      FR: '/trimestralReport/july2026FR.pdf',
+      EN: '/trimestralReport/july2026EN.pdf',
+    };
+    const pdfUrl = pdfMap[language] || pdfMap.ES;
+    window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -133,13 +142,15 @@ export const AboutSection = () => {
             </div>
             
             <div className="relative z-10 flex-shrink-0">
+
               <button 
-                onClick={() => window.open('/ruta-de-tu-archivo/analisis-contexto.pdf', '_blank', 'noopener,noreferrer')}
+                onClick={handleContextAnalysis}
                 className="group text-white font-montserrat text-[11px] font-bold uppercase tracking-[0.25em] flex items-center gap-4 border-b border-white/30 pb-2 transition-all duration-300 hover:border-[#2d61e0] hover:text-[#2d61e0]"
               >
                 {t.about.perspective.cta}
                 <span className="text-sm transform transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
+              
             </div>
           </div>
             
