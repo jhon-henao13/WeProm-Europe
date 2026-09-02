@@ -48,12 +48,25 @@ export const NewInsights = () => {
         EN: '/monthlyReport/july2026/july2026EN.pdf',
       }
     },
+
+    {
+      id: 'august2026',
+      label: t.insights.dossier?.months?.august2026 || 'Agosto 2026',
+      files: {
+        ES: '/monthlyReport/august2026/august2026ES.pdf',
+        FR: '/monthlyReport/august2026/august2026FR.pdf',
+        EN: '/monthlyReport/august2026/august2026EN.pdf',
+      }
+    },
+
     // Agrega más meses aquí, ej:
     // {
     //   id: 'august2026',
     //   label: 'Agosto 2026',
     //   files: { ES: '/monthlyReport/august2026/august2026ES.pdf', ... }
     // }
+
+    
   ];
 
 
@@ -237,7 +250,7 @@ export const NewInsights = () => {
         </div>
 
         {/* SECCIÓN ASIMÉTRICA: WEPROM DOSSIER */}
-        <div className="bg-slate-900 text-white p-8 md:p-16 relative overflow-hidden border border-slate-800">
+        <div className="bg-slate-900 text-white p-8 md:p-16 relative overflow-visible border border-slate-800">
           {/* Isotipo de Fondo Translúcido */}
           <div className="absolute right-0 bottom-0 w-1/3 h-full opacity-5 pointer-events-none select-none hidden md:block">
             <img src="/isotipo.png" alt="" className="w-full h-full object-contain object-right translate-x-[15%] translate-y-[15%]" />
@@ -259,7 +272,7 @@ export const NewInsights = () => {
             </div>
 
             {/* Acción Corporativa de Descarga */}
-            <div className="lg:col-span-5 flex lg:justify-end w-full relative report-selector-container">
+            <div className="lg:col-span-5 flex lg:justify-end w-full relative report-selector-container overflow-visible">
             <button 
               onClick={handleDossierDownload}
               className="group relative w-full lg:w-72 overflow-hidden bg-[#2d61e0] border border-[#2d61e0] text-white px-8 py-5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-500 hover:bg-transparent hover:text-white hover:border-white flex items-center justify-center gap-3 shadow-lg"
@@ -269,11 +282,11 @@ export const NewInsights = () => {
             </button>
             
             {showReportSelector && (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-white rounded-lg shadow-2xl border border-slate-200 p-2 min-w-[200px] z-20">
-                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1 border-b border-slate-100">
+              <div className="absolute bottom-full left-0 lg:left-auto lg:right-0 mb-3 bg-white rounded-lg shadow-2xl border border-slate-200 p-2 w-full lg:w-72 z-[100] max-h-60 overflow-y-auto">
+                <div className="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1 border-b border-slate-100 sticky top-0 bg-white z-10">
                   {t.insights.dossier?.selectMonth || 'Selecciona el mes'}
                 </div>
-                <div className="py-1">
+                <div className="py-1 flex flex-col">
                   {availableReports.map((month) => (
                     <button
                       key={month.id}

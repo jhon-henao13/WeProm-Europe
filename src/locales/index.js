@@ -456,7 +456,8 @@ const translations = {
         selectMonth: 'Selecciona el mes',
         months: {
           july2026: 'Julio 2026',
-          // august2026: 'Agosto 2026',
+          august2026: 'Agosto 2026',
+          // september2026: 'September 2026',
         }
       }
     },
@@ -994,7 +995,9 @@ const translations = {
         selectMonth: 'Sélectionnez le mois',
         months: {
           july2026: 'Juillet 2026',
-          // august2026: 'Agosto 2026',
+          august2026: 'Août 2026',
+          // september2026: 'Septembre 2026',
+          // october2026: 'Octobre 2026',
         }
 
       }
@@ -1528,7 +1531,8 @@ const translations = {
         selectMonth: 'Select the month',
         months: {
           july2026: 'July 2026',
-          // august2026: 'August 2026',
+          august2026: 'August 2026',
+          // september2026: 'September 2026',
         }
 
       }
